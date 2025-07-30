@@ -1,0 +1,568 @@
+# Advanced Security Scanning for Quantum ML Projects
+#
+# This workflow provides comprehensive security scanning including:
+# - SBOM (Software Bill of Materials) generation
+# - Container vulnerability scanning
+# - Quantum-specific security checks
+# - Dependency vulnerability analysis
+# - Compliance reporting and license scanning
+
+name: Security Scanning & SBOM
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'src/**'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
+      - 'Dockerfile*'
+      - '.github/workflows/security-scanning.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'src/**'
+      - 'pyproject.toml'
+      - 'requirements*.txt'
+      - 'Dockerfile*'
+  schedule:
+    # Weekly security scan on Sundays at 3 AM UTC
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+    inputs:
+      scan_type:
+        description: 'Type of security scan to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - sbom-only
+          - vulnerabilities-only
+          - quantum-security-only
+      severity_threshold:
+        description: 'Minimum severity level to report'
+        required: false
+        default: 'medium'
+        type: choice
+        options:
+          - low
+          - medium
+          - high
+          - critical
+
+env:
+  # Security configuration
+  SECURITY_SCAN_OUTPUT_DIR: security-reports
+  SBOM_FORMAT: spdx-json
+  VULNERABILITY_DB_UPDATE: true
+  
+  # Quantum-specific security settings
+  QUANTUM_SECURITY_CHECKS: true
+  QUANTUM_PARAMETER_VALIDATION: true
+  QUANTUM_CIRCUIT_OBFUSCATION_CHECK: true
+
+permissions:
+  contents: read
+  security-events: write
+  id-token: write
+  attestations: write
+
+jobs:
+  # Generate Software Bill of Materials (SBOM)
+  generate-sbom:
+    name: Generate SBOM
+    runs-on: ubuntu-latest
+    if: |
+      (github.event.inputs.scan_type == '' || 
+       github.event.inputs.scan_type == 'all' || 
+       github.event.inputs.scan_type == 'sbom-only')
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,all]"
+        pip install cyclonedx-bom syft
+    
+    - name: Create Output Directory
+      run: mkdir -p ${{ env.SECURITY_SCAN_OUTPUT_DIR }}
+    
+    - name: Generate Python SBOM with CycloneDX
+      run: |
+        cyclonedx-py -o ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/sbom-cyclonedx.json \
+          --format json \
+          --schema-version 1.5 \
+          --include-dev \
+          --include-optional \
+          .
+    
+    - name: Generate Comprehensive SBOM with Syft
+      run: |
+        syft . -o spdx-json=${{ env.SECURITY_SCAN_OUTPUT_DIR }}/sbom-syft.spdx.json
+        syft . -o cyclonedx-json=${{ env.SECURITY_SCAN_OUTPUT_DIR }}/sbom-syft-cyclonedx.json
+    
+    - name: Generate Quantum Dependencies Report
+      run: |
+        python scripts/security/generate_quantum_deps_report.py \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/quantum-dependencies.json \
+          --include-versions \
+          --check-vulnerabilities
+    
+    - name: Validate SBOM Completeness
+      run: |
+        python scripts/security/validate_sbom.py \
+          --sbom-file ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/sbom-syft.spdx.json \
+          --check-quantum-components \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/sbom-validation.json
+    
+    - name: Generate SBOM Attestation
+      uses: actions/attest-build-provenance@v1
+      with:
+        subject-path: ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/sbom-syft.spdx.json
+    
+    - name: Upload SBOM Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: sbom-reports
+        path: ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/
+        retention-days: 90
+
+  # Dependency vulnerability scanning
+  dependency-scan:
+    name: Dependency Vulnerability Scan
+    runs-on: ubuntu-latest
+    if: |
+      (github.event.inputs.scan_type == '' || 
+       github.event.inputs.scan_type == 'all' || 
+       github.event.inputs.scan_type == 'vulnerabilities-only')
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,all]"
+        pip install safety bandit semgrep pip-audit
+    
+    - name: Create Output Directory
+      run: mkdir -p ${{ env.SECURITY_SCAN_OUTPUT_DIR }}
+    
+    - name: Safety - Dependency Vulnerability Check
+      run: |
+        safety check \
+          --json \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/safety-report.json \
+          --continue-on-error
+        
+        safety check \
+          --short-report \
+          --continue-on-error || echo "Safety scan completed with findings"
+    
+    - name: Pip-Audit - Additional Vulnerability Check
+      run: |
+        pip-audit \
+          --format=json \
+          --output=${{ env.SECURITY_SCAN_OUTPUT_DIR }}/pip-audit-report.json \
+          --continue-on-error
+    
+    - name: Bandit - Security Issues in Code
+      run: |
+        bandit -r src/ \
+          -f json \
+          -o ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/bandit-report.json \
+          --severity-level low \
+          --exit-zero
+    
+    - name: Semgrep - SAST Analysis
+      env:
+        SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+      run: |
+        semgrep \
+          --config=auto \
+          --json \
+          --output=${{ env.SECURITY_SCAN_OUTPUT_DIR }}/semgrep-report.json \
+          src/ || echo "Semgrep scan completed"
+    
+    - name: OSV-Scanner - Comprehensive Vulnerability Check
+      uses: google/osv-scanner-action@v1.7.4
+      with:
+        scan-args: |-
+          --output=${{ env.SECURITY_SCAN_OUTPUT_DIR }}/osv-report.json
+          --format=json
+          ./
+      continue-on-error: true
+    
+    - name: Quantum-Specific Security Checks
+      run: |
+        python scripts/security/quantum_security_scan.py \
+          --source-dir src/ \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/quantum-security-report.json \
+          --check-parameter-exposure \
+          --check-circuit-leakage \
+          --check-hardware-credentials
+    
+    - name: Generate Vulnerability Summary
+      run: |
+        python scripts/security/aggregate_vulnerability_reports.py \
+          --reports-dir ${{ env.SECURITY_SCAN_OUTPUT_DIR }} \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/vulnerability-summary.json \
+          --severity-threshold ${{ github.event.inputs.severity_threshold || 'medium' }}
+    
+    - name: Upload Vulnerability Reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: vulnerability-reports
+        path: ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/
+        retention-days: 30
+
+  # Container security scanning
+  container-security:
+    name: Container Security Scan
+    runs-on: ubuntu-latest
+    if: |
+      (github.event.inputs.scan_type == '' || 
+       github.event.inputs.scan_type == 'all')
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    
+    - name: Build Container for Security Scanning
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        load: true
+        tags: quantum-mlops:security-scan
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+    
+    - name: Create Output Directory
+      run: mkdir -p ${{ env.SECURITY_SCAN_OUTPUT_DIR }}
+    
+    - name: Trivy - Container Vulnerability Scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: quantum-mlops:security-scan
+        format: 'json'
+        output: '${{ env.SECURITY_SCAN_OUTPUT_DIR }}/trivy-container-report.json'
+        severity: 'MEDIUM,HIGH,CRITICAL'
+    
+    - name: Trivy - Filesystem Scan
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'json'
+        output: '${{ env.SECURITY_SCAN_OUTPUT_DIR }}/trivy-fs-report.json'
+        severity: 'MEDIUM,HIGH,CRITICAL'
+    
+    - name: Trivy - SARIF Report for GitHub Security
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: quantum-mlops:security-scan
+        format: 'sarif'
+        output: '${{ env.SECURITY_SCAN_OUTPUT_DIR }}/trivy-results.sarif'
+    
+    - name: Grype - Additional Container Scanning
+      run: |
+        curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+        grype quantum-mlops:security-scan \
+          -o json \
+          --file ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/grype-report.json
+    
+    - name: Container Security Analysis
+      run: |
+        python scripts/security/analyze_container_security.py \
+          --trivy-report ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/trivy-container-report.json \
+          --grype-report ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/grype-report.json \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/container-security-analysis.json
+    
+    - name: Upload SARIF to GitHub Security
+      uses: github/codeql-action/upload-sarif@v3
+      if: always()
+      with:
+        sarif_file: '${{ env.SECURITY_SCAN_OUTPUT_DIR }}/trivy-results.sarif'
+    
+    - name: Upload Container Security Reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: container-security-reports
+        path: ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/
+        retention-days: 30
+
+  # License compliance and legal analysis
+  license-compliance:
+    name: License Compliance Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,all]"
+        pip install pip-licenses licensecheck
+    
+    - name: Create Output Directory
+      run: mkdir -p ${{ env.SECURITY_SCAN_OUTPUT_DIR }}
+    
+    - name: Generate License Report
+      run: |
+        pip-licenses \
+          --format=json \
+          --output-file=${{ env.SECURITY_SCAN_OUTPUT_DIR }}/licenses.json
+        
+        pip-licenses \
+          --format=csv \
+          --output-file=${{ env.SECURITY_SCAN_OUTPUT_DIR }}/licenses.csv
+    
+    - name: Check License Compatibility
+      run: |
+        python scripts/security/check_license_compatibility.py \
+          --licenses-file ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/licenses.json \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/license-compliance-report.json \
+          --allowed-licenses MIT,Apache-2.0,BSD-3-Clause,BSD-2-Clause \
+          --quantum-specific-check
+    
+    - name: REUSE License Compliance
+      uses: fsfe/reuse-action@v3
+      continue-on-error: true
+    
+    - name: Upload License Reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: license-compliance-reports
+        path: ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/
+        retention-days: 30
+
+  # Quantum-specific security analysis
+  quantum-security-analysis:
+    name: Quantum Security Analysis
+    runs-on: ubuntu-latest
+    if: |
+      (github.event.inputs.scan_type == '' || 
+       github.event.inputs.scan_type == 'all' || 
+       github.event.inputs.scan_type == 'quantum-security-only')
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,all]"
+    
+    - name: Create Output Directory
+      run: mkdir -p ${{ env.SECURITY_SCAN_OUTPUT_DIR }}
+    
+    - name: Quantum Circuit Security Analysis
+      run: |
+        python scripts/security/quantum_circuit_analysis.py \
+          --source-dir src/ \
+          --test-dir tests/ \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/quantum-circuit-security.json \
+          --check-parameter-leakage \
+          --check-state-information \
+          --check-measurement-timing
+    
+    - name: Quantum Backend Security Check
+      run: |
+        python scripts/security/quantum_backend_security.py \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/quantum-backend-security.json \
+          --check-credential-handling \
+          --check-queue-isolation \
+          --check-result-privacy \
+          --validate-connections
+    
+    - name: Quantum Cryptography Analysis
+      run: |
+        python scripts/security/quantum_crypto_analysis.py \
+          --source-dir src/ \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/quantum-crypto-analysis.json \
+          --check-post-quantum-safe \
+          --check-key-generation \
+          --check-random-number-usage
+    
+    - name: Quantum Information Leakage Check
+      run: |
+        python scripts/security/quantum_information_leakage.py \
+          --source-dir src/ \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/quantum-info-leakage.json \
+          --check-logging-exposure \
+          --check-error-messages \
+          --check-debug-output
+    
+    - name: Generate Quantum Security Report
+      run: |
+        python scripts/security/generate_quantum_security_report.py \
+          --reports-dir ${{ env.SECURITY_SCAN_OUTPUT_DIR }} \
+          --output ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/quantum-security-summary.json \
+          --compliance-frameworks NIST-PQC,ISO-IEC-23053
+    
+    - name: Upload Quantum Security Reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: quantum-security-reports
+        path: ${{ env.SECURITY_SCAN_OUTPUT_DIR }}/
+        retention-days: 30
+
+  # Security report aggregation and notification
+  security-report-summary:
+    name: Security Report Summary
+    runs-on: ubuntu-latest
+    needs: [generate-sbom, dependency-scan, container-security, license-compliance, quantum-security-analysis]
+    if: always()
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Download All Security Reports
+      uses: actions/download-artifact@v4
+      with:
+        path: all-security-reports
+    
+    - name: Aggregate Security Results
+      run: |
+        python scripts/security/aggregate_security_reports.py \
+          --reports-dir all-security-reports \
+          --output security-dashboard.html \
+          --format html \
+          --severity-threshold ${{ github.event.inputs.severity_threshold || 'medium' }}
+    
+    - name: Generate Security Summary for GitHub
+      run: |
+        echo "## 🛡️ Security Scan Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        python scripts/security/create_security_summary.py \
+          --reports-dir all-security-reports >> $GITHUB_STEP_SUMMARY
+    
+    - name: Check Security Policy Compliance
+      run: |
+        python scripts/security/check_security_policy.py \
+          --reports-dir all-security-reports \
+          --policy-file .github/security-policy.yml \
+          --output security-compliance.json
+    
+    - name: Create Security Issue if Critical Vulnerabilities Found
+      if: github.ref == 'refs/heads/main'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          // Check if critical vulnerabilities exist
+          try {
+            const complianceData = JSON.parse(fs.readFileSync('security-compliance.json', 'utf8'));
+            
+            if (complianceData.critical_vulnerabilities > 0) {
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `🚨 Critical Security Vulnerabilities Detected`,
+                body: `Critical security vulnerabilities have been detected in the quantum ML codebase.
+                
+                **Summary:**
+                - Critical vulnerabilities: ${complianceData.critical_vulnerabilities}
+                - High severity: ${complianceData.high_vulnerabilities}
+                - Affected components: ${complianceData.affected_components.join(', ')}
+                
+                **Action Required:**
+                Please review the security reports and address these vulnerabilities immediately.
+                
+                **Reports:**
+                - Security Dashboard: [View Results](${context.payload.repository.html_url}/actions/runs/${context.runId})`,
+                labels: ['security', 'critical', 'quantum-ml']
+              });
+              
+              console.log(`Created security issue: ${issue.data.html_url}`);
+            }
+          } catch (error) {
+            console.log('No critical vulnerabilities found or unable to parse compliance data');
+          }
+    
+    - name: Upload Security Dashboard
+      uses: actions/upload-artifact@v4
+      with:
+        name: security-dashboard
+        path: |
+          security-dashboard.html
+          security-compliance.json
+          all-security-reports/
+        retention-days: 90
+
+  # Optional: Slack notification for security results
+  # Uncomment and configure for your team's Slack workspace
+  #  notify-security-team:
+  #    name: Notify Security Team
+  #    runs-on: ubuntu-latest
+  #    needs: [security-report-summary]
+  #    if: always() && github.ref == 'refs/heads/main'
+  #    
+  #    steps:
+  #    - name: Send Slack Notification
+  #      uses: 8398a7/action-slack@v3
+  #      with:
+  #        status: ${{ job.status }}
+  #        channel: '#quantum-security'
+  #        webhook_url: ${{ secrets.SLACK_WEBHOOK_SECURITY }}
+  #        custom_payload: |
+  #          {
+  #            attachments: [{
+  #              color: '${{ job.status }}' === 'success' ? 'good' : 'danger',
+  #              title: 'Quantum ML Security Scan Results',
+  #              text: 'Security scanning completed for quantum-mlops-workbench',
+  #              fields: [{
+  #                title: 'Repository',
+  #                value: '${{ github.repository }}',
+  #                short: true
+  #              }, {
+  #                title: 'Branch',
+  #                value: '${{ github.ref_name }}',
+  #                short: true
+  #              }]
+  #            }]
+  #          }

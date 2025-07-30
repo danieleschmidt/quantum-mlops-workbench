@@ -1,0 +1,601 @@
+# Quantum Performance Benchmarking & Optimization
+#
+# This workflow provides comprehensive quantum performance testing including:
+# - Circuit depth optimization validation
+# - Quantum advantage benchmarking
+# - Hardware compatibility testing
+# - Performance regression detection
+# - Quantum noise resilience testing
+
+name: Quantum Performance Benchmarking
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - 'src/**'
+      - 'tests/benchmarks/**'
+      - 'pyproject.toml'
+      - '.github/workflows/performance-benchmarking.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'src/**'
+      - 'tests/benchmarks/**'
+      - 'pyproject.toml'
+  schedule:
+    # Run performance benchmarks daily at 4 AM UTC
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+    inputs:
+      benchmark_suite:
+        description: 'Benchmark suite to run'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - circuit-optimization
+          - quantum-advantage
+          - noise-resilience
+          - hardware-compatibility
+      hardware_testing:
+        description: 'Include hardware performance testing'
+        required: false
+        default: false
+        type: boolean
+      regression_check:
+        description: 'Run performance regression analysis'
+        required: false
+        default: true
+        type: boolean
+
+env:
+  # Benchmark configuration
+  BENCHMARK_OUTPUT_DIR: benchmark-results
+  BENCHMARK_TIMEOUT: 1800  # 30 minutes
+  BENCHMARK_WARMUP_ITERATIONS: 3
+  BENCHMARK_MIN_ROUNDS: 5
+  
+  # Quantum-specific settings
+  MAX_QUBITS_SIMULATION: 25
+  QUANTUM_SHOTS_BENCHMARK: 10000
+  PERFORMANCE_REGRESSION_THRESHOLD: 1.15  # 15% degradation threshold
+  
+  # Hardware budget controls
+  HARDWARE_BUDGET_SHOTS: 50000  # Max shots for hardware testing
+  HARDWARE_TIMEOUT: 900  # 15 minutes per hardware job
+
+jobs:
+  # Circuit optimization benchmarks
+  circuit-optimization-benchmarks:
+    name: Circuit Optimization Benchmarks
+    runs-on: ubuntu-latest-8-cores
+    if: |
+      (github.event.inputs.benchmark_suite == '' || 
+       github.event.inputs.benchmark_suite == 'all' || 
+       github.event.inputs.benchmark_suite == 'circuit-optimization')
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        quantum_framework: [pennylane, qiskit, cirq]
+        circuit_type: [variational, ansatz, qaoa, vqe]
+        qubit_count: [4, 8, 12, 16, 20]
+        exclude:
+          # Reduce matrix for faster execution
+          - quantum_framework: cirq
+            circuit_type: vqe
+          - qubit_count: 20
+            quantum_framework: cirq
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Need history for comparison
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,${{ matrix.quantum_framework }}]"
+        pip install pytest-benchmark memory-profiler psutil
+    
+    - name: Create Benchmark Output Directory
+      run: mkdir -p ${{ env.BENCHMARK_OUTPUT_DIR }}
+    
+    - name: Circuit Depth Optimization Benchmark
+      timeout-minutes: 30
+      run: |
+        pytest tests/benchmarks/test_circuit_optimization.py::test_circuit_depth_optimization \
+          --benchmark-only \
+          --benchmark-json=${{ env.BENCHMARK_OUTPUT_DIR }}/depth-opt-${{ matrix.quantum_framework }}-${{ matrix.circuit_type }}-${{ matrix.qubit_count }}.json \
+          --benchmark-warmup=on \
+          --benchmark-warmup-iterations=${{ env.BENCHMARK_WARMUP_ITERATIONS }} \
+          --benchmark-min-rounds=${{ env.BENCHMARK_MIN_ROUNDS }} \
+          -k "${{ matrix.circuit_type }}" \
+          --qubits=${{ matrix.qubit_count }} \
+          --framework=${{ matrix.quantum_framework }} \
+          -v
+    
+    - name: Gate Count Optimization Benchmark
+      timeout-minutes: 30
+      run: |
+        pytest tests/benchmarks/test_circuit_optimization.py::test_gate_count_optimization \
+          --benchmark-only \
+          --benchmark-json=${{ env.BENCHMARK_OUTPUT_DIR }}/gate-opt-${{ matrix.quantum_framework }}-${{ matrix.circuit_type }}-${{ matrix.qubit_count }}.json \
+          --benchmark-warmup=on \
+          --benchmark-warmup-iterations=${{ env.BENCHMARK_WARMUP_ITERATIONS }} \
+          --benchmark-min-rounds=${{ env.BENCHMARK_MIN_ROUNDS }} \
+          -k "${{ matrix.circuit_type }}" \
+          --qubits=${{ matrix.qubit_count }} \
+          --framework=${{ matrix.quantum_framework }} \
+          -v
+    
+    - name: Circuit Compilation Benchmark
+      timeout-minutes: 30
+      run: |
+        pytest tests/benchmarks/test_circuit_compilation.py \
+          --benchmark-only \
+          --benchmark-json=${{ env.BENCHMARK_OUTPUT_DIR }}/compilation-${{ matrix.quantum_framework }}-${{ matrix.circuit_type }}-${{ matrix.qubit_count }}.json \
+          --benchmark-warmup=on \
+          --benchmark-warmup-iterations=${{ env.BENCHMARK_WARMUP_ITERATIONS }} \
+          --benchmark-min-rounds=${{ env.BENCHMARK_MIN_ROUNDS }} \
+          -k "${{ matrix.circuit_type }}" \
+          --qubits=${{ matrix.qubit_count }} \
+          --framework=${{ matrix.quantum_framework }} \
+          -v
+    
+    - name: Memory Usage Profiling
+      run: |
+        python -m memory_profiler scripts/benchmarks/profile_circuit_memory.py \
+          --framework ${{ matrix.quantum_framework }} \
+          --circuit-type ${{ matrix.circuit_type }} \
+          --qubits ${{ matrix.qubit_count }} \
+          --output ${{ env.BENCHMARK_OUTPUT_DIR }}/memory-${{ matrix.quantum_framework }}-${{ matrix.circuit_type }}-${{ matrix.qubit_count }}.txt
+    
+    - name: Upload Circuit Optimization Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: circuit-optimization-${{ matrix.quantum_framework }}-${{ matrix.circuit_type }}-${{ matrix.qubit_count }}
+        path: ${{ env.BENCHMARK_OUTPUT_DIR }}/
+        retention-days: 30
+
+  # Quantum advantage benchmarks
+  quantum-advantage-benchmarks:
+    name: Quantum Advantage Benchmarks
+    runs-on: ubuntu-latest-4-cores
+    if: |
+      (github.event.inputs.benchmark_suite == '' || 
+       github.event.inputs.benchmark_suite == 'all' || 
+       github.event.inputs.benchmark_suite == 'quantum-advantage')
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        problem_type: [classification, optimization, sampling, simulation]
+        dataset_size: [small, medium, large]
+        include:
+          - problem_type: classification
+            classical_baseline: sklearn
+          - problem_type: optimization
+            classical_baseline: scipy
+          - problem_type: sampling
+            classical_baseline: numpy
+          - problem_type: simulation
+            classical_baseline: classical_sim
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,all]"
+        pip install pytest-benchmark scikit-learn scipy
+    
+    - name: Create Benchmark Output Directory
+      run: mkdir -p ${{ env.BENCHMARK_OUTPUT_DIR }}
+    
+    - name: Quantum vs Classical Performance Benchmark
+      timeout-minutes: 45
+      run: |
+        pytest tests/benchmarks/test_quantum_advantage.py::test_quantum_vs_classical \
+          --benchmark-only \
+          --benchmark-json=${{ env.BENCHMARK_OUTPUT_DIR }}/quantum-advantage-${{ matrix.problem_type }}-${{ matrix.dataset_size }}.json \
+          --benchmark-warmup=on \
+          --benchmark-warmup-iterations=${{ env.BENCHMARK_WARMUP_ITERATIONS }} \
+          --benchmark-min-rounds=${{ env.BENCHMARK_MIN_ROUNDS }} \
+          --problem-type=${{ matrix.problem_type }} \
+          --dataset-size=${{ matrix.dataset_size }} \
+          --classical-baseline=${{ matrix.classical_baseline }} \
+          -v
+    
+    - name: Quantum Speedup Analysis
+      run: |
+        python scripts/benchmarks/analyze_quantum_speedup.py \
+          --benchmark-file ${{ env.BENCHMARK_OUTPUT_DIR }}/quantum-advantage-${{ matrix.problem_type }}-${{ matrix.dataset_size }}.json \
+          --output ${{ env.BENCHMARK_OUTPUT_DIR }}/speedup-analysis-${{ matrix.problem_type }}-${{ matrix.dataset_size }}.json
+    
+    - name: Resource Scaling Analysis
+      run: |
+        python scripts/benchmarks/analyze_resource_scaling.py \
+          --problem-type ${{ matrix.problem_type }} \
+          --dataset-size ${{ matrix.dataset_size }} \
+          --output ${{ env.BENCHMARK_OUTPUT_DIR }}/scaling-analysis-${{ matrix.problem_type }}-${{ matrix.dataset_size }}.json
+    
+    - name: Upload Quantum Advantage Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: quantum-advantage-${{ matrix.problem_type }}-${{ matrix.dataset_size }}
+        path: ${{ env.BENCHMARK_OUTPUT_DIR }}/
+        retention-days: 30
+
+  # Noise resilience benchmarks
+  noise-resilience-benchmarks:
+    name: Noise Resilience Benchmarks
+    runs-on: ubuntu-latest-4-cores
+    if: |
+      (github.event.inputs.benchmark_suite == '' || 
+       github.event.inputs.benchmark_suite == 'all' || 
+       github.event.inputs.benchmark_suite == 'noise-resilience')
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        noise_model: [depolarizing, amplitude_damping, phase_damping, pauli, thermal]
+        noise_level: [0.001, 0.01, 0.05, 0.1]
+        mitigation_technique: [none, zero_noise_extrapolation, readout_error_mitigation]
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,pennylane,qiskit]"
+        pip install pytest-benchmark qiskit-aer mitiq
+    
+    - name: Create Benchmark Output Directory
+      run: mkdir -p ${{ env.BENCHMARK_OUTPUT_DIR }}
+    
+    - name: Noise Resilience Benchmark
+      timeout-minutes: 30
+      run: |
+        pytest tests/benchmarks/test_noise_resilience.py \
+          --benchmark-only \
+          --benchmark-json=${{ env.BENCHMARK_OUTPUT_DIR }}/noise-resilience-${{ matrix.noise_model }}-${{ matrix.noise_level }}-${{ matrix.mitigation_technique }}.json \
+          --benchmark-warmup=on \
+          --benchmark-warmup-iterations=${{ env.BENCHMARK_WARMUP_ITERATIONS }} \
+          --benchmark-min-rounds=${{ env.BENCHMARK_MIN_ROUNDS }} \
+          --noise-model=${{ matrix.noise_model }} \
+          --noise-level=${{ matrix.noise_level }} \
+          --mitigation=${{ matrix.mitigation_technique }} \
+          -v
+    
+    - name: Noise Impact Analysis
+      run: |
+        python scripts/benchmarks/analyze_noise_impact.py \
+          --benchmark-file ${{ env.BENCHMARK_OUTPUT_DIR }}/noise-resilience-${{ matrix.noise_model }}-${{ matrix.noise_level }}-${{ matrix.mitigation_technique }}.json \
+          --noise-model ${{ matrix.noise_model }} \
+          --noise-level ${{ matrix.noise_level }} \
+          --output ${{ env.BENCHMARK_OUTPUT_DIR }}/noise-impact-${{ matrix.noise_model }}-${{ matrix.noise_level }}-${{ matrix.mitigation_technique }}.json
+    
+    - name: Upload Noise Resilience Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: noise-resilience-${{ matrix.noise_model }}-${{ matrix.noise_level }}-${{ matrix.mitigation_technique }}
+        path: ${{ env.BENCHMARK_OUTPUT_DIR }}/
+        retention-days: 30
+
+  # Hardware compatibility benchmarks
+  hardware-compatibility-benchmarks:
+    name: Hardware Compatibility Benchmarks
+    runs-on: ubuntu-latest
+    if: |
+      (github.event.inputs.benchmark_suite == '' || 
+       github.event.inputs.benchmark_suite == 'all' || 
+       github.event.inputs.benchmark_suite == 'hardware-compatibility') &&
+      (github.event.inputs.hardware_testing == 'true' || 
+       github.event_name == 'schedule' || 
+       github.ref == 'refs/heads/main')
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        backend:
+          - provider: aws
+            device: sv1
+            connectivity: all-to-all
+          - provider: ibm
+            device: ibmq_qasm_simulator
+            connectivity: heavy-hex
+          - provider: ionq
+            device: simulator
+            connectivity: all-to-all
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,all]"
+        pip install pytest-benchmark
+    
+    - name: Configure Backend Credentials
+      run: |
+        # AWS Braket
+        if [ "${{ matrix.backend.provider }}" = "aws" ]; then
+          aws configure set aws_access_key_id "${{ secrets.AWS_ACCESS_KEY_ID }}"
+          aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          aws configure set default.region us-east-1
+        fi
+        
+        # IBM Quantum
+        if [ "${{ matrix.backend.provider }}" = "ibm" ]; then
+          echo "IBM_QUANTUM_TOKEN=${{ secrets.IBM_QUANTUM_TOKEN }}" >> $GITHUB_ENV
+        fi
+        
+        # IonQ
+        if [ "${{ matrix.backend.provider }}" = "ionq" ]; then
+          echo "IONQ_API_KEY=${{ secrets.IONQ_API_KEY }}" >> $GITHUB_ENV
+        fi
+    
+    - name: Create Benchmark Output Directory
+      run: mkdir -p ${{ env.BENCHMARK_OUTPUT_DIR }}
+    
+    - name: Hardware Connectivity Benchmark
+      timeout-minutes: 20
+      run: |
+        pytest tests/benchmarks/test_hardware_compatibility.py::test_connectivity_constraints \
+          --benchmark-only \
+          --benchmark-json=${{ env.BENCHMARK_OUTPUT_DIR }}/connectivity-${{ matrix.backend.provider }}-${{ matrix.backend.device }}.json \
+          --backend-provider=${{ matrix.backend.provider }} \
+          --backend-device=${{ matrix.backend.device }} \
+          --connectivity=${{ matrix.backend.connectivity }} \
+          -v
+    
+    - name: Gate Set Compatibility Benchmark
+      timeout-minutes: 20
+      run: |
+        pytest tests/benchmarks/test_hardware_compatibility.py::test_native_gate_compilation \
+          --benchmark-only \
+          --benchmark-json=${{ env.BENCHMARK_OUTPUT_DIR }}/gates-${{ matrix.backend.provider }}-${{ matrix.backend.device }}.json \
+          --backend-provider=${{ matrix.backend.provider }} \
+          --backend-device=${{ matrix.backend.device }} \
+          -v
+    
+    - name: Queue Time and Execution Benchmark
+      timeout-minutes: 25
+      run: |
+        pytest tests/benchmarks/test_hardware_compatibility.py::test_execution_time \
+          --benchmark-only \
+          --benchmark-json=${{ env.BENCHMARK_OUTPUT_DIR }}/execution-${{ matrix.backend.provider }}-${{ matrix.backend.device }}.json \
+          --backend-provider=${{ matrix.backend.provider }} \
+          --backend-device=${{ matrix.backend.device }} \
+          --shots=${{ env.QUANTUM_SHOTS_BENCHMARK }} \
+          --budget-shots=${{ env.HARDWARE_BUDGET_SHOTS }} \
+          -v \
+          || echo "Hardware execution benchmark completed with issues"
+    
+    - name: Upload Hardware Compatibility Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: hardware-compatibility-${{ matrix.backend.provider }}-${{ matrix.backend.device }}
+        path: ${{ env.BENCHMARK_OUTPUT_DIR }}/
+        retention-days: 30
+
+  # Performance regression analysis
+  performance-regression-analysis:
+    name: Performance Regression Analysis
+    runs-on: ubuntu-latest
+    needs: [circuit-optimization-benchmarks, quantum-advantage-benchmarks, noise-resilience-benchmarks]
+    if: |
+      always() && 
+      (github.event.inputs.regression_check == '' || 
+       github.event.inputs.regression_check == 'true')
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Need full history for regression analysis
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Install Analysis Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas matplotlib seaborn scipy numpy
+    
+    - name: Download All Benchmark Results
+      uses: actions/download-artifact@v4
+      with:
+        path: all-benchmark-results
+    
+    - name: Fetch Historical Benchmark Data
+      run: |
+        # Get benchmark data from previous runs
+        gh run list \
+          --workflow="performance-benchmarking.yml" \
+          --status=completed \
+          --limit=10 \
+          --json=databaseId,conclusion,headSha,createdAt \
+          > historical-runs.json
+        
+        # Download historical benchmark artifacts
+        python scripts/benchmarks/fetch_historical_benchmarks.py \
+          --runs-file historical-runs.json \
+          --output-dir historical-benchmarks
+      env:
+        GH_TOKEN: ${{ github.token }}
+    
+    - name: Performance Regression Analysis
+      run: |
+        python scripts/benchmarks/analyze_performance_regression.py \
+          --current-results all-benchmark-results \
+          --historical-results historical-benchmarks \
+          --threshold ${{ env.PERFORMANCE_REGRESSION_THRESHOLD }} \
+          --output regression-analysis.json \
+          --generate-plots
+    
+    - name: Generate Performance Trends Report
+      run: |
+        python scripts/benchmarks/generate_performance_trends.py \
+          --benchmark-data all-benchmark-results \
+          --historical-data historical-benchmarks \
+          --output performance-trends.html \
+          --format html
+    
+    - name: Check for Significant Regressions
+      id: regression_check
+      run: |
+        python scripts/benchmarks/check_regression_significance.py \
+          --analysis-file regression-analysis.json \
+          --threshold ${{ env.PERFORMANCE_REGRESSION_THRESHOLD }} \
+          --output-env >> $GITHUB_ENV
+    
+    - name: Create Performance Regression Issue
+      if: steps.regression_check.outputs.regression_detected == 'true'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const regressionData = JSON.parse(fs.readFileSync('regression-analysis.json', 'utf8'));
+          
+          const issue = await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `⚠️ Performance Regression Detected in Quantum ML Benchmarks`,
+            body: `Performance regression has been detected in the quantum ML benchmarks.
+            
+            **Regression Summary:**
+            - Affected benchmarks: ${regressionData.affected_benchmarks.length}
+            - Average regression: ${regressionData.average_regression.toFixed(2)}x
+            - Most impacted: ${regressionData.most_impacted_benchmark}
+            
+            **Detailed Analysis:**
+            ${regressionData.detailed_analysis}
+            
+            **Action Required:**
+            Please investigate the performance regression and optimize the affected components.
+            
+            **View Results:**
+            - [Performance Trends Report](${context.payload.repository.html_url}/actions/runs/${context.runId})
+            - [Benchmark Results](${context.payload.repository.html_url}/actions/runs/${context.runId})`,
+            labels: ['performance', 'regression', 'quantum-ml']
+          });
+          
+          console.log(`Created performance regression issue: ${issue.data.html_url}`);
+    
+    - name: Upload Regression Analysis Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: performance-regression-analysis
+        path: |
+          regression-analysis.json
+          performance-trends.html
+          historical-runs.json
+          plots/
+        retention-days: 90
+
+  # Generate comprehensive performance report
+  performance-report-summary:
+    name: Performance Report Summary
+    runs-on: ubuntu-latest
+    needs: [circuit-optimization-benchmarks, quantum-advantage-benchmarks, noise-resilience-benchmarks, performance-regression-analysis]
+    if: always()
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+    
+    - name: Setup Python Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Download All Performance Results
+      uses: actions/download-artifact@v4
+      with:
+        path: all-performance-results
+    
+    - name: Generate Comprehensive Performance Report
+      run: |
+        python scripts/benchmarks/generate_performance_report.py \
+          --results-dir all-performance-results \
+          --output quantum-performance-report.html \
+          --format html \
+          --include-plots \
+          --include-recommendations
+    
+    - name: Create Performance Summary for GitHub
+      run: |
+        echo "## 🚀 Quantum Performance Benchmark Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        python scripts/benchmarks/create_performance_summary.py \
+          --results-dir all-performance-results >> $GITHUB_STEP_SUMMARY
+    
+    - name: Upload Performance Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: quantum-performance-report
+        path: |
+          quantum-performance-report.html
+          all-performance-results/
+        retention-days: 90
+
+  # Optional: Performance monitoring integration
+  # Uncomment and configure for your monitoring setup
+  #  upload-to-monitoring:
+  #    name: Upload to Performance Monitoring
+  #    runs-on: ubuntu-latest
+  #    needs: [performance-report-summary]
+  #    if: github.ref == 'refs/heads/main'
+  #    
+  #    steps:
+  #    - name: Upload to DataDog
+  #      run: |
+  #        # Upload performance metrics to DataDog
+  #        python scripts/monitoring/upload_to_datadog.py \
+  #          --results-dir all-performance-results \
+  #          --api-key ${{ secrets.DATADOG_API_KEY }}
+  #    
+  #    - name: Update Performance Dashboard
+  #      run: |
+  #        # Update Grafana dashboard with latest results
+  #        python scripts/monitoring/update_grafana_dashboard.py \
+  #          --results-dir all-performance-results \
+  #          --grafana-url ${{ secrets.GRAFANA_URL }} \
+  #          --api-key ${{ secrets.GRAFANA_API_KEY }}
