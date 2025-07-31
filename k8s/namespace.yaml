@@ -1,0 +1,20 @@
+# Kubernetes namespace for Quantum MLOps platform
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: quantum-mlops
+  labels:
+    name: quantum-mlops
+    environment: production
+    purpose: quantum-computing
+    security-policy: restricted
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: quantum-mlops-staging
+  labels:
+    name: quantum-mlops-staging
+    environment: staging
+    purpose: quantum-computing
+    security-policy: restricted
