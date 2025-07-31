@@ -50,6 +50,6 @@ bandit==1.7.5
 safety==2.3.5
 
 # Build & Packaging
-setuptools==69.0.3
+setuptools==80.9.0
 wheel==0.42.0
 twine==4.0.2
