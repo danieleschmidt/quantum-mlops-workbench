@@ -1,0 +1,94 @@
+# Kubernetes services for Quantum MLOps platform
+apiVersion: v1
+kind: Service
+metadata:
+  name: quantum-mlops-service
+  namespace: quantum-mlops
+  labels:
+    app: quantum-mlops
+    component: api
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  selector:
+    app: quantum-mlops
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quantum-mlops-headless
+  namespace: quantum-mlops
+  labels:
+    app: quantum-mlops
+    component: api
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - port: 8000
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  selector:
+    app: quantum-mlops
+---
+# MLflow service
+apiVersion: v1
+kind: Service
+metadata:
+  name: mlflow-service
+  namespace: quantum-mlops
+  labels:
+    app: mlflow
+    component: tracking
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+    name: http
+  selector:
+    app: mlflow
+---
+# Prometheus service
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus-service
+  namespace: quantum-mlops
+  labels:
+    app: prometheus
+    component: monitoring
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9090
+    targetPort: 9090
+    protocol: TCP
+    name: http
+  selector:
+    app: prometheus
+---
+# Grafana service
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana-service
+  namespace: quantum-mlops
+  labels:
+    app: grafana
+    component: visualization
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+    app: grafana

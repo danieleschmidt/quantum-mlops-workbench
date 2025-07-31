@@ -1,0 +1,108 @@
+# Kubernetes deployment for Quantum MLOps platform
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quantum-mlops
+  namespace: quantum-mlops
+  labels:
+    app: quantum-mlops
+    version: v1.0.0
+    component: api
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: quantum-mlops
+  template:
+    metadata:
+      labels:
+        app: quantum-mlops
+        version: v1.0.0
+        component: api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      serviceAccountName: quantum-mlops
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 2000
+      containers:
+      - name: quantum-mlops
+        image: quantum-mlops:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        env:
+        - name: QUANTUM_ENV
+          value: "production"
+        - name: PYTHONPATH
+          value: "/app/src"
+        - name: MLFLOW_TRACKING_URI
+          value: "http://mlflow-service:5000"
+        - name: PROMETHEUS_ENDPOINT
+          value: "http://prometheus-service:9090"
+        - name: LOG_LEVEL
+          value: "INFO"
+        envFrom:
+        - secretRef:
+            name: quantum-secrets
+        - configMapRef:
+            name: quantum-config
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+        volumeMounts:
+        - name: quantum-data
+          mountPath: /app/data
+        - name: quantum-models
+          mountPath: /app/models
+        - name: config
+          mountPath: /app/config
+          readOnly: true
+      volumes:
+      - name: quantum-data
+        persistentVolumeClaim:
+          claimName: quantum-data-pvc
+      - name: quantum-models
+        persistentVolumeClaim:
+          claimName: quantum-models-pvc
+      - name: config
+        configMap:
+          name: quantum-config
+      nodeSelector:
+        quantum.io/compute-type: "high-memory"
+      tolerations:
+      - key: "quantum.io/specialized"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"

@@ -1,0 +1,83 @@
+# Dependency Management Makefile for Quantum MLOps
+# Extended dependency management commands
+
+.PHONY: deps-compile deps-update deps-check deps-audit deps-clean deps-sync
+
+# Compile requirements with pip-tools
+deps-compile:
+	@echo "🔧 Compiling dependencies..."
+	pip-compile requirements.txt --output-file requirements-lock.txt
+	pip-compile requirements-dev.txt --output-file requirements-dev-lock.txt
+
+# Update dependencies to latest versions
+deps-update:
+	@echo "⬆️ Updating dependencies to latest versions..."
+	pip-compile --upgrade requirements.txt --output-file requirements-lock.txt
+	pip-compile --upgrade requirements-dev.txt --output-file requirements-dev-lock.txt
+
+# Check for outdated dependencies
+deps-check:
+	@echo "🔍 Checking for outdated dependencies..."
+	pip list --outdated
+	@echo "\n📊 Dependency tree:"
+	pipdeptree
+
+# Security audit of dependencies
+deps-audit:
+	@echo "🔒 Running security audit..."
+	safety check --json --output safety-report.json || true
+	safety check
+	@echo "\n🔍 Checking for known vulnerabilities with OSV..."
+	osv-scanner --lockfile requirements-lock.txt || true
+
+# Clean dependency artifacts
+deps-clean:
+	@echo "🧹 Cleaning dependency artifacts..."
+	rm -rf .pip-cache/
+	rm -rf *.egg-info/
+	rm -f safety-report.json
+	rm -f pip-audit-report.json
+
+# Sync dependencies with lock file
+deps-sync:
+	@echo "🔄 Syncing dependencies with lock file..."
+	pip-sync requirements-lock.txt requirements-dev-lock.txt
+
+# Install pip-tools if not present
+deps-install-tools:
+	@echo "🛠️ Installing dependency management tools..."
+	pip install pip-tools pipdeptree safety osv-scanner
+
+# Comprehensive dependency management
+deps-full-update: deps-install-tools deps-update deps-audit
+	@echo "✅ Full dependency update completed"
+
+# Generate dependency report
+deps-report:
+	@echo "📋 Generating dependency report..."
+	@echo "## Dependency Report" > dependency-report.md
+	@echo "Generated on: $$(date)" >> dependency-report.md
+	@echo "" >> dependency-report.md
+	@echo "### Installed Packages" >> dependency-report.md
+	pip list --format=markdown >> dependency-report.md
+	@echo "" >> dependency-report.md
+	@echo "### Dependency Tree" >> dependency-report.md
+	@echo "\`\`\`" >> dependency-report.md
+	pipdeptree >> dependency-report.md
+	@echo "\`\`\`" >> dependency-report.md
+	@echo "📄 Dependency report saved to dependency-report.md"
+
+# Check for conflicting dependencies
+deps-conflicts:
+	@echo "⚠️ Checking for dependency conflicts..."
+	pip check
+
+# Validate lock files are up to date
+deps-validate:
+	@echo "✅ Validating lock files are up to date..."
+	@if ! pip-compile --dry-run requirements.txt | grep -q "Would update"; then \
+		echo "✅ requirements-lock.txt is up to date"; \
+	else \
+		echo "❌ requirements-lock.txt is out of date. Run 'make deps-compile'"; \
+		exit 1; \
+	fi

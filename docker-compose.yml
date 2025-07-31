@@ -1,0 +1,143 @@
+# Docker Compose for Quantum MLOps Development Environment
+version: '3.8'
+
+services:
+  # Main quantum MLOps application
+  quantum-mlops:
+    build:
+      context: .
+      target: development
+      dockerfile: Dockerfile
+    container_name: quantum-mlops-dev
+    ports:
+      - "8000:8000"
+      - "8888:8888"  # Jupyter
+    volumes:
+      - .:/app
+      - quantum-data:/app/data
+      - quantum-models:/app/models
+    environment:
+      - PYTHONPATH=/app/src
+      - QUANTUM_ENV=development
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - PROMETHEUS_ENDPOINT=http://prometheus:9090
+    depends_on:
+      - mlflow
+      - prometheus
+      - grafana
+    networks:
+      - quantum-network
+    restart: unless-stopped
+
+  # MLflow for experiment tracking
+  mlflow:
+    image: python:3.11-slim
+    container_name: quantum-mlflow
+    ports:
+      - "5000:5000"
+    volumes:
+      - mlflow-data:/mlflow
+    command: >
+      sh -c "pip install mlflow[extras] &&
+             mlflow server --host 0.0.0.0 --port 5000
+             --default-artifact-root /mlflow/artifacts
+             --backend-store-uri sqlite:///mlflow/mlflow.db"
+    networks:
+      - quantum-network
+    restart: unless-stopped
+
+  # Prometheus for metrics collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: quantum-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - quantum-network
+    restart: unless-stopped
+
+  # Grafana for visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: quantum-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=quantum123
+      - GF_SECURITY_ADMIN_USER=admin
+    networks:
+      - quantum-network
+    restart: unless-stopped
+
+  # Redis for caching quantum circuit results
+  redis:
+    image: redis:7-alpine
+    container_name: quantum-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - quantum-network
+    restart: unless-stopped
+
+  # PostgreSQL for metadata storage
+  postgres:
+    image: postgres:15-alpine
+    container_name: quantum-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=quantum_mlops
+      - POSTGRES_USER=quantum
+      - POSTGRES_PASSWORD=quantum_secure_pass
+    networks:
+      - quantum-network
+    restart: unless-stopped
+
+  # Testing service
+  quantum-test:
+    build:
+      context: .
+      target: testing
+      dockerfile: Dockerfile
+    container_name: quantum-test
+    volumes:
+      - .:/app
+      - test-results:/app/test-results
+    environment:
+      - PYTHONPATH=/app/src
+      - QUANTUM_ENV=testing
+    networks:
+      - quantum-network
+    profiles:
+      - testing
+
+volumes:
+  quantum-data:
+  quantum-models:
+  mlflow-data:
+  prometheus-data:
+  grafana-data:
+  redis-data:
+  postgres-data:
+  test-results:
+
+networks:
+  quantum-network:
+    driver: bridge

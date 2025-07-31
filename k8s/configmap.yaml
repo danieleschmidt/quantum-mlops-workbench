@@ -1,0 +1,112 @@
+# ConfigMap for Quantum MLOps configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quantum-config
+  namespace: quantum-mlops
+  labels:
+    app: quantum-mlops
+    component: config
+data:
+  # Application configuration
+  app.yaml: |
+    quantum:
+      backends:
+        - pennylane
+        - qiskit
+        - cirq
+      default_backend: pennylane
+      simulation:
+        default_shots: 1000
+        max_shots: 10000
+      hardware:
+        timeout: 300
+        retry_attempts: 3
+    
+    mlops:
+      experiment_tracking: true
+      model_registry: true
+      metrics_collection: true
+      
+    monitoring:
+      prometheus:
+        enabled: true
+        scrape_interval: 30s
+      grafana:
+        enabled: true
+      logging:
+        level: INFO
+        format: json
+        
+    security:
+      encryption_at_rest: true
+      tls_enabled: true
+      audit_logging: true
+
+  # Quantum hardware configuration
+  quantum-hardware.yaml: |
+    providers:
+      ibm:
+        hub: "ibm-q"
+        group: "open"
+        project: "main"
+        backend_filters:
+          - "ibmq_qasm_simulator"
+          - "ibm_brisbane"
+          - "ibm_kyoto"
+      
+      aws:
+        region: "us-east-1"
+        devices:
+          - "SV1"
+          - "LocalSimulator"
+          - "Aspen-M-3"
+      
+      google:
+        project_id: "quantum-mlops"
+        processor_id: "rainbow"
+        
+    circuit_optimization:
+      level: 2
+      transpilation: true
+      error_mitigation: true
+
+  # MLflow configuration
+  mlflow.ini: |
+    [mlflow]
+    backend_store_uri = postgresql://mlflow:password@postgres-service:5432/mlflow
+    default_artifact_root = s3://quantum-mlops-artifacts
+    serve_artifacts = true
+    
+    [tracking]
+    registry_store_uri = postgresql://mlflow:password@postgres-service:5432/mlflow
+    
+    [artifacts]
+    artifact_location = s3://quantum-mlops-artifacts
+    
+  # Prometheus configuration
+  prometheus.yml: |
+    global:
+      scrape_interval: 30s
+      evaluation_interval: 30s
+    
+    scrape_configs:
+    - job_name: 'quantum-mlops'
+      static_configs:
+      - targets: ['quantum-mlops-service:80']
+      metrics_path: '/metrics'
+      scrape_interval: 15s
+      
+    - job_name: 'mlflow'
+      static_configs:
+      - targets: ['mlflow-service:5000']
+      
+    - job_name: 'kubernetes-pods'
+      kubernetes_sd_configs:
+      - role: pod
+        namespaces:
+          names: ['quantum-mlops']
+      relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true

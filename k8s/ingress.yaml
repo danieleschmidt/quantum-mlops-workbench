@@ -1,0 +1,119 @@
+# Ingress configuration for Quantum MLOps platform
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quantum-mlops-ingress
+  namespace: quantum-mlops
+  labels:
+    app: quantum-mlops
+    component: ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+spec:
+  tls:
+  - hosts:
+    - quantum-mlops.example.com
+    - api.quantum-mlops.example.com
+    - mlflow.quantum-mlops.example.com
+    - grafana.quantum-mlops.example.com
+    secretName: quantum-mlops-tls
+  rules:
+  # Main API
+  - host: quantum-mlops.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: quantum-mlops-service
+            port:
+              number: 80
+  - host: api.quantum-mlops.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: quantum-mlops-service
+            port:
+              number: 80
+  # MLflow tracking server
+  - host: mlflow.quantum-mlops.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: mlflow-service
+            port:
+              number: 5000
+  # Grafana monitoring
+  - host: grafana.quantum-mlops.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana-service
+            port:
+              number: 3000
+---
+# NetworkPolicy for security
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: quantum-mlops-network-policy
+  namespace: quantum-mlops
+spec:
+  podSelector:
+    matchLabels:
+      app: quantum-mlops
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+    - podSelector:
+        matchLabels:
+          component: monitoring
+    ports:
+    - protocol: TCP
+      port: 8000
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: mlflow
+    ports:
+    - protocol: TCP
+      port: 5000
+  - to:
+    - podSelector:
+        matchLabels:
+          app: prometheus
+    ports:
+    - protocol: TCP
+      port: 9090
+  - to: []
+    ports:
+    - protocol: TCP
+      port: 443  # HTTPS for external quantum providers
+    - protocol: TCP
+      port: 53   # DNS
+    - protocol: UDP
+      port: 53   # DNS
