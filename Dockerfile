@@ -2,7 +2,7 @@
 # Optimized for quantum computing workloads with security hardening
 
 # Stage 1: Base quantum computing environment
-FROM python:3.11-slim-bookworm AS quantum-base
+FROM python:3.13-slim-bookworm AS quantum-base
 
 # Security: Create non-root user
 RUN groupadd -r quantum && useradd -r -g quantum quantum
