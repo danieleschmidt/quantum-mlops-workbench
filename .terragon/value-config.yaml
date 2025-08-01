@@ -1,0 +1,200 @@
+# Terragon Autonomous SDLC Value Discovery Configuration
+# For quantum-mlops-workbench repository (Advanced maturity: 85-95%)
+
+repository:
+  name: "quantum-mlops-workbench"
+  maturity_level: "advanced"
+  primary_language: "python"
+  frameworks: ["pennylane", "qiskit", "cirq", "pytorch", "mlflow"]
+  domain: "quantum-machine-learning"
+
+scoring:
+  # Adaptive weights based on advanced repository maturity
+  weights:
+    advanced:
+      wsjf: 0.5          # Weighted Shortest Job First
+      ice: 0.1           # Impact Confidence Ease (lower for mature repos)
+      technicalDebt: 0.3 # Higher emphasis on debt reduction
+      security: 0.1      # Baseline security maintenance
+  
+  # Score thresholds for task selection
+  thresholds:
+    minScore: 15        # Higher bar for advanced repos
+    maxRisk: 0.7        # Conservative risk tolerance
+    securityBoost: 2.0  # Critical security multiplier
+    complianceBoost: 1.8 # Compliance urgency multiplier
+    quantumBoost: 1.5   # Quantum-specific task boost
+
+# Value discovery signal sources
+discovery:
+  sources:
+    # Code analysis signals
+    - name: "gitHistory"
+      enabled: true
+      patterns: ["TODO", "FIXME", "HACK", "XXX", "DEPRECATED"]
+      weight: 0.2
+    
+    - name: "staticAnalysis"
+      enabled: true
+      tools: ["ruff", "mypy", "bandit", "semgrep"]
+      weight: 0.25
+    
+    - name: "securityScanning"
+      enabled: true
+      tools: ["trivy", "grype", "snyk", "safety"]
+      weight: 0.3
+    
+    - name: "dependencyAnalysis"
+      enabled: true
+      sources: ["requirements.txt", "pyproject.toml", "environment.yml"]
+      weight: 0.25
+
+  # Quantum-specific discovery sources
+  quantum_sources:
+    - name: "quantumCircuitAnalysis"
+      enabled: true
+      metrics: ["depth", "gate_count", "connectivity", "noise_resilience"]
+      weight: 0.3
+    
+    - name: "hardwareCompatibility"  
+      enabled: true
+      backends: ["ibm_quantum", "aws_braket", "ionq"]
+      weight: 0.2
+    
+    - name: "quantumPerformance"
+      enabled: true
+      metrics: ["fidelity", "coherence_time", "gate_error_rate"]
+      weight: 0.25
+      
+    - name: "quantumCostOptimization"
+      enabled: true
+      providers: ["aws", "ibm", "ionq"]
+      weight: 0.25
+
+# Autonomous execution configuration
+execution:
+  # Execution constraints
+  maxConcurrentTasks: 1
+  maxDailyTasks: 8
+  workingHours: "09:00-17:00"
+  timezone: "UTC"
+  
+  # Quality gates
+  testRequirements:
+    minCoverage: 85
+    maxPerformanceRegression: 3 # percent
+    quantumTestsRequired: true
+    
+  # Rollback triggers
+  rollbackTriggers:
+    - "testFailure"
+    - "buildFailure"
+    - "securityViolation"
+    - "performanceRegression"
+    - "quantumCircuitValidationFailure"
+  
+  # Branch naming convention
+  branchPattern: "auto-value/{category}-{id}-{slug}"
+  
+  # Commit message template
+  commitTemplate: |
+    {category}: {title}
+    
+    Autonomous SDLC enhancement addressing {description}
+    
+    Value Score: {score}
+    Category: {category}
+    Estimated Impact: {impact}
+    
+    🤖 Generated with Terragon Autonomous SDLC
+    
+    Co-Authored-By: Terry <terry@terragon.ai>
+
+# Task categorization and prioritization
+taskCategories:
+  # High-value categories for advanced repos
+  optimization:
+    priority: "high"
+    scoreMultiplier: 1.3
+    examples: ["performance tuning", "algorithm optimization", "resource efficiency"]
+  
+  modernization:
+    priority: "high" 
+    scoreMultiplier: 1.2
+    examples: ["framework upgrades", "API improvements", "architecture evolution"]
+  
+  technicalDebt:
+    priority: "medium"
+    scoreMultiplier: 1.1
+    examples: ["code refactoring", "dependency updates", "documentation gaps"]
+  
+  security:
+    priority: "critical"
+    scoreMultiplier: 2.0
+    examples: ["vulnerability fixes", "security hardening", "compliance updates"]
+  
+  quantumSpecific:
+    priority: "high"
+    scoreMultiplier: 1.4
+    examples: ["circuit optimization", "hardware integration", "noise mitigation"]
+
+# Learning and adaptation
+learning:
+  # Track prediction accuracy
+  trackPredictions: true
+  adaptationThreshold: 0.15 # Adjust weights if accuracy drops below 85%
+  
+  # Historical data retention
+  retentionPeriod: "90d"
+  
+  # Feedback integration
+  humanFeedback:
+    enabled: true
+    channels: ["pr_reviews", "issue_comments", "direct_feedback"]
+    weight: 0.3
+
+# Integration settings
+integrations:
+  github:
+    enabled: true
+    createIssues: true
+    assignReviewers: true
+    useCodeowners: true
+    
+  monitoring:
+    enabled: true
+    metrics: ["execution_time", "success_rate", "value_delivered"]
+    
+  notifications:
+    enabled: true
+    channels: ["github_comments", "pr_descriptions"]
+    quietHours: "18:00-08:00"
+
+# Advanced quantum MLOps specific configuration
+quantumMLOps:
+  # Hardware-specific optimizations
+  hardwareOptimization:
+    enabled: true
+    targetBackends: ["ibm_quantum", "aws_braket", "ionq_aria"]
+    optimizationGoals: ["gate_count", "circuit_depth", "error_rate"]
+  
+  # Cost management
+  costOptimization:
+    enabled: true
+    budgetLimits:
+      daily: 50    # USD
+      monthly: 1000 # USD
+    costSources: ["aws_braket", "ibm_quantum", "ionq"]
+  
+  # Performance benchmarking
+  benchmarking:
+    enabled: true
+    baselineMetrics: ["training_time", "inference_latency", "model_accuracy"]
+    quantumAdvantageTracking: true
+    
+  # MLOps integration
+  mlopsIntegration:
+    mlflow:
+      enabled: true
+      trackQuantumMetrics: true
+      artifactTypes: ["quantum_models", "circuit_diagrams", "performance_reports"]

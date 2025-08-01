@@ -1,0 +1,27 @@
+{
+  "timestamp": "2025-08-01T11:55:11.828491",
+  "repository": "quantum-mlops-workbench",
+  "maturity_level": "advanced",
+  "total_items_discovered": 1,
+  "quantum_specific_items": 1,
+  "average_score": 89.3,
+  "high_priority_items": 1,
+  "categories": {
+    "automation": 1
+  },
+  "next_execution": "2025-08-01T12:55:11.828517",
+  "discovered_items": [
+    {
+      "id": "workflow-activation",
+      "title": "Activate GitHub workflow templates",
+      "description": "Copy workflow templates to .github/workflows/ to enable CI/CD automation",
+      "category": "automation",
+      "score": 89.3,
+      "effort": 1.0,
+      "quantum_specific": true,
+      "files": [
+        ".github/workflows-templates/"
+      ]
+    }
+  ]
+}
