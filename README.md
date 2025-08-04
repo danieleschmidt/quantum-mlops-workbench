@@ -29,7 +29,7 @@ pip install quantum-mlops-workbench
 pip install quantum-mlops-workbench[pennylane,qiskit]
 
 # For development
-git clone https://github.com/yourusername/quantum-mlops-workbench.git
+git clone https://github.com/danieleschmidt/quantum-mlops-workbench.git
 cd quantum-mlops-workbench
 pip install -e ".[dev]"
 ```
@@ -388,9 +388,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ```bibtex
 @software{quantum_mlops_workbench,
   title={Quantum MLOps Workbench: CI/CD for Quantum Machine Learning},
-  author={Your Name},
+  author={Daniel Schmidt},
   year={2025},
-  url={https://github.com/yourusername/quantum-mlops-workbench}
+  url={https://github.com/danieleschmidt/quantum-mlops-workbench}
 }
 ```
 
