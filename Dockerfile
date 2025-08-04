@@ -2,7 +2,7 @@
 # Optimized for quantum computing workloads with security hardening
 
 # Stage 1: Base quantum computing environment
-FROM python:3.11-slim-bookworm AS quantum-base
+FROM python:3.13-slim-bookworm AS quantum-base
 
 # Security: Update base system and install security updates
 RUN apt-get update && apt-get upgrade -y
@@ -127,7 +127,7 @@ RUN mkdir -p /home/quantum/test-results && chmod 755 /home/quantum/test-results
 CMD ["sh", "-c", "pytest -v --cov=quantum_mlops --cov-report=html --cov-report=xml --junitxml=/home/quantum/test-results/junit.xml tests/ && bandit -r src/ -f json -o /home/quantum/test-results/bandit-report.json || true"]
 
 # Stage 5: Security-hardened production environment
-FROM python:3.11-slim-bookworm AS secure-production
+FROM python:3.13-slim-bookworm AS secure-production
 
 # Security: Minimal base with security updates
 RUN apt-get update && apt-get upgrade -y && \
