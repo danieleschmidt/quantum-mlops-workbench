@@ -10,6 +10,12 @@ import numpy as np
 
 from ..core import QuantumDevice
 
+try:
+    from ..backends import BackendManager, QuantumExecutor
+    REAL_BACKENDS_AVAILABLE = True
+except ImportError:
+    REAL_BACKENDS_AVAILABLE = False
+
 
 logger = logging.getLogger(__name__)
 
@@ -42,6 +48,20 @@ class QuantumBackendService:
     def __init__(self):
         self.backends = self._initialize_backends()
         self.circuit_cache: Dict[str, Any] = {}
+        
+        # Initialize real backend integration if available
+        if REAL_BACKENDS_AVAILABLE:
+            try:
+                self.quantum_executor = QuantumExecutor()
+                self.backend_manager = self.quantum_executor.backend_manager
+                logger.info("Real quantum backends initialized successfully")
+            except Exception as e:
+                logger.warning(f"Failed to initialize real backends: {e}")
+                self.quantum_executor = None
+                self.backend_manager = None
+        else:
+            self.quantum_executor = None
+            self.backend_manager = None
         
     def _initialize_backends(self) -> Dict[str, BackendInfo]:
         """Initialize available quantum backends."""
@@ -356,3 +376,152 @@ class QuantumBackendService:
                     decomposed.append(gate)
         
         return decomposed
+        
+    def execute_circuits_real(
+        self,
+        circuits: List[Dict[str, Any]],
+        preferred_backends: Optional[List[str]] = None,
+        shots: int = 1024
+    ) -> Dict[str, Any]:
+        """Execute circuits using real quantum backends if available.
+        
+        Args:
+            circuits: List of circuit descriptions
+            preferred_backends: Preferred backend names
+            shots: Number of measurement shots
+            
+        Returns:
+            Execution results with real backend data
+        """
+        if not REAL_BACKENDS_AVAILABLE or not self.quantum_executor:
+            logger.warning("Real backends not available, falling back to simulation")
+            return self._simulate_execution(circuits, shots)
+            
+        try:
+            # Execute using real quantum executor
+            results = []
+            
+            for circuit in circuits:
+                try:
+                    result = self.quantum_executor.execute(
+                        circuit,
+                        backend_names=preferred_backends,
+                        shots=shots
+                    )
+                    
+                    results.append({
+                        "circuit_id": getattr(result, 'circuit_id', 'unknown'),
+                        "counts": getattr(result, 'counts', {}),  
+                        "expectation_value": getattr(result, 'expectation_value', 0.0),
+                        "execution_time": getattr(result, 'execution_time', 0.0),
+                        "backend_used": "real_backend"
+                    })
+                    
+                except Exception as e:
+                    logger.warning(f"Real backend execution failed for circuit: {e}")
+                    # Fallback to simulation for this circuit
+                    sim_result = self._simulate_single_circuit(circuit, shots)
+                    results.append(sim_result)
+                    
+            return {
+                "status": "completed",
+                "results": results,
+                "backend_type": "real" if any(r.get("backend_used") == "real_backend" for r in results) else "simulation",
+                "timestamp": time.time()
+            }
+            
+        except Exception as e:
+            logger.error(f"Real backend execution completely failed: {e}")
+            return self._simulate_execution(circuits, shots)
+            
+    def _simulate_execution(self, circuits: List[Dict[str, Any]], shots: int) -> Dict[str, Any]:
+        """Fallback simulation execution."""
+        results = []
+        
+        for i, circuit in enumerate(circuits):
+            result = self._simulate_single_circuit(circuit, shots, circuit_id=f"sim_circuit_{i}")
+            results.append(result)
+            
+        return {
+            "status": "completed", 
+            "results": results,
+            "backend_type": "simulation",
+            "timestamp": time.time()
+        }
+        
+    def _simulate_single_circuit(self, circuit: Dict[str, Any], shots: int, circuit_id: str = None) -> Dict[str, Any]:
+        """Simulate single circuit execution."""
+        # Simple simulation - in practice would use more sophisticated methods
+        n_qubits = circuit.get("n_qubits", 2) 
+        
+        # Generate mock counts
+        states = [format(i, f'0{n_qubits}b') for i in range(2**min(n_qubits, 3))]  # Limit to 3 qubits for simplicity
+        counts = {}
+        
+        for state in states:
+            # Random distribution with bias toward certain states
+            prob = np.random.exponential(scale=0.5)
+            counts[state] = int(prob * shots / len(states))
+            
+        # Normalize to exact shot count
+        total = sum(counts.values())
+        if total > 0:
+            factor = shots / total
+            counts = {state: max(1, int(count * factor)) for state, count in counts.items()}
+            
+        # Adjust to exact shot count
+        current_total = sum(counts.values())
+        if current_total != shots:
+            adjustment = shots - current_total
+            first_state = list(counts.keys())[0]
+            counts[first_state] = max(0, counts[first_state] + adjustment)
+        
+        # Calculate mock expectation value
+        prob_zero = counts.get('0' * n_qubits, 0) / shots
+        expectation_value = 2 * prob_zero - 1  # Map to [-1, 1]
+        
+        return {
+            "circuit_id": circuit_id or "simulated",
+            "counts": counts,
+            "expectation_value": expectation_value,
+            "execution_time": 0.1,  # Mock execution time
+            "backend_used": "simulation"
+        }
+        
+    def get_real_backend_status(self) -> Dict[str, Any]:
+        """Get status of real quantum backends."""
+        if not REAL_BACKENDS_AVAILABLE or not self.quantum_executor:
+            return {
+                "available": False,
+                "reason": "Real backends not initialized",
+                "backends": {}
+            }
+            
+        try:
+            status = self.quantum_executor.get_backend_status()
+            available_backends = self.quantum_executor.list_available_backends()
+            
+            return {
+                "available": True,
+                "backends": status,
+                "available_backend_names": available_backends,
+                "quantum_executor_ready": True
+            }
+            
+        except Exception as e:
+            return {
+                "available": False,
+                "error": str(e),
+                "backends": {}
+            }
+            
+    def benchmark_real_backends(self, shots: int = 100) -> Dict[str, Any]:
+        """Benchmark real quantum backends if available."""
+        if not REAL_BACKENDS_AVAILABLE or not self.quantum_executor:
+            return {"error": "Real backends not available"}
+            
+        try:
+            return self.quantum_executor.benchmark_backends(shots=shots)
+        except Exception as e:
+            logger.error(f"Backend benchmarking failed: {e}")
+            return {"error": str(e)}

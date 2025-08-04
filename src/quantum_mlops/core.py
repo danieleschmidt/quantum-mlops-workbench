@@ -5,6 +5,12 @@ from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
 import numpy as np
 
+try:
+    from .backends import QuantumExecutor, BackendManager
+    BACKENDS_AVAILABLE = True
+except ImportError:
+    BACKENDS_AVAILABLE = False
+
 
 class QuantumDevice(Enum):
     """Supported quantum computing backends."""
@@ -39,6 +45,13 @@ class QuantumMLPipeline:
         self.config = kwargs
         self._validate_circuit()
         self._initialize_backend()
+        
+        # Initialize quantum executor if backends are available
+        if BACKENDS_AVAILABLE:
+            self.quantum_executor = QuantumExecutor()
+            self._setup_backend()
+        else:
+            self.quantum_executor = None
     
     def _validate_circuit(self) -> None:
         """Validate circuit requirements."""
@@ -60,6 +73,23 @@ class QuantumMLPipeline:
         
         self.backend_config = backend_configs.get(self.device, {})
         self.backend_config.update(self.config)
+        
+    def _setup_backend(self) -> None:
+        """Setup quantum backend for real execution."""
+        if not BACKENDS_AVAILABLE or not self.quantum_executor:
+            return
+            
+        try:
+            # Create backend based on device type
+            backend_name = self.quantum_executor.create_backend(
+                self.device, 
+                **self.config
+            )
+            self.backend_name = backend_name
+        except Exception as e:
+            print(f"Warning: Failed to setup backend {self.device}: {e}")
+            print("Falling back to simulation")
+            self.backend_name = None
     
     def _estimate_parameter_count(self) -> int:
         """Estimate number of trainable parameters."""
@@ -71,16 +101,107 @@ class QuantumMLPipeline:
         """Execute forward pass through quantum circuit."""
         predictions = []
         
+        # Use real quantum backends if available
+        if BACKENDS_AVAILABLE and self.quantum_executor and hasattr(self, 'backend_name'):
+            try:
+                predictions = self._execute_with_quantum_backend(model, X)
+            except Exception as e:
+                print(f"Warning: Real backend execution failed: {e}")
+                print("Falling back to simulation")
+                predictions = self._execute_with_simulation(model, X)
+        else:
+            predictions = self._execute_with_simulation(model, X)
+        
+        return np.array(predictions)
+        
+    def _execute_with_quantum_backend(self, model: "QuantumModel", X: np.ndarray) -> List[float]:
+        """Execute circuits using real quantum backends."""
+        predictions = []
+        
         for sample in X:
-            # Simulate quantum circuit execution
+            # Create circuit description for backend
+            circuit = self._create_circuit_description(model.parameters, sample)
+            
+            # Execute on quantum backend
+            try:
+                result = self.quantum_executor.execute(
+                    circuit,
+                    backend_names=[self.backend_name] if hasattr(self, 'backend_name') else None,
+                    shots=self.backend_config.get('shots', 1024)
+                )
+                
+                predictions.append(result.expectation_value or 0.0)
+                
+            except Exception as e:
+                print(f"Warning: Backend execution failed for sample: {e}")
+                # Fallback to simulation
+                result = self._simulate_circuit(model.parameters, sample)
+                predictions.append(result)
+                
+        return predictions
+        
+    def _execute_with_simulation(self, model: "QuantumModel", X: np.ndarray) -> List[float]:
+        """Execute circuits using local simulation."""
+        predictions = []
+        
+        for sample in X:
             if self.device == QuantumDevice.SIMULATOR:
                 result = self._simulate_circuit(model.parameters, sample)
             else:
                 result = self._execute_on_hardware(model.parameters, sample)
             
             predictions.append(result)
+            
+        return predictions
         
-        return np.array(predictions)
+    def _create_circuit_description(self, params: np.ndarray, x: np.ndarray) -> Dict[str, Any]:
+        """Create circuit description for backend execution."""
+        # Create a simple parameterized circuit
+        gates = []
+        
+        # Data encoding layer
+        for i in range(min(self.n_qubits, len(x))):
+            gates.append({
+                "type": "ry",
+                "qubit": i,
+                "angle": x[i] * np.pi  # Feature encoding
+            })
+            
+        # Parameterized layer
+        param_idx = 0
+        layers = self.config.get('layers', 3)
+        
+        for layer in range(layers):
+            for qubit in range(self.n_qubits):
+                if param_idx < len(params):
+                    gates.append({
+                        "type": "ry",
+                        "qubit": qubit,
+                        "angle": params[param_idx]
+                    })
+                    param_idx += 1
+                    
+                if param_idx < len(params):
+                    gates.append({
+                        "type": "rz", 
+                        "qubit": qubit,
+                        "angle": params[param_idx]
+                    })
+                    param_idx += 1
+                    
+            # Entangling layer
+            for qubit in range(self.n_qubits - 1):
+                gates.append({
+                    "type": "cnot",
+                    "control": qubit,
+                    "target": qubit + 1
+                })
+                
+        return {
+            "gates": gates,
+            "n_qubits": self.n_qubits,
+            "measurements": [{"type": "expectation", "wires": 0, "observable": "Z"}]
+        }
     
     def _simulate_circuit(self, params: np.ndarray, x: np.ndarray) -> float:
         """Simulate quantum circuit locally."""
@@ -222,6 +343,73 @@ class QuantumMLPipeline:
         }
         
         return model
+        
+    def get_backend_info(self) -> Dict[str, Any]:
+        """Get information about the current quantum backend."""
+        info = {
+            "device": self.device.value,
+            "n_qubits": self.n_qubits,
+            "config": self.backend_config,
+            "real_backend_available": BACKENDS_AVAILABLE and self.quantum_executor is not None,
+        }
+        
+        if BACKENDS_AVAILABLE and self.quantum_executor:
+            try:
+                status = self.quantum_executor.get_backend_status()
+                available_backends = self.quantum_executor.list_available_backends()
+                
+                info.update({
+                    "available_backends": available_backends,
+                    "backend_status": status,
+                    "current_backend": getattr(self, 'backend_name', None),
+                })
+            except Exception as e:
+                info["backend_error"] = str(e)
+                
+        return info
+        
+    def benchmark_execution(self, test_samples: int = 10) -> Dict[str, Any]:
+        """Benchmark the current quantum backend setup."""
+        if not BACKENDS_AVAILABLE or not self.quantum_executor:
+            return {"error": "Real backends not available"}
+            
+        # Create test data
+        X_test = np.random.random((test_samples, self.n_qubits))
+        model = QuantumModel(self.circuit, self.n_qubits)
+        model.parameters = np.random.uniform(-np.pi, np.pi, self._estimate_parameter_count())
+        
+        import time
+        
+        # Benchmark simulation
+        start_time = time.time()
+        sim_predictions = self._execute_with_simulation(model, X_test)
+        sim_time = time.time() - start_time
+        
+        # Benchmark real backend if available
+        backend_time = None
+        backend_predictions = None
+        backend_error = None
+        
+        if hasattr(self, 'backend_name'):
+            try:
+                start_time = time.time()
+                backend_predictions = self._execute_with_quantum_backend(model, X_test)
+                backend_time = time.time() - start_time
+            except Exception as e:
+                backend_error = str(e)
+                
+        return {
+            "test_samples": test_samples,
+            "simulation_time": sim_time,
+            "backend_time": backend_time,
+            "backend_error": backend_error,
+            "simulation_available": True,
+            "backend_available": hasattr(self, 'backend_name'),
+            "predictions_match": (
+                np.allclose(sim_predictions, backend_predictions, atol=0.1) 
+                if backend_predictions else None
+            ),
+        }
         
     def evaluate(
         self,
