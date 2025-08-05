@@ -1,0 +1,99 @@
+# Multi-stage production-ready Dockerfile for Quantum MLOps Workbench
+FROM python:3.9-slim as base
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PIP_NO_CACHE_DIR=1
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    git \
+    pkg-config \
+    libhdf5-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create non-root user
+RUN groupadd -r quantum && useradd -r -g quantum quantum
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements*.txt ./
+COPY pyproject.toml ./
+
+# Production stage
+FROM base as production
+
+# Install production dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY src/ ./src/
+COPY cli_demo.py ./
+COPY examples/ ./examples/
+
+# Set ownership
+RUN chown -R quantum:quantum /app
+
+# Create directories for logs and models
+RUN mkdir -p /app/logs /app/models && \
+    chown -R quantum:quantum /app/logs /app/models
+
+# Switch to non-root user
+USER quantum
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Default command
+CMD ["python", "-m", "uvicorn", "quantum_mlops.api:create_api_app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
+
+# Worker stage
+FROM production as worker
+
+USER root
+RUN pip install --no-cache-dir celery[redis]
+USER quantum
+
+CMD ["python", "-m", "celery", "worker", "-A", "quantum_mlops.tasks", "--loglevel=info", "--concurrency=2"]
+
+# Scheduler stage  
+FROM production as scheduler
+
+USER root
+RUN pip install --no-cache-dir celery[redis] celery-beat
+USER quantum
+
+CMD ["python", "-m", "celery", "beat", "-A", "quantum_mlops.tasks", "--loglevel=info"]
+
+# Development stage
+FROM base as development
+
+# Install development dependencies
+RUN pip install --no-cache-dir -r requirements-dev.txt
+
+# Install additional dev tools
+RUN pip install --no-cache-dir \
+    ipython \
+    jupyter \
+    black \
+    ruff \
+    mypy \
+    pytest-xdist
+
+# Copy everything for development
+COPY . .
+
+# Set ownership
+RUN chown -R quantum:quantum /app
+
+USER quantum
+
+# Development command
+CMD ["python", "-m", "uvicorn", "quantum_mlops.api:create_api_app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

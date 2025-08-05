@@ -1,0 +1,391 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: quantum-mlops-prod
+  labels:
+    name: quantum-mlops-prod
+    environment: production
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quantum-mlops-api
+  namespace: quantum-mlops-prod
+  labels:
+    app: quantum-mlops-api
+    tier: api
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: quantum-mlops-api
+  template:
+    metadata:
+      labels:
+        app: quantum-mlops-api
+        tier: api
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8000"
+        prometheus.io/path: "/metrics"
+    spec:
+      serviceAccountName: quantum-mlops-api
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+      containers:
+      - name: api
+        image: quantum-mlops:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+          name: http
+        env:
+        - name: ENVIRONMENT
+          value: "production"
+        - name: LOG_LEVEL
+          value: "info"
+        - name: PYTHONPATH
+          value: "/app/src"
+        - name: REDIS_URL
+          valueFrom:
+            secretKeyRef:
+              name: quantum-mlops-secrets
+              key: redis-url
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: quantum-mlops-secrets
+              key: database-url
+        - name: MLFLOW_TRACKING_URI
+          valueFrom:
+            configMapKeyRef:
+              name: quantum-mlops-config
+              key: mlflow-uri
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: aws-credentials
+              key: access-key-id
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aws-credentials
+              key: secret-access-key
+        - name: AWS_DEFAULT_REGION
+          valueFrom:
+            configMapKeyRef:
+              name: quantum-mlops-config
+              key: aws-region
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+        volumeMounts:
+        - name: logs
+          mountPath: /app/logs
+        - name: models
+          mountPath: /app/models
+      volumes:
+      - name: logs
+        persistentVolumeClaim:
+          claimName: quantum-mlops-logs
+      - name: models
+        persistentVolumeClaim:
+          claimName: quantum-mlops-models
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quantum-mlops-worker
+  namespace: quantum-mlops-prod
+  labels:
+    app: quantum-mlops-worker
+    tier: worker
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: quantum-mlops-worker
+  template:
+    metadata:
+      labels:
+        app: quantum-mlops-worker
+        tier: worker
+    spec:
+      serviceAccountName: quantum-mlops-worker
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+      containers:
+      - name: worker
+        image: quantum-mlops:latest
+        imagePullPolicy: Always
+        command: ["python", "-m", "quantum_mlops.worker"]
+        env:
+        - name: ENVIRONMENT
+          value: "production"
+        - name: WORKER_TYPE
+          value: "quantum"
+        - name: LOG_LEVEL
+          value: "info"
+        - name: PYTHONPATH
+          value: "/app/src"
+        - name: REDIS_URL
+          valueFrom:
+            secretKeyRef:
+              name: quantum-mlops-secrets
+              key: redis-url
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: quantum-mlops-secrets
+              key: database-url
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1000m"
+          limits:
+            memory: "4Gi"
+            cpu: "2000m"
+        volumeMounts:
+        - name: logs
+          mountPath: /app/logs
+        - name: models
+          mountPath: /app/models
+      volumes:
+      - name: logs
+        persistentVolumeClaim:
+          claimName: quantum-mlops-logs
+      - name: models
+        persistentVolumeClaim:
+          claimName: quantum-mlops-models
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: quantum-mlops-api-service
+  namespace: quantum-mlops-prod
+  labels:
+    app: quantum-mlops-api
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  selector:
+    app: quantum-mlops-api
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quantum-mlops-ingress
+  namespace: quantum-mlops-prod
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+spec:
+  tls:
+  - hosts:
+    - api.quantum-mlops.example.com
+    secretName: quantum-mlops-tls
+  rules:
+  - host: api.quantum-mlops.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: quantum-mlops-api-service
+            port:
+              number: 80
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: quantum-mlops-api
+  namespace: quantum-mlops-prod
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: quantum-mlops-worker
+  namespace: quantum-mlops-prod
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quantum-mlops-config
+  namespace: quantum-mlops-prod
+data:
+  mlflow-uri: "http://mlflow-service:5000"
+  aws-region: "us-east-1"
+  quantum-backends: "simulator,aws_braket"
+  max-qubits: "30"
+  default-language: "en"
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quantum-mlops-secrets
+  namespace: quantum-mlops-prod
+type: Opaque
+data:
+  # Base64 encoded values - replace with actual secrets
+  redis-url: cmVkaXM6Ly9yZWRpcy1zZXJ2aWNlOjYzNzk=
+  database-url: cG9zdGdyZXNxbDovL3F1YW50dW06cXVhbnR1bUBwb3N0Z3Jlcy1zZXJ2aWNlOjU0MzIvcXVhbnR1bV9tbG9wcw==
+
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: aws-credentials
+  namespace: quantum-mlops-prod
+type: Opaque
+data:
+  # Base64 encoded AWS credentials - replace with actual values
+  access-key-id: WU9VUl9BV1NfQUNDRVNTX0tFWV9JRA==
+  secret-access-key: WU9VUl9BV1NfU0VDUkVUX0FDQ0VTU19LRVk=
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: quantum-mlops-logs-pv
+  namespace: quantum-mlops-prod
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: quantum-mlops-storage
+  nfs:
+    path: /quantum-mlops/logs
+    server: nfs-server.example.com
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: quantum-mlops-logs
+  namespace: quantum-mlops-prod
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: quantum-mlops-storage
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: quantum-mlops-models-pv
+  namespace: quantum-mlops-prod
+spec:
+  capacity:
+    storage: 50Gi
+  accessModes:
+  - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: quantum-mlops-storage
+  nfs:
+    path: /quantum-mlops/models
+    server: nfs-server.example.com
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: quantum-mlops-models
+  namespace: quantum-mlops-prod
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 50Gi
+  storageClassName: quantum-mlops-storage
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: quantum-mlops-api-hpa
+  namespace: quantum-mlops-prod
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: quantum-mlops-api
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: quantum-mlops-api-pdb
+  namespace: quantum-mlops-prod
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: quantum-mlops-api

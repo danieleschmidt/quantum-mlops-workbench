@@ -18,6 +18,16 @@ from .exceptions import (
 from .logging_config import get_logger, get_logging_manager
 from .health import get_health_monitor, HealthStatus
 
+# New modules
+from .integrations import QuantumMLflow, QuantumWandB, setup_experiment_tracking
+from .algorithms import VQE, QAOA, create_h2_hamiltonian, create_maxcut_hamiltonian
+from .compilation import CircuitOptimizer, OptimizationLevel
+from .hyperopt import QuantumHyperOpt, OptimizationResult
+from .benchmarking import QuantumAdvantageTester, BenchmarkResult
+from .scaling import get_load_balancer, get_job_scheduler, get_auto_scaler, get_performance_optimizer
+from .validation import QuantumDataValidator, ValidationResult
+from .i18n import get_i18n_manager, SupportedLanguage, set_language, translate
+
 __all__ = [
     "QuantumMLPipeline",
     "QuantumDevice", 
@@ -33,4 +43,28 @@ __all__ = [
     "get_logging_manager",
     "get_health_monitor",
     "HealthStatus",
+    # New exports
+    "QuantumMLflow",
+    "QuantumWandB",
+    "setup_experiment_tracking",
+    "VQE",
+    "QAOA",
+    "create_h2_hamiltonian",
+    "create_maxcut_hamiltonian",
+    "CircuitOptimizer",
+    "OptimizationLevel",
+    "QuantumHyperOpt",
+    "OptimizationResult",
+    "QuantumAdvantageTester",
+    "BenchmarkResult",
+    "get_load_balancer",
+    "get_job_scheduler",
+    "get_auto_scaler",
+    "get_performance_optimizer",
+    "QuantumDataValidator",
+    "ValidationResult",
+    "get_i18n_manager",
+    "SupportedLanguage",
+    "set_language",
+    "translate",
 ]
