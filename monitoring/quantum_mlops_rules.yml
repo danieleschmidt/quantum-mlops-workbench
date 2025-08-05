@@ -1,0 +1,176 @@
+groups:
+  - name: quantum-mlops.rules
+    rules:
+      # High-level service availability
+      - alert: QuantumMLOpsAPIDown
+        expr: up{job="quantum-mlops-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Quantum MLOps API is down"
+          description: "The Quantum MLOps API has been down for more than 1 minute."
+
+      - alert: QuantumMLOpsWorkerDown
+        expr: up{job="quantum-mlops-workers"} == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Quantum MLOps worker is down"
+          description: "A Quantum MLOps worker has been down for more than 2 minutes."
+
+      # Performance alerts
+      - alert: HighQuantumJobLatency
+        expr: histogram_quantile(0.95, quantum_job_duration_seconds_bucket) > 300
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High quantum job latency"
+          description: "95th percentile quantum job latency is {{ $value }}s, which is above 300s threshold."
+
+      - alert: QuantumBackendQueueTooLong
+        expr: quantum_backend_queue_size > 50
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Quantum backend queue is too long"
+          description: "Quantum backend queue size is {{ $value }}, indicating potential bottleneck."
+
+      - alert: HighQuantumErrorRate
+        expr: rate(quantum_job_errors_total[5m]) > 0.1
+        for: 3m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High quantum job error rate"
+          description: "Quantum job error rate is {{ $value | humanizePercentage }} over the last 5 minutes."
+
+      # Resource utilization
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is {{ $value }}% on {{ $labels.instance }}."
+
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage"
+          description: "Memory usage is {{ $value }}% on {{ $labels.instance }}."
+
+      - alert: DiskSpaceRunningLow
+        expr: (node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100 < 10
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Disk space running low"
+          description: "Disk space is {{ $value }}% full on {{ $labels.instance }}."
+
+      # Database alerts
+      - alert: PostgreSQLDown
+        expr: up{job="postgres"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "PostgreSQL is down"
+          description: "PostgreSQL database has been down for more than 1 minute."
+
+      - alert: RedisDown
+        expr: up{job="redis"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Redis is down"
+          description: "Redis cache has been down for more than 1 minute."
+
+      # Quantum-specific alerts
+      - alert: QuantumCircuitOptimizationSlow
+        expr: histogram_quantile(0.90, quantum_circuit_optimization_duration_seconds_bucket) > 60
+        for: 3m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Quantum circuit optimization is slow"
+          description: "90th percentile circuit optimization time is {{ $value }}s, above 60s threshold."
+
+      - alert: QuantumModelTrainingFailed
+        expr: increase(quantum_model_training_failures_total[10m]) > 5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Multiple quantum model training failures"
+          description: "{{ $value }} quantum model training failures in the last 10 minutes."
+
+      - alert: QuantumHardwareAccessLimited
+        expr: quantum_hardware_access_available == 0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Quantum hardware access limited"
+          description: "No quantum hardware backends are currently available."
+
+      - alert: QuantumShotBudgetExceeded
+        expr: quantum_shots_used_daily > quantum_shots_budget_daily
+        for: 0m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Daily quantum shot budget exceeded"
+          description: "Daily quantum shot usage ({{ $value }}) has exceeded the budget."
+
+      # Security alerts
+      - alert: UnauthorizedQuantumAccess
+        expr: increase(quantum_unauthorized_access_attempts_total[5m]) > 10
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Multiple unauthorized quantum access attempts"
+          description: "{{ $value }} unauthorized access attempts to quantum resources in the last 5 minutes."
+
+      - alert: QuantumDataValidationFailures
+        expr: rate(quantum_data_validation_failures_total[5m]) > 0.05
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High quantum data validation failure rate"
+          description: "Quantum data validation failure rate is {{ $value | humanizePercentage }}."
+
+  - name: quantum-sla.rules
+    rules:
+      # SLA recording rules
+      - record: quantum_api_availability_5m
+        expr: avg_over_time(up{job="quantum-mlops-api"}[5m])
+
+      - record: quantum_api_availability_1h
+        expr: avg_over_time(quantum_api_availability_5m[1h])
+
+      - record: quantum_api_availability_24h
+        expr: avg_over_time(quantum_api_availability_1h[24h])
+
+      - record: quantum_job_success_rate_5m
+        expr: 1 - rate(quantum_job_errors_total[5m]) / rate(quantum_jobs_total[5m])
+
+      - record: quantum_job_success_rate_1h
+        expr: avg_over_time(quantum_job_success_rate_5m[1h])
+
+      - record: quantum_p95_latency_5m
+        expr: histogram_quantile(0.95, rate(quantum_job_duration_seconds_bucket[5m]))
+
+      - record: quantum_p99_latency_5m
+        expr: histogram_quantile(0.99, rate(quantum_job_duration_seconds_bucket[5m]))
