@@ -611,7 +611,7 @@ class SecurityScanner:
 _global_security_scanner: Optional[SecurityScanner] = None
 
 def get_security_scanner() -> SecurityScanner:
-    """Get global security scanner."""
+    """Get global security scanner."""" 
     global _global_security_scanner
     if _global_security_scanner is None:
         _global_security_scanner = SecurityScanner()
