@@ -1,0 +1,105 @@
+{
+  "experiment_info": {
+    "name": "generation2_robust",
+    "run_id": "run_1754622924",
+    "start_time": 1754622924.9491618,
+    "duration": 0.03127455711364746,
+    "is_running": false
+  },
+  "metrics_summary": {
+    "n_qubits": {
+      "latest": 6.0,
+      "mean": 6.0,
+      "std": 0.0,
+      "min": 6.0,
+      "max": 6.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "training_samples": {
+      "latest": 200.0,
+      "mean": 200.0,
+      "std": 0.0,
+      "min": 200.0,
+      "max": 200.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "epochs": {
+      "latest": 100.0,
+      "mean": 100.0,
+      "std": 0.0,
+      "min": 100.0,
+      "max": 100.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "learning_rate": {
+      "latest": 0.02,
+      "mean": 0.02,
+      "std": 0.0,
+      "min": 0.02,
+      "max": 0.02,
+      "count": 1,
+      "trend": "stable"
+    },
+    "patience": {
+      "latest": 15.0,
+      "mean": 15.0,
+      "std": 0.0,
+      "min": 15.0,
+      "max": 15.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "features": {
+      "latest": 8.0,
+      "mean": 8.0,
+      "std": 0.0,
+      "min": 8.0,
+      "max": 8.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "run_duration": {
+      "latest": 0.031246662139892578,
+      "mean": 0.031246662139892578,
+      "std": 0.0,
+      "min": 0.031246662139892578,
+      "max": 0.031246662139892578,
+      "count": 1,
+      "trend": "stable"
+    }
+  },
+  "training_summary": {
+    "total_steps": 0,
+    "final_loss": null,
+    "best_loss": null,
+    "gradient_explosion_count": 0,
+    "convergence_achieved": false
+  },
+  "quantum_summary": {
+    "states_logged": 0,
+    "avg_fidelity": null,
+    "avg_entanglement": null,
+    "fidelity_trend": null
+  },
+  "execution_summary": {
+    "backends_used": [],
+    "total_cost": 0,
+    "avg_execution_times": {},
+    "hardware_status": {}
+  },
+  "alert_summary": {
+    "total_alerts": 0,
+    "alert_types": {},
+    "severity_breakdown": {},
+    "time_window_hours": 24,
+    "most_recent": null
+  },
+  "tracking_status": {
+    "mlflow_enabled": false,
+    "wandb_enabled": false,
+    "storage_path": "quantum_monitoring"
+  }
+}

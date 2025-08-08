@@ -2,7 +2,12 @@
 
 import os
 import time
-import psutil
+try:
+    import psutil
+    PSUTIL_AVAILABLE = True
+except ImportError:
+    PSUTIL_AVAILABLE = False
+    psutil = None
 import threading
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any, Callable, Union

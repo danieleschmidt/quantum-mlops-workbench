@@ -1,0 +1,213 @@
+{
+  "experiment_info": {
+    "name": "generation2_robust",
+    "run_id": "run_1754622949",
+    "start_time": 1754622949.3439848,
+    "duration": 1.0891571044921875,
+    "is_running": false
+  },
+  "metrics_summary": {
+    "n_qubits": {
+      "latest": 6.0,
+      "mean": 6.0,
+      "std": 0.0,
+      "min": 6.0,
+      "max": 6.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "training_samples": {
+      "latest": 200.0,
+      "mean": 200.0,
+      "std": 0.0,
+      "min": 200.0,
+      "max": 200.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "epochs": {
+      "latest": 100.0,
+      "mean": 100.0,
+      "std": 0.0,
+      "min": 100.0,
+      "max": 100.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "learning_rate": {
+      "latest": 0.02,
+      "mean": 0.02,
+      "std": 0.0,
+      "min": 0.02,
+      "max": 0.02,
+      "count": 51,
+      "trend": "stable"
+    },
+    "patience": {
+      "latest": 15.0,
+      "mean": 15.0,
+      "std": 0.0,
+      "min": 15.0,
+      "max": 15.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "features": {
+      "latest": 8.0,
+      "mean": 8.0,
+      "std": 0.0,
+      "min": 8.0,
+      "max": 8.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "epoch": {
+      "latest": 49.0,
+      "mean": 24.5,
+      "std": 14.430869689661812,
+      "min": 0.0,
+      "max": 49.0,
+      "count": 50,
+      "trend": "increasing"
+    },
+    "loss": {
+      "latest": 1.2962437689709183,
+      "mean": 1.2854064962573424,
+      "std": 0.05182642019662353,
+      "min": 1.1747448140766363,
+      "max": 1.3806645672794737,
+      "count": 50,
+      "trend": "stable"
+    },
+    "best_loss": {
+      "latest": 1.1747448140766363,
+      "mean": 1.2593548205135396,
+      "std": 0.0690785487933307,
+      "min": 1.1747448140766363,
+      "max": 1.3694769815442522,
+      "count": 50,
+      "trend": "stable"
+    },
+    "parameter_norm": {
+      "latest": 6.264698738016786,
+      "mean": 6.120618796157267,
+      "std": 0.1575626468472795,
+      "min": 5.754102935930937,
+      "max": 6.366269715506938,
+      "count": 50,
+      "trend": "stable"
+    },
+    "gradient_norm": {
+      "latest": 3.4641016151377544,
+      "mean": 3.4270034725613403,
+      "std": 0.07701641670442724,
+      "min": 3.0343995273546494,
+      "max": 3.4641016151377544,
+      "count": 50,
+      "trend": "stable"
+    },
+    "epoch_time": {
+      "latest": 0.02198052406311035,
+      "mean": 0.021676058769226073,
+      "std": 0.00339822032507169,
+      "min": 0.018872499465942383,
+      "max": 0.03757929801940918,
+      "count": 50,
+      "trend": "stable"
+    },
+    "patience_counter": {
+      "latest": 15.0,
+      "mean": 3.06,
+      "std": 4.206708927415825,
+      "min": 0.0,
+      "max": 15.0,
+      "count": 50,
+      "trend": "increasing"
+    },
+    "final_loss": {
+      "latest": 1.1747448140766363,
+      "mean": 1.1747448140766363,
+      "std": 0.0,
+      "min": 1.1747448140766363,
+      "max": 1.1747448140766363,
+      "count": 1,
+      "trend": "stable"
+    },
+    "training_time": {
+      "latest": 1.0913376808166504,
+      "mean": 1.0913376808166504,
+      "std": 0.0,
+      "min": 1.0913376808166504,
+      "max": 1.0913376808166504,
+      "count": 1,
+      "trend": "stable"
+    },
+    "epochs_completed": {
+      "latest": 50.0,
+      "mean": 50.0,
+      "std": 0.0,
+      "min": 50.0,
+      "max": 50.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "converged": {
+      "latest": 0.0,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "parameter_count": {
+      "latest": 12.0,
+      "mean": 12.0,
+      "std": 0.0,
+      "min": 12.0,
+      "max": 12.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "run_duration": {
+      "latest": 1.089116096496582,
+      "mean": 1.089116096496582,
+      "std": 0.0,
+      "min": 1.089116096496582,
+      "max": 1.089116096496582,
+      "count": 1,
+      "trend": "stable"
+    }
+  },
+  "training_summary": {
+    "total_steps": 0,
+    "final_loss": null,
+    "best_loss": null,
+    "gradient_explosion_count": 0,
+    "convergence_achieved": false
+  },
+  "quantum_summary": {
+    "states_logged": 0,
+    "avg_fidelity": null,
+    "avg_entanglement": null,
+    "fidelity_trend": null
+  },
+  "execution_summary": {
+    "backends_used": [],
+    "total_cost": 0,
+    "avg_execution_times": {},
+    "hardware_status": {}
+  },
+  "alert_summary": {
+    "total_alerts": 0,
+    "alert_types": {},
+    "severity_breakdown": {},
+    "time_window_hours": 24,
+    "most_recent": null
+  },
+  "tracking_status": {
+    "mlflow_enabled": false,
+    "wandb_enabled": false,
+    "storage_path": "quantum_monitoring"
+  }
+}

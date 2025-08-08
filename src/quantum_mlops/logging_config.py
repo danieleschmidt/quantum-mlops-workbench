@@ -124,8 +124,8 @@ class AsyncLogHandler(logging.Handler):
         self.target_handler = target_handler
         self.queue = Queue(maxsize=queue_size)
         self.worker_thread = threading.Thread(target=self._log_worker, daemon=True)
-        self.worker_thread.start()
         self._shutdown = False
+        self.worker_thread.start()
         
     def emit(self, record: logging.LogRecord) -> None:
         """Emit log record asynchronously."""

@@ -9,7 +9,12 @@ from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 from unittest.mock import MagicMock, patch
 
 import numpy as np
-import pytest
+try:
+    import pytest
+    PYTEST_AVAILABLE = True
+except ImportError:
+    PYTEST_AVAILABLE = False
+    pytest = None
 
 from .core import QuantumModel, QuantumMLPipeline, QuantumDevice, QuantumMetrics
 
