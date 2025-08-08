@@ -473,9 +473,9 @@ class ErrorHandler:
             "error_code": exception.error_code,
             "category": exception.category.name,
             "severity": exception.severity.name,
-            "user_id": exception.context.user_id if exception.context else None,
-            "component": exception.context.component if exception.context else None,
-            "operation": exception.context.operation if exception.context else None
+            "user_id": getattr(exception.context, 'user_id', None) if hasattr(exception.context, 'user_id') else None,
+            "component": getattr(exception.context, 'component', None) if hasattr(exception.context, 'component') else None,
+            "operation": getattr(exception.context, 'operation', None) if hasattr(exception.context, 'operation') else None
         }
         
         if exception.severity == ErrorSeverity.CRITICAL:
@@ -496,11 +496,11 @@ class ErrorHandler:
         
         # Store recent errors
         self.recent_errors.append({
-            "timestamp": exception.context.timestamp if exception.context else datetime.utcnow(),
+            "timestamp": getattr(exception.context, 'timestamp', datetime.utcnow()) if hasattr(exception.context, 'timestamp') else datetime.utcnow(),
             "category": exception.category.name,
             "severity": exception.severity.name,
             "message": exception.message[:100],  # Truncate for storage
-            "user_id": exception.context.user_id if exception.context else None
+            "user_id": getattr(exception.context, 'user_id', None) if hasattr(exception.context, 'user_id') else None
         })
         
         # Maintain size limit

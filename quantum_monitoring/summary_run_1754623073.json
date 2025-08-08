@@ -1,0 +1,296 @@
+{
+  "experiment_info": {
+    "name": "generation3_optimized",
+    "run_id": "run_1754623073",
+    "start_time": 1754623073.232661,
+    "duration": 8.011216402053833,
+    "is_running": false
+  },
+  "metrics_summary": {
+    "optimization_level": {
+      "latest": 3.0,
+      "mean": 3.0,
+      "std": 0.0,
+      "min": 3.0,
+      "max": 3.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "caching_enabled": {
+      "latest": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "parallel_enabled": {
+      "latest": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "max_workers": {
+      "latest": 2.0,
+      "mean": 2.0,
+      "std": 0.0,
+      "min": 2.0,
+      "max": 2.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "optimal_batch_size": {
+      "latest": 50.0,
+      "mean": 50.0,
+      "std": 0.0,
+      "min": 50.0,
+      "max": 50.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "n_qubits": {
+      "latest": 8.0,
+      "mean": 8.0,
+      "std": 0.0,
+      "min": 8.0,
+      "max": 8.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "epoch": {
+      "latest": 49.0,
+      "mean": 24.5,
+      "std": 14.430869689661812,
+      "min": 0.0,
+      "max": 49.0,
+      "count": 50,
+      "trend": "increasing"
+    },
+    "loss": {
+      "latest": 45.175875590114345,
+      "mean": 49.66322710341673,
+      "std": 3.835075586032759,
+      "min": 44.42773131078134,
+      "max": 56.761469039553205,
+      "count": 50,
+      "trend": "decreasing"
+    },
+    "best_loss": {
+      "latest": 44.42773131078134,
+      "mean": 49.50438826751332,
+      "std": 3.9047843957190103,
+      "min": 44.42773131078134,
+      "max": 56.239446548187615,
+      "count": 50,
+      "trend": "decreasing"
+    },
+    "learning_rate": {
+      "latest": 0.03,
+      "mean": 0.02988,
+      "std": 0.0007846018098373211,
+      "min": 0.027,
+      "max": 0.0315,
+      "count": 50,
+      "trend": "stable"
+    },
+    "parameter_norm": {
+      "latest": 7.4832314348470845,
+      "mean": 7.670983544882506,
+      "std": 0.16396570584275466,
+      "min": 7.471777718195612,
+      "max": 7.933972802624277,
+      "count": 50,
+      "trend": "decreasing"
+    },
+    "epoch_time": {
+      "latest": 0.16237568855285645,
+      "mean": 0.1592373275756836,
+      "std": 0.016224698210373874,
+      "min": 0.14229846000671387,
+      "max": 0.2115480899810791,
+      "count": 50,
+      "trend": "stable"
+    },
+    "patience_counter": {
+      "latest": 5.0,
+      "mean": 0.82,
+      "std": 1.351887569289695,
+      "min": 0.0,
+      "max": 5.0,
+      "count": 50,
+      "trend": "increasing"
+    },
+    "gradient_norm": {
+      "latest": 419.4711214671839,
+      "mean": 437.3546705826704,
+      "std": 118.99894493595845,
+      "min": 250.97830382664912,
+      "max": 714.6346995883746,
+      "count": 50,
+      "trend": "decreasing"
+    },
+    "batch_size": {
+      "latest": 50.0,
+      "mean": 50.0,
+      "std": 0.0,
+      "min": 50.0,
+      "max": 50.0,
+      "count": 50,
+      "trend": "stable"
+    },
+    "cache_hit_rate": {
+      "latest": 0.0,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "count": 50,
+      "trend": "stable"
+    },
+    "cache_size": {
+      "latest": 2000.0,
+      "mean": 2000.0,
+      "std": 0.0,
+      "min": 2000.0,
+      "max": 2000.0,
+      "count": 51,
+      "trend": "stable"
+    },
+    "final_loss": {
+      "latest": 44.42773131078134,
+      "mean": 44.42773131078134,
+      "std": 0.0,
+      "min": 44.42773131078134,
+      "max": 44.42773131078134,
+      "count": 1,
+      "trend": "stable"
+    },
+    "training_time": {
+      "latest": 8.011863470077515,
+      "mean": 8.011863470077515,
+      "std": 0.0,
+      "min": 8.011863470077515,
+      "max": 8.011863470077515,
+      "count": 1,
+      "trend": "stable"
+    },
+    "epochs_completed": {
+      "latest": 50.0,
+      "mean": 50.0,
+      "std": 0.0,
+      "min": 50.0,
+      "max": 50.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "converged": {
+      "latest": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "peak_performance": {
+      "latest": 44.42773131078134,
+      "mean": 44.42773131078134,
+      "std": 0.0,
+      "min": 44.42773131078134,
+      "max": 44.42773131078134,
+      "count": 1,
+      "trend": "stable"
+    },
+    "hits": {
+      "latest": 0.0,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "misses": {
+      "latest": 425000.0,
+      "mean": 425000.0,
+      "std": 0.0,
+      "min": 425000.0,
+      "max": 425000.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "hit_rate": {
+      "latest": 0.0,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "max_size": {
+      "latest": 2000.0,
+      "mean": 2000.0,
+      "std": 0.0,
+      "min": 2000.0,
+      "max": 2000.0,
+      "count": 1,
+      "trend": "stable"
+    },
+    "run_duration": {
+      "latest": 8.011188507080078,
+      "mean": 8.011188507080078,
+      "std": 0.0,
+      "min": 8.011188507080078,
+      "max": 8.011188507080078,
+      "count": 1,
+      "trend": "stable"
+    }
+  },
+  "training_summary": {
+    "total_steps": 0,
+    "final_loss": null,
+    "best_loss": null,
+    "gradient_explosion_count": 0,
+    "convergence_achieved": false
+  },
+  "quantum_summary": {
+    "states_logged": 0,
+    "avg_fidelity": null,
+    "avg_entanglement": null,
+    "fidelity_trend": null
+  },
+  "execution_summary": {
+    "backends_used": [],
+    "total_cost": 0,
+    "avg_execution_times": {},
+    "hardware_status": {}
+  },
+  "alert_summary": {
+    "total_alerts": 50,
+    "alert_types": {
+      "gradient_explosion": 50
+    },
+    "severity_breakdown": {
+      "high": 50
+    },
+    "time_window_hours": 24,
+    "most_recent": {
+      "type": "gradient_explosion",
+      "severity": "high",
+      "message": "Gradient norm exploded to 419.4711",
+      "timestamp": "2025-08-08T03:18:01.242922",
+      "value": 419.4711214671839,
+      "threshold": 10.0
+    }
+  },
+  "tracking_status": {
+    "mlflow_enabled": false,
+    "wandb_enabled": false,
+    "storage_path": "quantum_monitoring"
+  }
+}
