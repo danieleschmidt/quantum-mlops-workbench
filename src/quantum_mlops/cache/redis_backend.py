@@ -11,10 +11,34 @@ try:
 except ImportError:
     REDIS_AVAILABLE = False
 
-from .manager import CacheBackend
+from abc import ABC, abstractmethod
 
 
 logger = logging.getLogger(__name__)
+
+
+class CacheBackend(ABC):
+    """Abstract base class for cache backends."""
+    
+    @abstractmethod
+    def get(self, key: str) -> Optional[Any]:
+        """Get value by key."""
+        pass
+    
+    @abstractmethod
+    def set(self, key: str, value: Any, ttl: Optional[int] = None) -> bool:
+        """Set key-value pair with optional TTL."""
+        pass
+    
+    @abstractmethod
+    def delete(self, key: str) -> bool:
+        """Delete key."""
+        pass
+    
+    @abstractmethod
+    def clear(self) -> bool:
+        """Clear all cached items."""
+        pass
 
 
 class RedisCache(CacheBackend):
