@@ -10,7 +10,7 @@
 pennylane==0.33.1
 qiskit==0.45.1
 qiskit-aer==0.13.2
-qiskit-ibm-runtime==0.40.1
+qiskit-ibm-runtime==0.41.0
 cirq==1.2.0
 amazon-braket-sdk==1.96.0
 
