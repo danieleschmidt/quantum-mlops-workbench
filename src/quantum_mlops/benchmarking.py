@@ -10,6 +10,17 @@ import numpy as np
 from .core import QuantumMLPipeline, QuantumDevice, QuantumModel, QuantumMetrics
 from .exceptions import QuantumMLOpsException
 
+# Import advanced advantage detection modules
+from .advantage_detection import (
+    AdvantageAnalysisEngine,
+    ComprehensiveAdvantageResult,
+    AnalysisType,
+    QuantumKernelAnalyzer,
+    VariationalAdvantageAnalyzer,
+    NoiseResilientTester,
+    QuantumSupremacyAnalyzer
+)
+
 try:
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.svm import SVC
@@ -114,6 +125,68 @@ class QuantumAdvantageTester:
                 'n_classes': len(np.unique(y_train))
             }
         }
+    
+    def comprehensive_advantage_analysis(
+        self,
+        quantum_model: QuantumMLPipeline,
+        classical_models: Dict[str, Any],
+        dataset: Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray],
+        analysis_types: List[str] = ['kernel', 'variational', 'noise_resilient', 'supremacy'],
+        **kwargs: Any
+    ) -> ComprehensiveAdvantageResult:
+        """Run comprehensive quantum advantage analysis with multiple detection algorithms."""
+        
+        X_train, X_test, y_train, y_test = dataset
+        n_qubits = quantum_model.n_qubits
+        
+        # Initialize advantage analysis engine
+        engine = AdvantageAnalysisEngine(
+            n_qubits=n_qubits,
+            enable_kernel_analysis='kernel' in analysis_types,
+            enable_variational_analysis='variational' in analysis_types,
+            enable_noise_analysis='noise_resilient' in analysis_types,
+            enable_supremacy_analysis='supremacy' in analysis_types,
+            seed=42  # Fixed seed for reproducibility
+        )
+        
+        # Prepare analysis configuration
+        analysis_config = {
+            'X': X_train,
+            'y': y_train,
+            'problem_type': 'machine_learning',
+            'analysis_types': analysis_types
+        }
+        
+        # Add quantum circuit if available
+        if hasattr(quantum_model, 'circuit'):
+            analysis_config['quantum_circuit'] = quantum_model.circuit
+        
+        # Add cost function for variational analysis
+        if 'variational' in analysis_types:
+            def cost_function(params):
+                # Simple cost function using quantum model
+                try:
+                    # Simplified cost evaluation
+                    return np.sum(params**2) * 0.1  # Placeholder cost
+                except:
+                    return np.sum(params**2) * 0.1
+            
+            analysis_config['cost_function'] = cost_function
+        
+        # Add classical model for noise analysis
+        if 'noise_resilient' in analysis_types and classical_models:
+            analysis_config['classical_model'] = list(classical_models.values())[0]
+        
+        # Add problem sizes for supremacy analysis
+        if 'supremacy' in analysis_types:
+            analysis_config['problem_sizes'] = [4, 8, 12, min(16, n_qubits)]
+        
+        # Run comprehensive analysis
+        results = engine.comprehensive_analysis(analysis_config, **kwargs)
+        
+        logger.info(f"Comprehensive advantage analysis complete: {results.advantage_category}")
+        
+        return results
     
     def _benchmark_quantum_model(
         self,
