@@ -31,7 +31,7 @@ rich==13.7.0
 prometheus-client==0.22.1
 opentelemetry-api==1.21.0
 opentelemetry-sdk==1.36.0
-structlog==23.2.0
+structlog==25.4.0
 
 # Testing & Quality Assurance
 pytest==8.4.1
