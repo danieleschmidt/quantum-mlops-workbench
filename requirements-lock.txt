@@ -15,7 +15,7 @@ cirq==1.2.0
 amazon-braket-sdk==1.96.0
 
 # Machine Learning & Data Science
-torch==2.1.2
+torch==2.8.0
 scikit-learn==1.6.1
 numpy==1.24.4
 pandas==2.1.4
