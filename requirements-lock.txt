@@ -41,7 +41,7 @@ pytest-asyncio==1.1.0
 
 # Development Tools
 black==23.12.1
-ruff==0.1.8
+ruff==0.12.8
 mypy==1.17.1
 pre-commit==4.2.0
 
