@@ -28,6 +28,20 @@ from .scaling import get_load_balancer, get_job_scheduler, get_auto_scaler, get_
 from .validation import QuantumDataValidator, ValidationResult
 from .i18n import get_i18n_manager, SupportedLanguage, set_language, translate
 
+# Advanced quantum advantage detection
+from .advantage_detection import (
+    AdvantageAnalysisEngine,
+    ComprehensiveAdvantageResult,
+    QuantumKernelAnalyzer,
+    KernelAdvantageResult,
+    VariationalAdvantageAnalyzer,
+    VariationalAdvantageResult,
+    NoiseResilientTester,
+    NoiseAdvantageResult,
+    QuantumSupremacyAnalyzer,
+    SupremacyResult
+)
+
 __all__ = [
     "QuantumMLPipeline",
     "QuantumDevice", 
@@ -67,4 +81,15 @@ __all__ = [
     "SupportedLanguage",
     "set_language",
     "translate",
+    # Advantage detection exports
+    "AdvantageAnalysisEngine",
+    "ComprehensiveAdvantageResult",
+    "QuantumKernelAnalyzer",
+    "KernelAdvantageResult",
+    "VariationalAdvantageAnalyzer",
+    "VariationalAdvantageResult",
+    "NoiseResilientTester",
+    "NoiseAdvantageResult",
+    "QuantumSupremacyAnalyzer",
+    "SupremacyResult",
 ]
