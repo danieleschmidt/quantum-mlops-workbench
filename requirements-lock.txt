@@ -19,7 +19,7 @@ torch==2.1.2
 scikit-learn==1.6.1
 numpy==1.24.4
 pandas==2.1.4
-scipy==1.11.4
+scipy==1.13.1
 
 # MLOps & Experiment Tracking
 mlflow==3.1.4
