@@ -1,0 +1,139 @@
+{
+  "generation": 3,
+  "experiment_type": "scalable_quantum_ml",
+  "timestamp": "2025-08-14T11:58:59.482391+00:00",
+  "optimization_level": "high_performance",
+  "dataset_info": {
+    "train_samples": 200,
+    "test_samples": 50,
+    "features": 4,
+    "total_workload": 250
+  },
+  "performance_metrics": {
+    "total_time": 17.793904066085815,
+    "cpu_time": 17.793904066085815,
+    "memory_peak_mb": 50.049560546875,
+    "throughput_samples_per_sec": 337.1941299512603,
+    "parallel_efficiency": 1.0,
+    "cache_metrics": {
+      "hits": 54198,
+      "misses": 47852,
+      "total_requests": 102050,
+      "hit_rate": 0.53109260166585,
+      "cache_size": 1000,
+      "memory_usage_mb": 0.049560546875
+    },
+    "optimization_level": "high_performance"
+  },
+  "prediction_metadata": {
+    "execution_time": 0.011468648910522461,
+    "parallel_efficiency": 1.0,
+    "batch_count": 4,
+    "optimal_batch_size": 16,
+    "max_workers": 6,
+    "cache_metrics": {
+      "hits": 54198,
+      "misses": 47852,
+      "total_requests": 102050,
+      "hit_rate": 0.53109260166585,
+      "cache_size": 1000,
+      "memory_usage_mb": 0.049560546875
+    },
+    "error_count": 0
+  },
+  "benchmark_results": {
+    "benchmark_results": {
+      "25": {
+        "error": "cannot access local variable 'initial_lr' where it is not associated with a value",
+        "success": false
+      },
+      "50": {
+        "error": "cannot access local variable 'initial_lr' where it is not associated with a value",
+        "success": false
+      },
+      "100": {
+        "error": "cannot access local variable 'initial_lr' where it is not associated with a value",
+        "success": false
+      },
+      "150": {
+        "error": "cannot access local variable 'initial_lr' where it is not associated with a value",
+        "success": false
+      }
+    },
+    "scalability_efficiency": 0,
+    "recommended_max_samples": 100,
+    "optimization_recommendations": {
+      "max_workers": 6,
+      "cache_size": 800,
+      "batch_size_multiplier": 2,
+      "parallel_processing": true,
+      "memory_optimization": false
+    }
+  },
+  "system_statistics": {
+    "scheduler_stats": {
+      "max_workers": 6,
+      "active_jobs": 0,
+      "completed_jobs": 0,
+      "queue_length": 0
+    },
+    "load_balancer_stats": {
+      "backend_stats": {
+        "simulator": {
+          "requests": 0,
+          "total_time": 0.0,
+          "avg_time": 0.0,
+          "error_count": 0,
+          "success_rate": 1.0,
+          "last_used": 1755172720.5526118
+        },
+        "aws_braket": {
+          "requests": 0,
+          "total_time": 0.0,
+          "avg_time": 0.0,
+          "error_count": 0,
+          "success_rate": 1.0,
+          "last_used": 1755172720.5526185
+        },
+        "ibm_quantum": {
+          "requests": 0,
+          "total_time": 0.0,
+          "avg_time": 0.0,
+          "error_count": 0,
+          "success_rate": 1.0,
+          "last_used": 1755172720.5526223
+        },
+        "ionq": {
+          "requests": 0,
+          "total_time": 0.0,
+          "avg_time": 0.0,
+          "error_count": 0,
+          "success_rate": 1.0,
+          "last_used": 1755172720.5526245
+        }
+      },
+      "backend_weights": {
+        "simulator": 1.0,
+        "aws_braket": 1.0,
+        "ibm_quantum": 1.0,
+        "ionq": 1.0
+      },
+      "total_backends": 4
+    }
+  },
+  "efficiency_analysis": {
+    "training_efficiency": 1.0,
+    "prediction_efficiency": 1.0,
+    "cache_efficiency": 0.53109260166585,
+    "scalability_efficiency": 0,
+    "overall_efficiency": 0.6327731504164625
+  },
+  "scaling_recommendation": "MAINTAIN: Current configuration is adequate",
+  "resource_recommendations": {
+    "max_workers": 6,
+    "cache_size": 800,
+    "batch_size_multiplier": 2,
+    "parallel_processing": true,
+    "memory_optimization": false
+  }
+}

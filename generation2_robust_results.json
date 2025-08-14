@@ -1,0 +1,103 @@
+{
+  "generation": 2,
+  "experiment_type": "robust_quantum_ml",
+  "experiment_metadata": {
+    "name": "generation2_robust_demo",
+    "timestamp": "2025-08-14T11:58:40.196492+00:00",
+    "framework_version": "2.0"
+  },
+  "model_info": {
+    "model_id": "qml_model_1755172718275_a87ff6",
+    "n_qubits": 4,
+    "n_parameters": 8,
+    "circuit_depth": 1
+  },
+  "training_config": {
+    "epochs": 40,
+    "learning_rate": 0.03,
+    "validation_split": 0.25,
+    "early_stopping_patience": 15
+  },
+  "metrics": {
+    "accuracy": 0.4888888888888889,
+    "loss": 0.3555214846539505,
+    "gradient_variance": 0.0001982146015951769,
+    "fidelity": 1.0,
+    "training_time": 1.9048354625701904,
+    "inference_time": 0.0047664642333984375,
+    "circuit_depth": 1,
+    "n_parameters": 8,
+    "convergence_epoch": 12,
+    "noise_resilience": null
+  },
+  "evaluation_metrics": {
+    "accuracy": 0.4,
+    "loss": 0.4202900105769352,
+    "gradient_variance": 8.042122200790334e-11,
+    "fidelity": 1.0,
+    "training_time": 1.9048354625701904,
+    "inference_time": 0.0015072822570800781,
+    "circuit_depth": 1,
+    "n_parameters": 8,
+    "convergence_epoch": 12,
+    "noise_resilience": 1.0
+  },
+  "evaluation_metadata": {
+    "evaluation_time": 0.002223491668701172,
+    "test_samples": 30,
+    "prediction_metadata": {
+      "inference_time": 0.0015072822570800781,
+      "n_samples": 30,
+      "n_errors": 0,
+      "error_rate": 0.0,
+      "errors": []
+    },
+    "noise_analysis": {
+      "depolarizing": {
+        "accuracy": 0.4,
+        "loss": 0.42765566515535086,
+        "noise_level": 0.02,
+        "degradation": 0
+      },
+      "amplitude_damping": {
+        "accuracy": 0.4,
+        "loss": 0.42370491763440643,
+        "noise_level": 0.01,
+        "degradation": 0
+      },
+      "bit_flip": {
+        "accuracy": 0.4,
+        "loss": 0.4196212005789527,
+        "noise_level": 0.005,
+        "degradation": 0
+      },
+      "thermal": {
+        "accuracy": 0.4,
+        "loss": 0.4193263598118761,
+        "noise_level": 0.008,
+        "degradation": 0
+      }
+    },
+    "validation_result": {
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "metadata": {
+        "n_samples": 30,
+        "n_features": 4,
+        "n_classes": 2,
+        "target_range": [
+          0.0,
+          1.0
+        ],
+        "has_missing_values": false
+      }
+    }
+  },
+  "health_assessment": {
+    "health_score": 0.7,
+    "issues": [
+      "Low accuracy performance"
+    ]
+  }
+}
