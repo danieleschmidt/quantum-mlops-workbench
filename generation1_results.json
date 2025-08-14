@@ -1,0 +1,39 @@
+{
+  "generation": 1,
+  "experiment_type": "simple_quantum_ml",
+  "backend_info": {
+    "device": "simulator",
+    "n_qubits": 4,
+    "model_trained": false,
+    "simulator_type": "simple_quantum_simulator"
+  },
+  "training_config": {
+    "n_qubits": 4,
+    "epochs": 30,
+    "learning_rate": 0.05,
+    "training_samples": 80,
+    "test_samples": 20
+  },
+  "results": {
+    "accuracy": 0.6,
+    "loss": 0.2303044472879506,
+    "predictions": [
+      0.46197670272036584,
+      0.6172696023694192,
+      0.7265251503998726,
+      0.6182020513527573,
+      0.49153287837789106
+    ],
+    "n_samples": 20
+  },
+  "experiment_summary": {
+    "experiment_name": "generation1_quantum_demo",
+    "training_epochs": 1,
+    "evaluations": 1,
+    "status": "completed",
+    "final_training_loss": 0.2634512776478724,
+    "final_training_accuracy": 0.65,
+    "test_accuracy": 0.6,
+    "test_loss": 0.2303044472879506
+  }
+}

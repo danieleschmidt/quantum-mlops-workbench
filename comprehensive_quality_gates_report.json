@@ -1,0 +1,194 @@
+{
+  "timestamp": "2025-08-14T11:58:59.615992+00:00",
+  "summary": {
+    "total_gates": 9,
+    "passed_gates": 9,
+    "failed_gates": 0,
+    "overall_score": 0.9703703703703703,
+    "execution_time": 21.60047745704651,
+    "categories": {
+      "Foundation": {
+        "gates": [
+          "Project Structure",
+          "Code Quality",
+          "Documentation"
+        ],
+        "passed": 3,
+        "total": 3,
+        "score": 3.0,
+        "avg_score": 1.0,
+        "pass_rate": 1.0
+      },
+      "Core Features": {
+        "gates": [
+          "Generation 1 Functionality",
+          "Generation 2 Robustness",
+          "Generation 3 Scalability"
+        ],
+        "passed": 3,
+        "total": 3,
+        "score": 3.0,
+        "avg_score": 1.0,
+        "pass_rate": 1.0
+      },
+      "Production": {
+        "gates": [
+          "Deployment Readiness",
+          "Integration Examples",
+          "Performance Benchmarks"
+        ],
+        "passed": 3,
+        "total": 3,
+        "score": 2.7333333333333334,
+        "avg_score": 0.9111111111111111,
+        "pass_rate": 1.0
+      }
+    },
+    "critical_failures": [],
+    "recommendations": [
+      "Excellent! All quality gates performing well. Ready for production."
+    ]
+  },
+  "detailed_results": [
+    {
+      "gate_name": "Project Structure",
+      "category": "Foundation",
+      "passed": true,
+      "score": 1.0,
+      "execution_time": 0.0027658939361572266,
+      "details": {
+        "required_files": "6/6",
+        "optional_files": "6/6",
+        "missing_required": [],
+        "missing_optional": []
+      },
+      "error_message": ""
+    },
+    {
+      "gate_name": "Code Quality",
+      "category": "Foundation",
+      "passed": true,
+      "score": 1.0,
+      "execution_time": 0.017861127853393555,
+      "details": {
+        "total_python_files": 94,
+        "total_lines_of_code": 43566,
+        "avg_lines_per_file": 463.468085106383,
+        "has_src_structure": true,
+        "has_tests": true,
+        "has_examples": true,
+        "organization_score": 1.0
+      },
+      "error_message": ""
+    },
+    {
+      "gate_name": "Documentation",
+      "category": "Foundation",
+      "passed": true,
+      "score": 1.0,
+      "execution_time": 0.0017023086547851562,
+      "details": {
+        "documentation_score": "5.0/5",
+        "has_readme": true,
+        "readme_length": 10821,
+        "has_architecture_docs": true,
+        "has_contributing": true,
+        "example_count": 5
+      },
+      "error_message": ""
+    },
+    {
+      "gate_name": "Generation 1 Functionality",
+      "category": "Core Features",
+      "passed": true,
+      "score": 1.0,
+      "execution_time": 0.11348557472229004,
+      "details": {
+        "return_code": 0,
+        "found_demo_file": "gen1_simple_demo.py",
+        "output_length": 1787,
+        "has_success_message": true,
+        "stderr_length": 0
+      },
+      "error_message": ""
+    },
+    {
+      "gate_name": "Generation 2 Robustness",
+      "category": "Core Features",
+      "passed": true,
+      "score": 1.0,
+      "execution_time": 2.2229623794555664,
+      "details": {
+        "return_code": 0,
+        "found_demo_file": "gen2_robust_demo.py",
+        "has_robustness_features": true,
+        "logs_directory_created": true,
+        "output_length": 2112,
+        "stderr_length": 60274
+      },
+      "error_message": ""
+    },
+    {
+      "gate_name": "Generation 3 Scalability",
+      "category": "Core Features",
+      "passed": true,
+      "score": 1.0,
+      "execution_time": 19.236849308013916,
+      "details": {
+        "return_code": 0,
+        "found_demo_file": "gen3_scale_demo.py",
+        "has_scaling_features": true,
+        "has_performance_metrics": true,
+        "output_length": 2913,
+        "stderr_length": 4048
+      },
+      "error_message": ""
+    },
+    {
+      "gate_name": "Deployment Readiness",
+      "category": "Production",
+      "passed": true,
+      "score": 1.0,
+      "execution_time": 0.0009264945983886719,
+      "details": {
+        "deployment_files_present": "6/6",
+        "security_files_present": "3/3",
+        "deployment_score": 1.0,
+        "security_score": 1.0,
+        "missing_deployment": [],
+        "missing_security": []
+      },
+      "error_message": ""
+    },
+    {
+      "gate_name": "Integration Examples",
+      "category": "Production",
+      "passed": true,
+      "score": 0.7333333333333333,
+      "execution_time": 0.0005974769592285156,
+      "details": {
+        "total_examples": 5,
+        "integration_examples": 1,
+        "backend_examples": 1,
+        "monitoring_examples": 1,
+        "example_score": 1.0,
+        "diversity_score": 0.3333333333333333
+      },
+      "error_message": ""
+    },
+    {
+      "gate_name": "Performance Benchmarks",
+      "category": "Production",
+      "passed": true,
+      "score": 1.0,
+      "execution_time": 0.0008876323699951172,
+      "details": {
+        "results_files_found": "3/3",
+        "has_performance_data": true,
+        "performance_metrics_count": 2,
+        "results_score": 1.0
+      },
+      "error_message": ""
+    }
+  ]
+}
