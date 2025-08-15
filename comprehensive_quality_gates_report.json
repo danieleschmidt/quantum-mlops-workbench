@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-08-14T11:58:59.615992+00:00",
+  "timestamp": "2025-08-15T13:32:31.917620+00:00",
   "summary": {
     "total_gates": 9,
     "passed_gates": 9,
     "failed_gates": 0,
     "overall_score": 0.9703703703703703,
-    "execution_time": 21.60047745704651,
+    "execution_time": 21.10599398612976,
     "categories": {
       "Foundation": {
         "gates": [
@@ -55,7 +55,7 @@
       "category": "Foundation",
       "passed": true,
       "score": 1.0,
-      "execution_time": 0.0027658939361572266,
+      "execution_time": 0.0032470226287841797,
       "details": {
         "required_files": "6/6",
         "optional_files": "6/6",
@@ -69,11 +69,11 @@
       "category": "Foundation",
       "passed": true,
       "score": 1.0,
-      "execution_time": 0.017861127853393555,
+      "execution_time": 1.3092937469482422,
       "details": {
-        "total_python_files": 94,
-        "total_lines_of_code": 43566,
-        "avg_lines_per_file": 463.468085106383,
+        "total_python_files": 4888,
+        "total_lines_of_code": 2208599,
+        "avg_lines_per_file": 451.84103927986905,
         "has_src_structure": true,
         "has_tests": true,
         "has_examples": true,
@@ -86,7 +86,7 @@
       "category": "Foundation",
       "passed": true,
       "score": 1.0,
-      "execution_time": 0.0017023086547851562,
+      "execution_time": 0.0014569759368896484,
       "details": {
         "documentation_score": "5.0/5",
         "has_readme": true,
@@ -102,7 +102,7 @@
       "category": "Core Features",
       "passed": true,
       "score": 1.0,
-      "execution_time": 0.11348557472229004,
+      "execution_time": 0.12280440330505371,
       "details": {
         "return_code": 0,
         "found_demo_file": "gen1_simple_demo.py",
@@ -117,14 +117,14 @@
       "category": "Core Features",
       "passed": true,
       "score": 1.0,
-      "execution_time": 2.2229623794555664,
+      "execution_time": 2.895545721054077,
       "details": {
         "return_code": 0,
         "found_demo_file": "gen2_robust_demo.py",
         "has_robustness_features": true,
         "logs_directory_created": true,
         "output_length": 2112,
-        "stderr_length": 60274
+        "stderr_length": 76714
       },
       "error_message": ""
     },
@@ -133,7 +133,7 @@
       "category": "Core Features",
       "passed": true,
       "score": 1.0,
-      "execution_time": 19.236849308013916,
+      "execution_time": 16.76878333091736,
       "details": {
         "return_code": 0,
         "found_demo_file": "gen3_scale_demo.py",
@@ -149,7 +149,7 @@
       "category": "Production",
       "passed": true,
       "score": 1.0,
-      "execution_time": 0.0009264945983886719,
+      "execution_time": 0.0008955001831054688,
       "details": {
         "deployment_files_present": "6/6",
         "security_files_present": "3/3",
@@ -165,7 +165,7 @@
       "category": "Production",
       "passed": true,
       "score": 0.7333333333333333,
-      "execution_time": 0.0005974769592285156,
+      "execution_time": 0.0006182193756103516,
       "details": {
         "total_examples": 5,
         "integration_examples": 1,
@@ -181,7 +181,7 @@
       "category": "Production",
       "passed": true,
       "score": 1.0,
-      "execution_time": 0.0008876323699951172,
+      "execution_time": 0.0009071826934814453,
       "details": {
         "results_files_found": "3/3",
         "has_performance_data": true,

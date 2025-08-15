@@ -1,7 +1,7 @@
 {
   "generation": 3,
   "experiment_type": "scalable_quantum_ml",
-  "timestamp": "2025-08-14T11:58:59.482391+00:00",
+  "timestamp": "2025-08-15T13:32:31.779762+00:00",
   "optimization_level": "high_performance",
   "dataset_info": {
     "train_samples": 200,
@@ -10,32 +10,32 @@
     "total_workload": 250
   },
   "performance_metrics": {
-    "total_time": 17.793904066085815,
-    "cpu_time": 17.793904066085815,
+    "total_time": 15.373487710952759,
+    "cpu_time": 15.373487710952759,
     "memory_peak_mb": 50.049560546875,
-    "throughput_samples_per_sec": 337.1941299512603,
+    "throughput_samples_per_sec": 390.28229070787444,
     "parallel_efficiency": 1.0,
     "cache_metrics": {
-      "hits": 54198,
-      "misses": 47852,
+      "hits": 53603,
+      "misses": 48447,
       "total_requests": 102050,
-      "hit_rate": 0.53109260166585,
+      "hit_rate": 0.5252621264086232,
       "cache_size": 1000,
       "memory_usage_mb": 0.049560546875
     },
     "optimization_level": "high_performance"
   },
   "prediction_metadata": {
-    "execution_time": 0.011468648910522461,
+    "execution_time": 0.012511253356933594,
     "parallel_efficiency": 1.0,
     "batch_count": 4,
     "optimal_batch_size": 16,
     "max_workers": 6,
     "cache_metrics": {
-      "hits": 54198,
-      "misses": 47852,
+      "hits": 53603,
+      "misses": 48447,
       "total_requests": 102050,
-      "hit_rate": 0.53109260166585,
+      "hit_rate": 0.5252621264086232,
       "cache_size": 1000,
       "memory_usage_mb": 0.049560546875
     },
@@ -85,7 +85,7 @@
           "avg_time": 0.0,
           "error_count": 0,
           "success_rate": 1.0,
-          "last_used": 1755172720.5526118
+          "last_used": 1755264735.2547498
         },
         "aws_braket": {
           "requests": 0,
@@ -93,7 +93,7 @@
           "avg_time": 0.0,
           "error_count": 0,
           "success_rate": 1.0,
-          "last_used": 1755172720.5526185
+          "last_used": 1755264735.2547538
         },
         "ibm_quantum": {
           "requests": 0,
@@ -101,7 +101,7 @@
           "avg_time": 0.0,
           "error_count": 0,
           "success_rate": 1.0,
-          "last_used": 1755172720.5526223
+          "last_used": 1755264735.2547565
         },
         "ionq": {
           "requests": 0,
@@ -109,7 +109,7 @@
           "avg_time": 0.0,
           "error_count": 0,
           "success_rate": 1.0,
-          "last_used": 1755172720.5526245
+          "last_used": 1755264735.254758
         }
       },
       "backend_weights": {
@@ -124,9 +124,9 @@
   "efficiency_analysis": {
     "training_efficiency": 1.0,
     "prediction_efficiency": 1.0,
-    "cache_efficiency": 0.53109260166585,
+    "cache_efficiency": 0.5252621264086232,
     "scalability_efficiency": 0,
-    "overall_efficiency": 0.6327731504164625
+    "overall_efficiency": 0.6313155316021558
   },
   "scaling_recommendation": "MAINTAIN: Current configuration is adequate",
   "resource_recommendations": {
