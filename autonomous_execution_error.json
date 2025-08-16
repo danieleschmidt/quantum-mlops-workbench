@@ -1,0 +1,6 @@
+{
+  "error": "No module named 'numpy'",
+  "error_type": "ModuleNotFoundError",
+  "timestamp": 1755375092.7268963,
+  "duration": 0.012477874755859375
+}
