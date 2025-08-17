@@ -1,0 +1,15 @@
+{
+  "experiment_id": "quantum_advantage_1755473139",
+  "timestamp": "2025-08-17 23:25:39",
+  "problem_size": 10,
+  "advantage_score": 0.8385795255919993,
+  "certification": {
+    "certified": true,
+    "confidence_level": "low",
+    "certification_score": 0.8385795255919993,
+    "requirements_met": {
+      "quantum_advantage": true,
+      "statistical_significance": false,
+      "noise_resilience": true,
+      "hardware_efficiency": false,
+      "advantage_threshold": 

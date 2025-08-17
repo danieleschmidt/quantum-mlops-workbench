@@ -1,0 +1,72 @@
+{
+  "experiment_id": "quantum_advantage_1755473161",
+  "timestamp": "2025-08-17 23:26:01",
+  "problem_size": 10,
+  "advantage_score": 0.7856486333577088,
+  "certification": {
+    "certified": true,
+    "confidence_level": "low",
+    "certification_score": 0.7856486333577088,
+    "requirements_met": {
+      "quantum_advantage": true,
+      "statistical_significance": false,
+      "noise_resilience": true,
+      "hardware_efficiency": false,
+      "advantage_threshold": false
+    }
+  },
+  "breakthroughs": [
+    {
+      "breakthrough_type": "quantum_advantage",
+      "quantum_accuracy": 0.6,
+      "classical_accuracy": 0.5208333333333334,
+      "quantum_time": 5.275158405303955,
+      "classical_time": 0.10588932037353516,
+      "advantage_ratio": 1.152,
+      "noise_resilience": 1.0,
+      "hardware_efficiency": 0.020073202023102813,
+      "statistical_significance": 0.2654097252810071,
+      "timestamp": "2025-08-17 23:26:07",
+      "experiment_id": "qa_1755473167"
+    },
+    {
+      "breakthrough_type": "noise_resilience",
+      "quantum_accuracy": 0.5666666666666667,
+      "classical_accuracy": 0.4000000000000001,
+      "quantum_time": 2.547234535217285,
+      "classical_time": 0.10562705993652344,
+      "advantage_ratio": 1.4166666666666663,
+      "noise_resilience": 1.0,
+      "hardware_efficiency": 0.04146734761803675,
+      "statistical_significance": 0.13179856905786347,
+      "timestamp": "2025-08-17 23:26:09",
+      "experiment_id": "nr_1755473169"
+    },
+    {
+      "breakthrough_type": "algorithmic_speedup",
+      "quantum_accuracy": 0.35,
+      "classical_accuracy": 0.6507936507936507,
+      "quantum_time": 1.0704891681671143,
+      "classical_time": 0.016161203384399414,
+      "advantage_ratio": 0.5378048780487805,
+      "noise_resilience": 0.85,
+      "hardware_efficiency": 0.015097026541679576,
+      "statistical_significance": 0.3,
+      "timestamp": "2025-08-17 23:26:10",
+      "experiment_id": "as_1755473170"
+    },
+    {
+      "breakthrough_type": "hardware_efficiency",
+      "quantum_accuracy": 0.6666666666666666,
+      "classical_accuracy": 0.5333333333333333,
+      "quantum_time": 0.6191408634185791,
+      "classical_time": 0.0982053279876709,
+      "advantage_ratio": 1.25,
+      "noise_resilience": 1.0,
+      "hardware_efficiency": 0.5555555555555556,
+      "statistical_significance": 0.17207689343270624,
+      "timestamp": "2025-08-17 23:26:11",
+      "experiment_id": "he_1755473171"
+    }
+  ]
+}

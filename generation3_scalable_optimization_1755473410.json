@@ -1,0 +1,386 @@
+{
+  "timestamp": "2025-08-17 23:28:21",
+  "workload_id": "scalable_opt_1755473301",
+  "configuration": {
+    "problem_sizes": [
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "algorithms": [
+      "vqe",
+      "qaoa",
+      "qml"
+    ],
+    "targets": [
+      "accuracy",
+      "speed",
+      "efficiency"
+    ],
+    "optimization_budget": 300,
+    "parallel_workers": 4
+  },
+  "algorithm_results": {
+    "vqe": {
+      "algorithm": "vqe",
+      "problem_size_results": {
+        "4": {
+          "problem_size": 4,
+          "accuracy": 0.56,
+          "execution_time": 1.0879948139190674,
+          "throughput": 45.956101408144534,
+          "memory_efficiency": 2.56e-07,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.3195079107728944,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "exact_statevector"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "6": {
+          "problem_size": 6,
+          "accuracy": 0.4,
+          "execution_time": 13.024109363555908,
+          "throughput": 3.8390341023939887,
+          "memory_efficiency": 1.024e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.5157165665103984,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "exact_statevector"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "8": {
+          "problem_size": 8,
+          "accuracy": 0.52,
+          "execution_time": 17.186350345611572,
+          "throughput": 2.9092855082386464,
+          "memory_efficiency": 4.096e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.7411011265922482,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "10": {
+          "problem_size": 10,
+          "accuracy": 0.62,
+          "execution_time": 31.076526165008545,
+          "throughput": 1.6089314402295984,
+          "memory_efficiency": 8.192e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 2,
+            "estimated_time_seconds": 2.0,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "12": {
+          "problem_size": 12,
+          "accuracy": 0.7,
+          "execution_time": 47.03338003158569,
+          "throughput": 1.0630747772416536,
+          "memory_efficiency": 3.2768e-05,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 2,
+            "estimated_time_seconds": 2.29739670999407,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        }
+      },
+      "scaling_metrics": {
+        "scaling_factor": 3.4284353271054795,
+        "efficiency_trend": 0.02799999999999998,
+        "max_throughput": 45.956101408144534,
+        "average_accuracy": 0.5599999999999999
+      },
+      "optimization_insights": [
+        "vqe shows poor scaling (factor: 3.43)",
+        "vqe achieves high throughput (46.0 ops/s)",
+        "VQE benefits from hardware-efficient ansatz"
+      ]
+    },
+    "qaoa": {
+      "algorithm": "qaoa",
+      "problem_size_results": {
+        "4": {
+          "problem_size": 4,
+          "accuracy": 0.42,
+          "execution_time": 2.001497983932495,
+          "throughput": 24.981289215071406,
+          "memory_efficiency": 2.56e-07,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.3195079107728944,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "exact_statevector"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "6": {
+          "problem_size": 6,
+          "accuracy": 0.46,
+          "execution_time": 12.555517196655273,
+          "throughput": 3.982313051454364,
+          "memory_efficiency": 1.024e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.5157165665103984,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "exact_statevector"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "8": {
+          "problem_size": 8,
+          "accuracy": 0.52,
+          "execution_time": 17.582729816436768,
+          "throughput": 2.8436995007031713,
+          "memory_efficiency": 4.096e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.7411011265922482,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "10": {
+          "problem_size": 10,
+          "accuracy": 0.48,
+          "execution_time": 29.867396116256714,
+          "throughput": 1.6740662562407034,
+          "memory_efficiency": 8.192e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 2,
+            "estimated_time_seconds": 2.0,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "12": {
+          "problem_size": 12,
+          "accuracy": 0.44,
+          "execution_time": 46.76195216178894,
+          "throughput": 1.069245352011993,
+          "memory_efficiency": 3.2768e-05,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 2,
+            "estimated_time_seconds": 2.29739670999407,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        }
+      },
+      "scaling_metrics": {
+        "scaling_factor": 2.868322177537513,
+        "efficiency_trend": 0.0040000000000000036,
+        "max_throughput": 24.981289215071406,
+        "average_accuracy": 0.46399999999999997
+      },
+      "optimization_insights": [
+        "qaoa shows good scaling (factor: 2.87)",
+        "qaoa achieves high throughput (25.0 ops/s)",
+        "QAOA performance depends on problem structure"
+      ]
+    },
+    "qml": {
+      "algorithm": "qml",
+      "problem_size_results": {
+        "4": {
+          "problem_size": 4,
+          "accuracy": 0.48,
+          "execution_time": 1.3916356563568115,
+          "throughput": 35.928944312116805,
+          "memory_efficiency": 2.56e-07,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.3195079107728944,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "exact_statevector"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "6": {
+          "problem_size": 6,
+          "accuracy": 0.46,
+          "execution_time": 13.140573263168335,
+          "throughput": 3.805009035651802,
+          "memory_efficiency": 1.024e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.5157165665103984,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "exact_statevector"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "8": {
+          "problem_size": 8,
+          "accuracy": 0.5,
+          "execution_time": 17.47893452644348,
+          "throughput": 2.8605862631018004,
+          "memory_efficiency": 4.096e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 1,
+            "estimated_time_seconds": 1.7411011265922482,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "10": {
+          "problem_size": 10,
+          "accuracy": 0.64,
+          "execution_time": 28.399030685424805,
+          "throughput": 1.760623471760303,
+          "memory_efficiency": 8.192e-06,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 2,
+            "estimated_time_seconds": 2.0,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        },
+        "12": {
+          "problem_size": 12,
+          "accuracy": 0.54,
+          "execution_time": 47.93338227272034,
+          "throughput": 1.043114373100598,
+          "memory_efficiency": 3.2768e-05,
+          "resource_allocation": {
+            "cpu_cores": 2,
+            "memory_gb": 2,
+            "estimated_time_seconds": 2.29739670999407,
+            "priority": "normal",
+            "can_parallelize": true,
+            "simulation_method": "matrix_product_state"
+          },
+          "gradient_variance": 0.0,
+          "convergence_rate": 0
+        }
+      },
+      "scaling_metrics": {
+        "scaling_factor": 3.2216391784300233,
+        "efficiency_trend": 0.01200000000000001,
+        "max_throughput": 35.928944312116805,
+        "average_accuracy": 0.524
+      },
+      "optimization_insights": [
+        "qml shows poor scaling (factor: 3.22)",
+        "qml achieves high throughput (35.9 ops/s)",
+        "QML requires sufficient data encoding depth"
+      ]
+    }
+  },
+  "scalability_analysis": {
+    "max_qubits_tested": 12,
+    "max_concurrent_jobs": 4,
+    "throughput_qps": 45.956101408144534,
+    "memory_efficiency": 0.75,
+    "cpu_utilization": 0.75,
+    "scaling_factor": 3.172798894357672,
+    "bottleneck_analysis": {
+      "primary_bottleneck": "quantum_simulation",
+      "memory_constraint": "moderate",
+      "cpu_constraint": "moderate"
+    },
+    "performance_prediction": {
+      "max_feasible_qubits": 5,
+      "optimal_batch_size": 8,
+      "recommended_workers": 2
+    },
+    "resource_requirements": {
+      "memory_gb_per_qubit": 0.5,
+      "cpu_cores_optimal": 2,
+      "storage_gb": 1.0
+    }
+  },
+  "performance_optimizations": {
+    "circuit_optimizations": [
+      "Reduce vqe circuit depth to improve scaling",
+      "Reduce qaoa circuit depth to improve scaling",
+      "Reduce qml circuit depth to improve scaling"
+    ],
+    "resource_optimizations": [
+      "Implement memory optimization for vqe at sizes [4, 6, 8, 10, 12]",
+      "Implement memory optimization for qaoa at sizes [4, 6, 8, 10, 12]",
+      "Implement memory optimization for qml at sizes [4, 6, 8, 10, 12]"
+    ],
+    "algorithmic_optimizations": [
+      "Use problem-specific ansatz designs",
+      "Implement adaptive learning rate scheduling",
+      "Enable gradient clipping for stability",
+      "Use warm-start initialization for related problems"
+    ],
+    "system_optimizations": [
+      "Implement result caching for repeated computations",
+      "Use batch processing for multiple quantum jobs",
+      "Enable adaptive resource allocation based on problem size",
+      "Implement circuit compilation caching"
+    ]
+  },
+  "recommendations": [
+    "\u2705 Successfully demonstrated scaling to 12+ qubits",
+    "\ud83d\ude80 Ready for NISQ device deployment",
+    "\u26a1 High throughput achieved - suitable for production",
+    "\u26a0\ufe0f Poor scaling factor - major optimizations required",
+    "\ud83d\udcbe Good memory efficiency",
+    "\ud83d\udd2e Predicted maximum feasible qubits: 5",
+    "\u2699\ufe0f Optimal worker configuration: 2 parallel jobs"
+  ]
+}

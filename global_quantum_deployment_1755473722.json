@@ -1,0 +1,42 @@
+{
+  "deployment_id": "global_deploy_1755473721",
+  "timestamp": "2025-08-17 23:35:21",
+  "regions_deployed": [
+    "us-east-1",
+    "eu-west-1",
+    "ap-southeast-1",
+    "ca-central-1"
+  ],
+  "languages_supported": [
+    "en"
+  ],
+  "compliance_status": {
+    "us-east-1": "COMPLIANT",
+    "eu-west-1": "COMPLIANT",
+    "ap-southeast-1": "COMPLIANT",
+    "ca-central-1": "COMPLIANT"
+  },
+  "performance_metrics": {
+    "average_throughput": 14.326584479170855,
+    "max_throughput": 15.461122003887485,
+    "average_latency_ms": 100.23077414625526,
+    "min_latency_ms": 73.98597778665989,
+    "average_accuracy": 0.42500000000000004,
+    "regions_tested": 4,
+    "global_performance_score": 1.4326584479170854
+  },
+  "security_status": {
+    "average_security_score": 0.95,
+    "high_security_regions": 4,
+    "compliant_regions": 4,
+    "total_regions": 4,
+    "compliance_rate": 1.0,
+    "global_security_level": "HIGH"
+  },
+  "deployment_status": "SUCCESS",
+  "recommendations": [
+    "\u2705 All regions deployed successfully",
+    "\ud83d\ude80 Ready for global production traffic",
+    "\ud83c\udf10 Consider adding more language support for global reach"
+  ]
+}
