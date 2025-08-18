@@ -1,0 +1,356 @@
+{
+  "timestamp": "2025-08-17 23:33:06",
+  "validation_id": "quality_gates_1755473586",
+  "gates": {
+    "unit_tests": {
+      "gate_name": "unit_tests",
+      "status": "PASS",
+      "score": 1.0,
+      "details": {
+        "tests_run": 4,
+        "tests_passed": 4,
+        "tests_failed": 0,
+        "coverage": 0.85,
+        "accuracy": 0.6,
+        "gradient_variance": 0.0
+      },
+      "execution_time": 0.0,
+      "timestamp": "2025-08-17 23:33:06"
+    },
+    "integration_tests": {
+      "gate_name": "integration_tests",
+      "status": "PASS",
+      "score": 1.0,
+      "details": {
+        "tests_run": 3,
+        "tests_passed": 3,
+        "tests_failed": 0,
+        "device_compatibility": true,
+        "scaling_support": true,
+        "noise_resilience": true
+      },
+      "execution_time": 0.0,
+      "timestamp": "2025-08-17 23:33:06"
+    },
+    "security_scan": {
+      "gate_name": "security_scan",
+      "status": "FAIL",
+      "score": 0.0,
+      "details": {
+        "total_issues": 215,
+        "critical_issues": 0,
+        "high_issues": 72,
+        "medium_issues": 143,
+        "security_score": 0.0,
+        "issues": [
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 188,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 191,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 192,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 193,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 239,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 300,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 360,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 432,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 465,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          },
+          {
+            "type": "potential_secret",
+            "file": "/root/repo/src/quantum_mlops/api.py",
+            "line": 478,
+            "severity": "medium",
+            "description": "Potential hardcoded token"
+          }
+        ]
+      },
+      "execution_time": 0.0,
+      "timestamp": "2025-08-17 23:33:06"
+    },
+    "performance_benchmark": {
+      "gate_name": "performance_benchmark",
+      "status": "PASS",
+      "score": 1.0,
+      "details": {
+        "average_throughput": 137.5853540396796,
+        "max_execution_time": 0.2351531982421875,
+        "throughput_score": 1.0,
+        "time_score": 1.0,
+        "benchmark_results": [
+          {
+            "n_qubits": 4,
+            "total_time": 0.10150861740112305,
+            "train_time": 0.10092759132385254,
+            "inference_time": 0.0003883838653564453,
+            "throughput": 197.0276072322775,
+            "accuracy": 0.4
+          },
+          {
+            "n_qubits": 6,
+            "total_time": 0.15304851531982422,
+            "train_time": 0.15246081352233887,
+            "inference_time": 0.0004544258117675781,
+            "throughput": 130.6775172448172,
+            "accuracy": 0.5
+          },
+          {
+            "n_qubits": 8,
+            "total_time": 0.2351531982421875,
+            "train_time": 0.23443198204040527,
+            "inference_time": 0.0005879402160644531,
+            "throughput": 85.05093764194406,
+            "accuracy": 0.5
+          }
+        ]
+      },
+      "execution_time": 0.0,
+      "timestamp": "2025-08-17 23:33:07"
+    },
+    "code_quality": {
+      "gate_name": "code_quality",
+      "status": "PASS",
+      "score": 0.9877271777731356,
+      "details": {
+        "total_files": 70,
+        "total_lines": 38296,
+        "total_issues": 47,
+        "issue_rate": 0.0012272822226864425,
+        "issues": [
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/algorithms.py",
+            "line": 280,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/benchmarking.py",
+            "line": 444,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/benchmarking.py",
+            "line": 555,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/benchmarking.py",
+            "line": 556,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/benchmarking.py",
+            "line": 557,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/benchmarking.py",
+            "line": 568,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/benchmarking.py",
+            "line": 569,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/benchmarking.py",
+            "line": 579,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/benchmarking.py",
+            "line": 596,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/cli.py",
+            "line": 279,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/cli.py",
+            "line": 1153,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/compilation.py",
+            "line": 334,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/core.py",
+            "line": 595,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/exceptions.py",
+            "line": 477,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/exceptions.py",
+            "line": 478,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/exceptions.py",
+            "line": 499,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/global_deployment_engine.py",
+            "line": 353,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/high_performance_compilation.py",
+            "line": 727,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/hyperopt.py",
+            "line": 304,
+            "severity": "low"
+          },
+          {
+            "type": "line_length",
+            "file": "/root/repo/src/quantum_mlops/hyperopt.py",
+            "line": 595,
+            "severity": "low"
+          }
+        ]
+      },
+      "execution_time": 0.0,
+      "timestamp": "2025-08-17 23:33:07"
+    },
+    "documentation_check": {
+      "gate_name": "documentation_check",
+      "status": "PASS",
+      "score": 0.931559405940594,
+      "details": {
+        "doc_files_found": 18,
+        "readme_exists": true,
+        "total_functions": 1616,
+        "documented_functions": 1458,
+        "documentation_coverage": 0.9022277227722773
+      },
+      "execution_time": 0.0,
+      "timestamp": "2025-08-17 23:33:07"
+    },
+    "dependency_audit": {
+      "gate_name": "dependency_audit",
+      "status": "PASS",
+      "score": 1.0,
+      "details": {
+        "dependencies_found": 122,
+        "vulnerabilities_found": 0,
+        "vulnerabilities": [],
+        "dependency_files": [
+          "/root/repo/requirements-dev.txt",
+          "/root/repo/requirements-lock.txt",
+          "/root/repo/requirements.txt",
+          "/root/repo/pyproject.toml"
+        ]
+      },
+      "execution_time": 0.0,
+      "timestamp": "2025-08-17 23:33:07"
+    },
+    "quantum_specific_tests": {
+      "gate_name": "quantum_specific_tests",
+      "status": "PASS",
+      "score": 1.0,
+      "details": {
+        "tests_run": 4,
+        "tests_passed": 4,
+        "parameter_counting": true,
+        "state_vector_validation": true,
+        "gradient_tracking": true,
+        "circuit_depth_calculation": true
+      },
+      "execution_time": 0.0,
+      "timestamp": "2025-08-17 23:33:07"
+    }
+  },
+  "overall_status": "WARNING",
+  "overall_score": 0.8649108229642162,
+  "recommendations": [
+    "\ud83d\udd12 Address security vulnerabilities immediately",
+    "\u2705 Excellent quality - ready for production"
+  ],
+  "summary": {
+    "total_gates": 8,
+    "passed_gates": 7,
+    "failed_gates": 1,
+    "warning_gates": 0,
+    "pass_rate": 0.875
+  }
+}
