@@ -25,7 +25,7 @@ scipy==1.13.1
 mlflow==3.1.4
 pydantic==2.11.7
 typer==0.16.0
-rich==13.7.0
+rich==14.1.0
 
 # Monitoring & Observability
 prometheus-client==0.22.1
