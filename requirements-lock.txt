@@ -12,7 +12,7 @@ qiskit==0.45.1
 qiskit-aer==0.17.1
 qiskit-ibm-runtime==0.41.0
 cirq==1.3.0
-amazon-braket-sdk==1.96.1
+amazon-braket-sdk==1.97.0
 
 # Machine Learning & Data Science
 torch==2.8.0
