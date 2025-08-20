@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-08-20T11:37:34.801679",
+  "overall_score": 0.7873466666666666,
+  "overall_status": "WARNING",
+  "execution_time": 0.0004253387451171875,
+  "gate_results": [
+    {
+      "gate_name": "Code Quality",
+      "status": 

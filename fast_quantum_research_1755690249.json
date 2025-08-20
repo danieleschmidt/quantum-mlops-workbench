@@ -1,0 +1,72 @@
+{
+  "research_timestamp": "2025-08-20T11:44:09.118402",
+  "total_research_time": 0.03745079040527344,
+  "kernel_advantage": {
+    "dataset_size": 40,
+    "quantum_alignment": 0.08662018997527618,
+    "classical_alignment": 0.130697216554462,
+    "overall_advantage": 0.43185528706982196,
+    "advantage_significant": false
+  },
+  "variational_supremacy": {
+    "experiments_count": 3,
+    "supremacy_achieved": 0,
+    "supremacy_rate": 0.0,
+    "best_advantage_ratio": 1.02694594658918,
+    "average_significance": 0.05386517978006248
+  },
+  "noise_resilience": {
+    "detailed_results": {
+      "0.0": {
+        "mean_advantage": 1.3113093258219495,
+        "std_advantage": 0.02431764145634252,
+        "advantage_scores": [
+          1.335626967278292,
+          1.286991684365607
+        ]
+      },
+      "0.01": {
+        "mean_advantage": 1.2791769137914843,
+        "std_advantage": 0.04145170242098828,
+        "advantage_scores": [
+          1.2377252113704962,
+          1.3206286162124727
+        ]
+      },
+      "0.05": {
+        "mean_advantage": 1.0549019213487634,
+        "std_advantage": 0.06482453492147205,
+        "advantage_scores": [
+          1.1197264562702354,
+          0.9900773864272913
+        ]
+      },
+      "0.1": {
+        "mean_advantage": 0.9930352170774447,
+        "std_advantage": 0.02408437945691333,
+        "advantage_scores": [
+          1.017119596534358,
+          0.9689508376205314
+        ]
+      }
+    },
+    "resilience_metrics": {
+      "overall_mean_advantage": 1.1596058445099104,
+      "advantage_stability": 0.8740146853945218,
+      "positive_advantage_rate": 0.75
+    },
+    "noise_threshold": 0.05
+  },
+  "publication_assessment": {
+    "overall_readiness": 0.3748029370789044,
+    "publication_worthy": false,
+    "kernel_contribution": false,
+    "supremacy_demonstration": false,
+    "noise_resilience_validated": true
+  },
+  "novel_contributions": [
+    "Fast quantum kernel method with theoretical advantage",
+    "Efficient variational supremacy detection",
+    "Practical noise resilience analysis framework"
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "timestamp": "2025-08-20T11:37:44.680461",
+  "overall_score": 0.7873466666666666,
+  "overall_status": "WARNING",
+  "execution_time": 0.08406186103820801,
+  "gate_results": [
+    {
+      "gate_name": "Code Quality",
+      "status": "warning",
+      "score": 0.7894,
+      "details": {
+        "complexity_score": 8.5,
+        "maintainability_index": 75.2,
+        "code_coverage": 87.5,
+        "technical_debt_ratio": 3.2,
+        "duplication_percentage": 2.1
+      },
+      "execution_time": 0.009005308151245117,
+      "error_message": null,
+      "recommendations": [
+        "Improve code coverage above 90%"
+      ]
+    },
+    {
+      "gate_name": "Security",
+      "status": "passed",
+      "score": 0.7999999999999999,
+      "details": {
+        "vulnerability_scan": {
+          "vulnerability_count": 2,
+          "critical_issues": [],
+          "warnings": [
+            "Weak random number generation",
+            "Unencrypted data transmission"
+          ],
+          "scan_coverage": 92.5,
+          "compliance_score": 85.0
+        },
+        "quantum_security": {
+          "quantum_key_security": true,
+          "post_quantum_crypto": false,
+          "quantum_random_generation": true,
+          "secure_multiparty_computation": false,
+          "score": 0.75
+        }
+      },
+      "execution_time": 0.009001016616821289,
+      "error_message": null,
+      "recommendations": []
+    },
+    {
+      "gate_name": "Performance",
+      "status": "passed",
+      "score": 0.7473333333333333,
+      "details": {
+        "performance_metrics": {
+          "throughput": 2400.0,
+          "latency_p50": 15.2,
+          "latency_p95": 45.8,
+          "latency_p99": 125.6,
+          "cpu_utilization": 65.5,
+          "memory_utilization": 42.3,
+          "error_rate": 0.003
+        },
+        "quantum_performance": {
+          "quantum_shots_per_second": 50000,
+          "circuit_compilation_time": 0.05,
+          "quantum_advantage_detected": true,
+          "noise_resilience_score": 0.82
+        }
+      },
+      "execution_time": 0.008591651916503906,
+      "error_message": null,
+      "recommendations": []
+    },
+    {
+      "gate_name": "Reliability",
+      "status": "warning",
+      "score": 0.7999999999999999,
+      "details": {
+        "error_handling": {
+          "exception_handling_coverage": 85.0,
+          "graceful_degradation": true,
+          "timeout_handling": true,
+          "retry_mechanisms": true,
+          "score": 0.85
+        },
+        "fault_tolerance": {
+          "circuit_breaker_pattern": true,
+          "bulkhead_isolation": false,
+          "automatic_failover": true,
+          "health_checks": true,
+          "score": 0.75
+        },
+        "quantum_reliability": {
+          "error_mitigation_active": true,
+          "noise_characterization": true,
+          "decoherence_tracking": true,
+          "quantum_error_correction": false,
+          "score": 0.8
+        }
+      },
+      "execution_time": 0.0099639892578125,
+      "error_message": null,
+      "recommendations": [
+        "Improve error recovery mechanisms"
+      ]
+    },
+    {
+      "gate_name": "Compliance",
+      "status": "warning",
+      "score": 0.7999999999999999,
+      "details": {
+        "regulatory_compliance": {
+          "gdpr_compliant": true,
+          "ccpa_compliant": true,
+          "sox_compliant": false,
+          "hipaa_compliant": false,
+          "score": 0.85
+        },
+        "data_protection": {
+          "encryption_at_rest": true,
+          "encryption_in_transit": true,
+          "access_controls": true,
+          "audit_logging": true,
+          "data_anonymization": false,
+          "score": 0.8
+        },
+        "quantum_compliance": {
+          "quantum_ethics_guidelines": false,
+          "quantum_advantage_disclosure": true,
+          "noise_model_transparency": true,
+          "quantum_supremacy_claims": false,
+          "score": 0.75
+        }
+      },
+      "execution_time": 0.0051004886627197266,
+      "error_message": null,
+      "recommendations": [
+        "Address compliance gaps"
+      ]
+    }
+  ],
+  "summary": {
+    "scores_by_category": {
+      "Code Quality": 0.7894,
+      "Security": 0.7999999999999999,
+      "Performance": 0.7473333333333333,
+      "Reliability": 0.7999999999999999,
+      "Compliance": 0.7999999999999999
+    },
+    "weights_applied": {
+      "Code Quality": 0.2,
+      "Security": 0.25,
+      "Performance": 0.2,
+      "Reliability": 0.2,
+      "Compliance": 0.15
+    },
+    "total_gates": 5,
+    "passed_gates": 2,
+    "failed_gates": 0,
+    "warning_gates": 3
+  },
+  "recommendations": [
+    "Code Quality: Improve code coverage above 90%",
+    "Reliability: Improve error recovery mechanisms",
+    "Compliance: Address compliance gaps"
+  ],
+  "quality_metrics": {
+    "average_execution_time": 0.008332490921020508,
+    "total_validation_time": 0.04166245460510254,
+    "gate_success_rate": 0.4,
+    "critical_issues_found": 0,
+    "improvement_areas": 3
+  }
+}
