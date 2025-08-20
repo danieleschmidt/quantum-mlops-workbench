@@ -1,0 +1,9 @@
+{
+  "research_timestamp": "2025-08-20T11:43:48.742168",
+  "total_research_time": 0.03156113624572754,
+  "kernel_advantage": {
+    "dataset_size": 40,
+    "quantum_alignment": 0.08662018997527618,
+    "classical_alignment": 0.130697216554462,
+    "overall_advantage": 0.43185528706982196,
+    "advantage_significant": 

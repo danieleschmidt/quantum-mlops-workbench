@@ -1,0 +1,229 @@
+{
+  "generation": "3_make_it_scale",
+  "timestamp": "2025-08-20T11:34:32.763620",
+  "training": {
+    "experiment_id": "scalable_qml_1755689662591_045860",
+    "training_time": 10.16466999053955,
+    "final_loss": 0.2937122611204221,
+    "final_accuracy": 0.6,
+    "final_throughput": 2392.779964630042,
+    "final_cache_hit_rate": 0.00562474889513861,
+    "parallel_efficiency": 0.2694890072759408,
+    "total_jobs_submitted": 24000,
+    "total_jobs_completed": 24750,
+    "total_quantum_shots": 163840,
+    "training_history": [
+      {
+        "loss": 0.4109267341047499,
+        "accuracy": 0.7,
+        "throughput": 2380.422247446084,
+        "latency": 0.0004200935363769531,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.0,
+        "parallel_efficiency": 0.2850447926279032,
+        "quantum_advantage_score": 0.8200000000000001,
+        "total_quantum_shots": 10240,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.36232580948361975,
+        "accuracy": 0.4,
+        "throughput": 2520.6153846153848,
+        "latency": 0.000396728515625,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.0030211480362537764,
+        "parallel_efficiency": 0.2707676147783007,
+        "quantum_advantage_score": 0.64,
+        "total_quantum_shots": 20480,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.3184441806802659,
+        "accuracy": 0.4,
+        "throughput": 2343.9722812115792,
+        "latency": 0.00042662620544433596,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.004024144869215292,
+        "parallel_efficiency": 0.26769790826232587,
+        "quantum_advantage_score": 0.64,
+        "total_quantum_shots": 30720,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.34571025511374076,
+        "accuracy": 0.4,
+        "throughput": 2422.3528732313025,
+        "latency": 0.00041282176971435547,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.004524886877828055,
+        "parallel_efficiency": 0.2690040685151629,
+        "quantum_advantage_score": 0.64,
+        "total_quantum_shots": 40960,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.3167628819796746,
+        "accuracy": 0.6,
+        "throughput": 2473.3482722019107,
+        "latency": 0.0004043102264404297,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.0048250904704463205,
+        "parallel_efficiency": 0.27161544859354675,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 51200,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.31105051680867374,
+        "accuracy": 0.6,
+        "throughput": 2471.308036766439,
+        "latency": 0.0004046440124511719,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.005025125628140704,
+        "parallel_efficiency": 0.27578817767951214,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 61440,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.2854999535895822,
+        "accuracy": 0.6,
+        "throughput": 2310.2748554117325,
+        "latency": 0.0004328489303588867,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.00516795865633075,
+        "parallel_efficiency": 0.27104554482249227,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 71680,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.30854777508409853,
+        "accuracy": 0.6,
+        "throughput": 2297.8710348983727,
+        "latency": 0.000435185432434082,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.0052750565184626974,
+        "parallel_efficiency": 0.2665898727366224,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 81920,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.28931359324596934,
+        "accuracy": 0.6,
+        "throughput": 2475.5379802868442,
+        "latency": 0.00040395259857177733,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.0053583389149363695,
+        "parallel_efficiency": 0.26744797428431777,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 92160,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.3093005393512607,
+        "accuracy": 0.6,
+        "throughput": 2104.4122221664743,
+        "latency": 0.0004751920700073242,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.0054249547920434,
+        "parallel_efficiency": 0.26737386207036473,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 102400,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.30536593599153444,
+        "accuracy": 0.6,
+        "throughput": 2470.5801967367615,
+        "latency": 0.00040476322174072267,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.005479452054794521,
+        "parallel_efficiency": 0.2699756381075108,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 112640,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.3247843919952168,
+        "accuracy": 0.6,
+        "throughput": 2281.993471164309,
+        "latency": 0.0004382133483886719,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.0055248618784530384,
+        "parallel_efficiency": 0.2706642225311566,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 122880,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.31079078028089974,
+        "accuracy": 0.6,
+        "throughput": 2242.9433155080214,
+        "latency": 0.0004458427429199219,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.005563282336578581,
+        "parallel_efficiency": 0.26781205387414747,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 133120,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.29552166190524065,
+        "accuracy": 0.6,
+        "throughput": 2492.8998514115897,
+        "latency": 0.0004011392593383789,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.005596211795092553,
+        "parallel_efficiency": 0.26807423421399895,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 143360,
+        "distributed_coherence": 0.85
+      },
+      {
+        "loss": 0.2937122611204221,
+        "accuracy": 0.6,
+        "throughput": 2392.779964630042,
+        "latency": 0.00041792392730712893,
+        "resource_utilization": 0.0,
+        "cache_hit_rate": 0.00562474889513861,
+        "parallel_efficiency": 0.2694890072759408,
+        "quantum_advantage_score": 0.76,
+        "total_quantum_shots": 153600,
+        "distributed_coherence": 0.85
+      }
+    ],
+    "devices": [
+      "simulator",
+      "distributed_simulator",
+      "aws_braket"
+    ],
+    "scaling_strategy": "hybrid",
+    "final_evaluation": {
+      "mse": 0.3073777246880956,
+      "mae": 0.4822300438816072,
+      "accuracy": 0.4,
+      "throughput": 3523.2928724431936,
+      "latency": 0.0002838253974914551,
+      "cache_effectiveness": 0.006019261637239166,
+      "resource_utilization": 0.0,
+      "job_success_rate": 1.03125
+    }
+  },
+  "cache_statistics": {
+    "hit_rate": 0.006019261637239166,
+    "cache_size": 24770,
+    "total_hits": 150,
+    "total_misses": 24770
+  },
+  "scaling_enhancements": {
+    "distributed_computing": true,
+    "intelligent_caching": true,
+    "resource_management": true,
+    "load_balancing": true,
+    "parallel_gradient_computation": true,
+    "adaptive_strategies": true,
+    "performance_optimization": true
+  }
+}

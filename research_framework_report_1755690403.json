@@ -1,0 +1,21 @@
+{
+  "study_id": "comp_study_1755690399",
+  "total_experiments": 9,
+  "successful_experiments": 9,
+  "average_quantum_advantage": 0.8656970854151301,
+  "statistical_power": 0.814714677767113,
+  "publication_metrics": {
+    "mean_effect_size": -6.704079660086857,
+    "significance_rate": 0.6666666666666666,
+    "advantage_consistency": 0.8306230209197332,
+    "large_effect_rate": 0.7777777777777778,
+    "publication_score": 4.107718767658693
+  },
+  "reproducibility_score": 0.95,
+  "experimental_conditions": {
+    "n_datasets": 3,
+    "n_trials_per_dataset": 3,
+    "train_test_split": 0.7,
+    "statistical_test": "t_test"
+  }
+}

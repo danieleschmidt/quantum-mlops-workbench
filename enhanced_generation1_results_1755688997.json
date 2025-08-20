@@ -1,0 +1,359 @@
+{
+  "generation": "1_make_it_work",
+  "timestamp": "2025-08-20T11:23:17.767400",
+  "training": {
+    "experiment_id": "qml_1755688900486_0b2e90",
+    "training_time": 97.23916125297546,
+    "final_loss": 0.4643032398008328,
+    "final_accuracy": 0.39,
+    "quantum_advantage_score": 0.5558998392783828,
+    "noise_resilience": {
+      "noise_0.0": 0.5,
+      "noise_0.01": 0.4,
+      "noise_0.05": 0.4,
+      "noise_0.1": 0.4
+    },
+    "total_quantum_shots": 153948160,
+    "training_history": [
+      {
+        "loss": 0.5118669093605751,
+        "accuracy": 0.34,
+        "gradient_norm": 0.09006537780474114,
+        "gradient_variance": 0.00032169594615081984,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9453139562719104,
+        "quantum_advantage_score": 0.535903522252655
+      },
+      {
+        "loss": 0.5100336327812183,
+        "accuracy": 0.34,
+        "gradient_norm": 0.08999492058156046,
+        "gradient_variance": 0.0003213363578324796,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.941665507872484,
+        "quantum_advantage_score": 0.5359036300598159
+      },
+      {
+        "loss": 0.5082151594226282,
+        "accuracy": 0.35,
+        "gradient_norm": 0.08993392217738015,
+        "gradient_variance": 0.0003210516425358268,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9912751778462328,
+        "quantum_advantage_score": 0.539903715419562
+      },
+      {
+        "loss": 0.5064113379978663,
+        "accuracy": 0.35,
+        "gradient_norm": 0.08988214542254616,
+        "gradient_variance": 0.0003208395384526215,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9833226111960502,
+        "quantum_advantage_score": 0.5399037790099622
+      },
+      {
+        "loss": 0.504622022103623,
+        "accuracy": 0.35,
+        "gradient_norm": 0.08983934813508679,
+        "gradient_variance": 0.00032069777974997834,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9475557368698261,
+        "quantum_advantage_score": 0.539903821510303
+      },
+      {
+        "loss": 0.5028470706347296,
+        "accuracy": 0.36,
+        "gradient_norm": 0.08980528416998407,
+        "gradient_variance": 0.00032062410288897494,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9816103267741083,
+        "quantum_advantage_score": 0.543903843599193
+      },
+      {
+        "loss": 0.5010863481508502,
+        "accuracy": 0.36,
+        "gradient_norm": 0.0897797044523785,
+        "gradient_variance": 0.00032061625276566037,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9658012495189897,
+        "quantum_advantage_score": 0.5439038459527206
+      },
+      {
+        "loss": 0.4993397251963145,
+        "accuracy": 0.36,
+        "gradient_norm": 0.08976235799284346,
+        "gradient_variance": 0.0003206719886822917,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9682720375562535,
+        "quantum_advantage_score": 0.5439038292426632
+      },
+      {
+        "loss": 0.4976070785740606,
+        "accuracy": 0.35,
+        "gradient_norm": 0.08975299288298198,
+        "gradient_variance": 0.0003207890901559213,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9223155663372813,
+        "quantum_advantage_score": 0.5399037941347451
+      },
+      {
+        "loss": 0.4958882915746702,
+        "accuracy": 0.36,
+        "gradient_norm": 0.08975135726970511,
+        "gradient_variance": 0.0003209653625706378,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9264516706850465,
+        "quantum_advantage_score": 0.5439037412869415
+      },
+      {
+        "loss": 0.49418325416147846,
+        "accuracy": 0.36,
+        "gradient_norm": 0.08975720030666148,
+        "gradient_variance": 0.0003211986426789382,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9574895294792786,
+        "quantum_advantage_score": 0.5439036713478286
+      },
+      {
+        "loss": 0.4924918631127588,
+        "accuracy": 0.36,
+        "gradient_norm": 0.08977027308137837,
+        "gradient_variance": 0.0003214868039567122,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9732377613627072,
+        "quantum_advantage_score": 0.5439035849549776
+      },
+      {
+        "loss": 0.4908140221219851,
+        "accuracy": 0.36,
+        "gradient_norm": 0.08979032951676574,
+        "gradient_variance": 0.0003218277618153483,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9774074963347525,
+        "quantum_advantage_score": 0.5439034827333913
+      },
+      {
+        "loss": 0.4891496418571941,
+        "accuracy": 0.36,
+        "gradient_norm": 0.08981712724571239,
+        "gradient_variance": 0.0003222194786734042,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9933224069829011,
+        "quantum_advantage_score": 0.5439033652939825
+      },
+      {
+        "loss": 0.4874986399804787,
+        "accuracy": 0.37,
+        "gradient_norm": 0.08985042845757041,
+        "gradient_variance": 0.0003226599688891881,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9515843594568073,
+        "quantum_advantage_score": 0.5479032332320954
+      },
+      {
+        "loss": 0.4858609411286659,
+        "accuracy": 0.37,
+        "gradient_norm": 0.08989000071538202,
+        "gradient_variance": 0.00032314730355447385,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9833173891835281,
+        "quantum_advantage_score": 0.5479030871260675
+      },
+      {
+        "loss": 0.4842364768562541,
+        "accuracy": 0.37,
+        "gradient_norm": 0.08993561774274547,
+        "gradient_variance": 0.0003236796151483968,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.869422339649906,
+        "quantum_advantage_score": 0.5479029275358333
+      },
+      {
+        "loss": 0.4826251855417086,
+        "accuracy": 0.37,
+        "gradient_norm": 0.0899870601792535,
+        "gradient_variance": 0.000324255102049438,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9691148122177493,
+        "quantum_advantage_score": 0.547902755001572
+      },
+      {
+        "loss": 0.4810270122582451,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09004411630345634,
+        "gradient_variance": 0.00032487203290219304,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9765942975530645,
+        "quantum_advantage_score": 0.5479025700423977
+      },
+      {
+        "loss": 0.47944190861026387,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09010658272231353,
+        "gradient_variance": 0.00032552875083446367,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.941316523088374,
+        "quantum_advantage_score": 0.5479023731550945
+      },
+      {
+        "loss": 0.4778698325366389,
+        "accuracy": 0.37,
+        "gradient_norm": 0.0901742650260998,
+        "gradient_variance": 0.0003262236775190513,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9546401356352131,
+        "quantum_advantage_score": 0.5479021648128988
+      },
+      {
+        "loss": 0.4763107480821011,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09024697840771627,
+        "gradient_variance": 0.00032695531707345113,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9688625034142604,
+        "quantum_advantage_score": 0.5479019454643297
+      },
+      {
+        "loss": 0.47476462513800644,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09032454824534325,
+        "gradient_variance": 0.00032772225978957084,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9112746427025654,
+        "quantum_advantage_score": 0.547901715532071
+      },
+      {
+        "loss": 0.47323143915382937,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09040681064733976,
+        "gradient_variance": 0.0003285231856844755,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9957042660637967,
+        "quantum_advantage_score": 0.5479014754119061
+      },
+      {
+        "loss": 0.47171117082076974,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09049361295826569,
+        "gradient_variance": 0.00032935686786216917,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9898572416593772,
+        "quantum_advantage_score": 0.5479012254717106
+      },
+      {
+        "loss": 0.47020380572892223,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09058481422485648,
+        "gradient_variance": 0.0003302221756753952,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9754674070205043,
+        "quantum_advantage_score": 0.5479009660505036
+      },
+      {
+        "loss": 0.46870933399951203,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09068028562074601,
+        "gradient_variance": 0.00033111807767557895,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9776225281835447,
+        "quantum_advantage_score": 0.5479006974575643
+      },
+      {
+        "loss": 0.46722774989376326,
+        "accuracy": 0.37,
+        "gradient_norm": 0.09077991082867878,
+        "gradient_variance": 0.0003320436443381423,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9890003951817089,
+        "quantum_advantage_score": 0.5479004199716141
+      },
+      {
+        "loss": 0.46575905140002305,
+        "accuracy": 0.39,
+        "gradient_norm": 0.09088358637891727,
+        "gradient_variance": 0.0003329980505497108,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.944747636695304,
+        "quantum_advantage_score": 0.5559001338400716
+      },
+      {
+        "loss": 0.4643032398008328,
+        "accuracy": 0.39,
+        "gradient_norm": 0.09099122194249994,
+        "gradient_variance": 0.00033398057784303275,
+        "circuit_depth": 40,
+        "entanglement_measure": 0.3333333333333333,
+        "noise_resilience": 0.9852954070807395,
+        "quantum_advantage_score": 0.5558998392783828
+      }
+    ],
+    "device": "simulator",
+    "n_qubits": 4,
+    "n_layers": 3
+  },
+  "evaluation": {
+    "mse": 0.3135974863530176,
+    "mae": 0.45663780541260657,
+    "accuracy": 0.6,
+    "avg_execution_time": 0.0006731271743774414,
+    "total_samples": 20,
+    "predictions": [
+      0.09804848822637854,
+      -0.19707070135019938,
+      -0.04673942299191297,
+      0.06696469866971233,
+      -0.1287655039485402,
+      -0.07498241094680565,
+      0.04975896137303916,
+      -0.26051743315592873,
+      -0.20011889263150504,
+      -0.2116254145303874,
+      -0.2784114666102496,
+      0.03884369168042588,
+      -0.1476349890721568,
+      -0.2957664375651921,
+      0.018937982188992147,
+      -0.15857465955250916,
+      -0.23605134076333428,
+      0.20058115578166325,
+      0.26576978768282356,
+      -0.16207403650128244
+    ]
+  },
+  "enhancements": {
+    "enhanced_simulation": true,
+    "noise_resilience_testing": true,
+    "quantum_advantage_scoring": true,
+    "parameter_shift_gradients": true,
+    "multi_backend_support": true
+  }
+}
