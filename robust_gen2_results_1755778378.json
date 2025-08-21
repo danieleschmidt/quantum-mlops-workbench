@@ -1,0 +1,166 @@
+{
+  "generation": 2,
+  "timestamp": "2025-08-21T12:12:58.483148+00:00",
+  "execution_id": "825ab79b",
+  "performance": {
+    "accuracy": 0.8832854662105772,
+    "precision": 0.9008857195510315,
+    "recall": 0.9251952175862251,
+    "f1_score": 0.9128786598331269,
+    "execution_time": 1.5107638835906982,
+    "quantum_advantage_detected": true
+  },
+  "training": {
+    "final_loss": 0.08829095358482658,
+    "gradient_variance": 0.04334122792444777,
+    "circuit_depth": 6,
+    "model_status": "complete",
+    "epochs_completed": 30
+  },
+  "robustness": {
+    "noise_resilience": 0.803296128280175,
+    "error_rate": 0.11671453378942276,
+    "confidence_interval": [
+      0.8328676187819346,
+      0.9337033136392199
+    ],
+    "stability_score": 0.9566587720755523
+  },
+  "validation": {
+    "overall_passed": true,
+    "validation_passed": true,
+    "security_passed": true,
+    "average_score": 0.8051704441321509,
+    "details": [
+      {
+        "passed": true,
+        "score": 1.0,
+        "message": "Accuracy validation passed",
+        "details": {
+          "accuracy": 0.8832854662105772,
+          "threshold": 0.6
+        },
+        "timestamp": "2025-08-21T12:12:58.482339+00:00"
+      },
+      {
+        "passed": true,
+        "score": 0.5665877207555223,
+        "message": "Gradient stability passed",
+        "details": {
+          "gradient_variance": 0.04334122792444777,
+          "threshold": 0.1,
+          "stability_score": 0.5665877207555223
+        },
+        "timestamp": "2025-08-21T12:12:58.482367+00:00"
+      },
+      {
+        "passed": true,
+        "score": 0.8489236116409302,
+        "message": "Performance validation passed",
+        "details": {
+          "execution_time": 1.5107638835906982,
+          "threshold": 10.0,
+          "performance_score": 0.8489236116409302
+        },
+        "timestamp": "2025-08-21T12:12:58.482381+00:00"
+      }
+    ],
+    "security_details": [
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Parameter validation passed"
+      },
+      {
+        "level": "low",
+        "passed": true,
+        "vulnerability": null,
+        "recommendation": "Data integrity verified (checksum: 21877380...)"
+      }
+    ]
+  },
+  "metadata": {
+    "config": {
+      "n_qubits": 4,
+      "n_layers": 3,
+      "learning_rate": 0.01,
+      "epochs": 30,
+      "batch_size": 32,
+      "validation_split": 0.2,
+      "early_stopping_patience": 5,
+      "noise_level": 0.01,
+      "max_execution_time": 300,
+      "security_level": "high"
+    },
+    "training_epochs_completed": 30,
+    "early_stopping_triggered": false,
+    "timestamp": "2025-08-21T12:12:58.481811+00:00"
+  },
+  "config": {
+    "n_qubits": 4,
+    "n_layers": 3,
+    "learning_rate": 0.01,
+    "epochs": 30,
+    "batch_size": 32,
+    "validation_split": 0.2,
+    "early_stopping_patience": 5,
+    "noise_level": 0.01,
+    "max_execution_time": 300,
+    "security_level": "high"
+  }
+}

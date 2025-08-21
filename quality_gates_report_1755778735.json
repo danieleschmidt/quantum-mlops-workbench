@@ -1,0 +1,223 @@
+{
+  "execution_timestamp": "2025-08-21T12:18:55.802193+00:00",
+  "total_execution_time": 0.0010080337524414062,
+  "total_gates_executed": 11,
+  "results": {
+    "passed": 9,
+    "failed": 2,
+    "warnings": 0,
+    "errors": 0
+  },
+  "scoring": {
+    "overall_score": 0.9226358571269767,
+    "critical_gates_passed": true,
+    "deployment_approved": false
+  },
+  "gate_results": [
+    {
+      "gate_name": "Code Execution",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 1.0,
+      "message": "Code executes successfully",
+      "execution_time": 7.963180541992188e-05,
+      "details": {
+        "passed": true,
+        "message": "Code executes successfully",
+        "score": 1.0,
+        "execution_verified": true
+      }
+    },
+    {
+      "gate_name": "Unit Tests",
+      "priority": "unknown",
+      "result": "failed",
+      "score": 0.8768911415987286,
+      "message": "Unit tests: 67/77 passed, Coverage: 88.4%",
+      "execution_time": 6.508827209472656e-05,
+      "details": {
+        "passed": false,
+        "message": "Unit tests: 67/77 passed, Coverage: 88.4%",
+        "score": 0.8768911415987286,
+        "total_tests": 77,
+        "passed_tests": 67,
+        "failed_tests": 10,
+        "test_success_rate": 0.8701298701298701,
+        "code_coverage": 0.883652413067587,
+        "tests_passed": false,
+        "coverage_acceptable": true
+      }
+    },
+    {
+      "gate_name": "Security Scan",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 0.95,
+      "message": "Security scan: 1 issues found, 0 critical",
+      "execution_time": 5.316734313964844e-05,
+      "details": {
+        "passed": true,
+        "message": "Security scan: 1 issues found, 0 critical",
+        "score": 0.95,
+        "vulnerabilities": [
+          {
+            "type": "dependency_risk",
+            "severity": "low",
+            "message": "High number of external dependencies increases attack surface"
+          }
+        ],
+        "security_score": 0.95,
+        "scan_complete": true
+      }
+    },
+    {
+      "gate_name": "Integration Tests",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 1.0,
+      "message": "Integration tests: 23/23 passed",
+      "execution_time": 7.081031799316406e-05,
+      "details": {
+        "passed": true,
+        "message": "Integration tests: 23/23 passed",
+        "score": 1.0,
+        "integration_tests": 23,
+        "passed_integration": 23,
+        "integration_success_rate": 1.0,
+        "integration_passed": true
+      }
+    },
+    {
+      "gate_name": "Data Privacy",
+      "priority": "unknown",
+      "result": "failed",
+      "score": 0.7,
+      "message": "Privacy validation: GDPR \u2717, CCPA \u2717",
+      "execution_time": 4.839897155761719e-05,
+      "details": {
+        "passed": false,
+        "message": "Privacy validation: GDPR \u2717, CCPA \u2717",
+        "score": 0.7,
+        "privacy_issues": [
+          {
+            "type": "pii_detected",
+            "severity": "critical",
+            "message": "Personal identifiable information detected"
+          }
+        ],
+        "privacy_score": 0.7,
+        "gdpr_compliant": false,
+        "ccpa_compliant": false
+      }
+    },
+    {
+      "gate_name": "Performance Benchmark",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 1.0,
+      "message": "Performance: 100.00% score, 511.9 samples/sec",
+      "execution_time": 0.00010609626770019531,
+      "details": {
+        "passed": true,
+        "message": "Performance: 100.00% score, 511.9 samples/sec",
+        "score": 1.0,
+        "samples_per_second": 511.89383757808474,
+        "time_per_sample": 0.0019535300614894765,
+        "throughput_score": 1.0,
+        "latency_score": 1.0,
+        "accuracy_score": 1.0,
+        "overall_performance_score": 1.0,
+        "performance_acceptable": true,
+        "benchmarks_passed": true
+      }
+    },
+    {
+      "gate_name": "Quantum Validation",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 1.0,
+      "message": "Quantum operations: 100.0% score",
+      "execution_time": 8.463859558105469e-05,
+      "details": {
+        "passed": true,
+        "message": "Quantum operations: 100.0% score",
+        "score": 1.0,
+        "circuit_depth_score": 1.0,
+        "quantum_volume_score": 1.0,
+        "fidelity_score": 1.0,
+        "overall_quantum_score": 1.0,
+        "quantum_advantage_potential": false,
+        "quantum_benchmarks_passed": true
+      }
+    },
+    {
+      "gate_name": "Quantum Tests",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 0.9400307082399637,
+      "message": "Quantum tests: 94.0% score",
+      "execution_time": 5.269050598144531e-05,
+      "details": {
+        "passed": true,
+        "message": "Quantum tests: 94.0% score",
+        "score": 0.9400307082399637,
+        "state_preparation_accuracy": 0.9688748071232053,
+        "gate_fidelity": 0.9949052643708552,
+        "measurement_accuracy": 0.9102456080053921,
+        "noise_tolerance": 0.8860971534604021,
+        "quantum_test_score": 0.9400307082399637,
+        "quantum_tests_passed": true
+      }
+    },
+    {
+      "gate_name": "Scalability Test",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 0.8067095090460407,
+      "message": "Scalability: 80.7% score",
+      "execution_time": 6.079673767089844e-05,
+      "details": {
+        "passed": true,
+        "message": "Scalability: 80.7% score",
+        "score": 0.8067095090460407,
+        "scalability_score": 0.8067095090460407
+      }
+    },
+    {
+      "gate_name": "AI Ethics",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 0.875363069512011,
+      "message": "AI Ethics: 87.5% score, Bias: 93.7%",
+      "execution_time": 0.0001342296600341797,
+      "details": {
+        "passed": true,
+        "message": "AI Ethics: 87.5% score, Bias: 93.7%",
+        "score": 0.875363069512011,
+        "fairness_score": 0.8440343332992507,
+        "bias_score": 0.9367119850947676,
+        "transparency_score": 0.8453428901420147,
+        "ethics_score": 0.875363069512011,
+        "ethics_compliant": true,
+        "bias_acceptable": true
+      }
+    },
+    {
+      "gate_name": "Quantum Compliance",
+      "priority": "unknown",
+      "result": "passed",
+      "score": 1.0,
+      "message": "Quantum compliance: Compliant",
+      "execution_time": 7.176399230957031e-05,
+      "details": {
+        "passed": true,
+        "message": "Quantum compliance: Compliant",
+        "score": 1.0,
+        "export_control_compliant": true,
+        "cryptography_compliant": true,
+        "information_security_score": 0.9584470268999743,
+        "overall_quantum_compliance": true
+      }
+    }
+  ]
+}
