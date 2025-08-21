@@ -1,0 +1,71 @@
+{
+  "generation": 3,
+  "timestamp": "2025-08-21T12:16:56.507447",
+  "config": {
+    "n_qubits": 6,
+    "n_layers": 4,
+    "learning_rate": 0.008,
+    "epochs": 40,
+    "batch_size": 100,
+    "dataset_size": 2000,
+    "cache_enabled": true,
+    "adaptive_learning": true,
+    "early_stopping_patience": 10,
+    "optimization_level": 3
+  },
+  "performance": {
+    "accuracy": 0.4965,
+    "best_accuracy": 0.5355,
+    "optimization_score": 0.5874166566371918,
+    "quantum_advantage_detected": false
+  },
+  "scalability": {
+    "dataset_size": 2000,
+    "cache_hit_rate": 0.0,
+    "throughput": 13.968485154203918,
+    "avg_epoch_time": 0.07132318814595541,
+    "scalability_score": 0.6,
+    "assessments": {
+      "cache_efficiency": {
+        "score": 0.0,
+        "passed": false,
+        "target": 0.3
+      },
+      "throughput": {
+        "epochs_per_second": 13.968485154203918,
+        "passed": true,
+        "target": 0.2
+      },
+      "dataset_scalability": {
+        "time_per_sample_ms": 1.0738458633422852,
+        "passed": true,
+        "target": 0.05
+      },
+      "optimization": {
+        "score": 0.5874166566371918,
+        "passed": false,
+        "target": 0.7
+      },
+      "memory_efficiency": {
+        "efficiency_score": 0.8517126044145913,
+        "passed": true,
+        "target": 0.7
+      }
+    }
+  },
+  "training": {
+    "epochs_completed": 30,
+    "execution_time": 2.1476917266845703,
+    "total_execution_time": 2.167192220687866,
+    "early_stopping": true,
+    "final_learning_rate": 0.007988008396361091
+  },
+  "optimizations": [
+    "Adaptive caching",
+    "Batch processing",
+    "Memory-efficient dataset generation",
+    "Adaptive learning rate",
+    "Early stopping",
+    "Cached quantum circuit evaluation"
+  ]
+}
