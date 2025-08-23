@@ -1,0 +1,455 @@
+{
+  "summary": {
+    "campaign_id": "robust_559590bf",
+    "generation": 2,
+    "total_runtime": 0.41626716999996916,
+    "completed_tests": 5,
+    "failed_tests": 0,
+    "success_rate": 100.0,
+    "health_status": {
+      "status": "healthy",
+      "metrics": {
+        "cpu_usage": {
+          "current": 30.0,
+          "average": 28.333333333333332,
+          "trend": "increasing"
+        },
+        "memory_usage": {
+          "current": 50.0,
+          "average": 35.416666666666664,
+          "trend": "increasing"
+        },
+        "operation_latency": {
+          "current": 0.10199785232543945,
+          "average": 0.10195285081863403,
+          "trend": "stable"
+        },
+        "advantage_factor": {
+          "current": 3.3434245142629564,
+          "average": 6.0121406312741446,
+          "trend": "stable"
+        }
+      },
+      "active_alerts": 0,
+      "recent_alerts": [],
+      "uptime": 0.4171178340911865
+    },
+    "error_analysis": {
+      "total_errors": 1,
+      "error_types": {
+        "RuntimeError": 1
+      },
+      "recovery_actions": 0
+    },
+    "security_audit": {
+      "active_sessions": 1,
+      "audit_events": 1,
+      "rate_limit_hits": 0
+    },
+    "performance_metrics": {
+      "avg_advantage_factor": 5.209712505019316,
+      "avg_confidence": 0.75493082033919,
+      "fault_tolerance_distribution": {
+        "basic": 1,
+        "medium": 1,
+        "high": 1,
+        "maximum": 1
+      }
+    },
+    "timestamp": "2025-08-23T04:03:17.941926+00:00"
+  },
+  "detailed_results": [
+    {
+      "algorithm_type": "RobustQuantumAlgorithm_10",
+      "quantum_runtime": 0.010017339999999422,
+      "classical_runtime": 0.10031338200002438,
+      "advantage_factor": 10.013973969140526,
+      "confidence_score": 0.9246558095228066,
+      "statistical_significance": 0.009000000000000001,
+      "noise_resilience": 0.8205466499999999,
+      "hardware_compatibility": {
+        "ibm_quantum_condor": true,
+        "ibm_quantum_heron": true,
+        "google_sycamore": true,
+        "aws_braket_sv1": true,
+        "aws_braket_aria": true,
+        "ionq_forte": true,
+        "rigetti_aspen": true,
+        "pasqal_fresnel": true,
+        "quantinuum_h1": true
+      },
+      "error_correction_applied": false,
+      "fault_tolerance_level": "basic",
+      "validation_checksum": "b4e0d1a6171bb274",
+      "security_context": {
+        "session_id": "f132ed8d-3e8c-41e3-9c67-c84a6eb62dd2",
+        "api_key_hash": "fbe125033749d62682b5f3b363e09022486f469170781cbb8a74d93b0c760369",
+        "permissions": [
+          "read",
+          "execute",
+          "research",
+          "optimize"
+        ],
+        "rate_limit_remaining": 1000,
+        "authenticated": true,
+        "encryption_enabled": true,
+        "audit_trail": []
+      },
+      "resource_monitor": {
+        "cpu_usage": 20,
+        "memory_usage": 10.0,
+        "quantum_circuit_depth": 5,
+        "estimated_runtime": 6.049822504519291,
+        "hardware_requirements": {
+          "min_qubits": 10,
+          "coherence_time": "1000\u00b5s",
+          "gate_fidelity": 0.999
+        },
+        "noise_levels": {
+          "depolarizing": 0.01,
+          "readout": 0.01,
+          "thermal": 0.0001
+        }
+      },
+      "timestamp": "2025-08-23T04:03:17.628627+00:00"
+    },
+    {
+      "algorithm_type": "RobustQuantumAlgorithm_15",
+      "quantum_runtime": 0.015012759000014739,
+      "classical_runtime": 0.10030265299997154,
+      "advantage_factor": 6.6811605381711034,
+      "confidence_score": 0.8854279951229778,
+      "statistical_significance": 0.0425,
+      "noise_resilience": 0.7664481999999999,
+      "hardware_compatibility": {
+        "ibm_quantum_condor": true,
+        "ibm_quantum_heron": true,
+        "google_sycamore": true,
+        "aws_braket_sv1": true,
+        "aws_braket_aria": true,
+        "ionq_forte": true,
+        "rigetti_aspen": true,
+        "pasqal_fresnel": true,
+        "quantinuum_h1": true
+      },
+      "error_correction_applied": false,
+      "fault_tolerance_level": "medium",
+      "validation_checksum": "e91c4b4140a765ab",
+      "security_context": {
+        "session_id": "f132ed8d-3e8c-41e3-9c67-c84a6eb62dd2",
+        "api_key_hash": "fbe125033749d62682b5f3b363e09022486f469170781cbb8a74d93b0c760369",
+        "permissions": [
+          "read",
+          "execute",
+          "research",
+          "optimize"
+        ],
+        "rate_limit_remaining": 1000,
+        "authenticated": true,
+        "encryption_enabled": true,
+        "audit_trail": []
+      },
+      "resource_monitor": {
+        "cpu_usage": 30.0,
+        "memory_usage": 22.5,
+        "quantum_circuit_depth": 7,
+        "estimated_runtime": 2.9870761509568013,
+        "hardware_requirements": {
+          "min_qubits": 15,
+          "coherence_time": "1500\u00b5s",
+          "gate_fidelity": 0.999
+        },
+        "noise_levels": {
+          "depolarizing": 0.015,
+          "readout": 0.01,
+          "thermal": 0.0001
+        }
+      },
+      "timestamp": "2025-08-23T04:03:17.731399+00:00"
+    },
+    {
+      "algorithm_type": "DegradedQuantumAlgorithm_20",
+      "quantum_runtime": 1.0,
+      "classical_runtime": 2.0,
+      "advantage_factor": 2.0,
+      "confidence_score": 0.3,
+      "statistical_significance": 0.1,
+      "noise_resilience": 0.5,
+      "hardware_compatibility": {
+        "simulator": true
+      },
+      "error_correction_applied": false,
+      "fault_tolerance_level": "degraded",
+      "validation_checksum": "a8c05c68e9ad39ce",
+      "security_context": {
+        "session_id": "f132ed8d-3e8c-41e3-9c67-c84a6eb62dd2",
+        "api_key_hash": "fbe125033749d62682b5f3b363e09022486f469170781cbb8a74d93b0c760369",
+        "permissions": [
+          "read",
+          "execute",
+          "research",
+          "optimize"
+        ],
+        "rate_limit_remaining": 1000,
+        "authenticated": true,
+        "encryption_enabled": true,
+        "audit_trail": []
+      },
+      "resource_monitor": {
+        "cpu_usage": 30.0,
+        "memory_usage": 40.0,
+        "quantum_circuit_depth": 10,
+        "estimated_runtime": 2.185648530850471,
+        "hardware_requirements": {
+          "min_qubits": 20,
+          "coherence_time": "2000\u00b5s",
+          "gate_fidelity": 0.999
+        },
+        "noise_levels": {
+          "depolarizing": 0.02,
+          "readout": 0.01,
+          "thermal": 0.0001
+        }
+      },
+      "timestamp": "2025-08-23T04:03:17.734963+00:00"
+    },
+    {
+      "algorithm_type": "RobustQuantumAlgorithm_25",
+      "quantum_runtime": 0.025006239000015286,
+      "classical_runtime": 0.10027510599996958,
+      "advantage_factor": 4.010003503521992,
+      "confidence_score": 0.8502206318193058,
+      "statistical_significance": 0.037500000000000006,
+      "noise_resilience": 0.660489375,
+      "hardware_compatibility": {
+        "ibm_quantum_condor": true,
+        "ibm_quantum_heron": true,
+        "google_sycamore": true,
+        "aws_braket_sv1": true,
+        "aws_braket_aria": true,
+        "ionq_forte": true,
+        "rigetti_aspen": true,
+        "pasqal_fresnel": true,
+        "quantinuum_h1": true
+      },
+      "error_correction_applied": true,
+      "fault_tolerance_level": "high",
+      "validation_checksum": "f90185be0bfd9dd3",
+      "security_context": {
+        "session_id": "f132ed8d-3e8c-41e3-9c67-c84a6eb62dd2",
+        "api_key_hash": "fbe125033749d62682b5f3b363e09022486f469170781cbb8a74d93b0c760369",
+        "permissions": [
+          "read",
+          "execute",
+          "research",
+          "optimize"
+        ],
+        "rate_limit_remaining": 1000,
+        "authenticated": true,
+        "encryption_enabled": true,
+        "audit_trail": []
+      },
+      "resource_monitor": {
+        "cpu_usage": 30.0,
+        "memory_usage": 50.0,
+        "quantum_circuit_depth": 12,
+        "estimated_runtime": 4.089675487081214,
+        "hardware_requirements": {
+          "min_qubits": 25,
+          "coherence_time": "2500\u00b5s",
+          "gate_fidelity": 0.999
+        },
+        "noise_levels": {
+          "depolarizing": 0.025,
+          "readout": 0.01,
+          "thermal": 0.0001
+        }
+      },
+      "timestamp": "2025-08-23T04:03:17.837693+00:00"
+    },
+    {
+      "algorithm_type": "RobustQuantumAlgorithm_30",
+      "quantum_runtime": 0.03000755499996785,
+      "classical_runtime": 0.10032799499998646,
+      "advantage_factor": 3.3434245142629564,
+      "confidence_score": 0.8143496652308604,
+      "statistical_significance": 0.034999999999999996,
+      "noise_resilience": 0.6086216499999999,
+      "hardware_compatibility": {
+        "ibm_quantum_condor": true,
+        "ibm_quantum_heron": true,
+        "google_sycamore": true,
+        "aws_braket_sv1": true,
+        "aws_braket_aria": false,
+        "ionq_forte": true,
+        "rigetti_aspen": true,
+        "pasqal_fresnel": true,
+        "quantinuum_h1": true
+      },
+      "error_correction_applied": true,
+      "fault_tolerance_level": "maximum",
+      "validation_checksum": "0176e06ca76fe01c",
+      "security_context": {
+        "session_id": "f132ed8d-3e8c-41e3-9c67-c84a6eb62dd2",
+        "api_key_hash": "fbe125033749d62682b5f3b363e09022486f469170781cbb8a74d93b0c760369",
+        "permissions": [
+          "read",
+          "execute",
+          "research",
+          "optimize"
+        ],
+        "rate_limit_remaining": 1000,
+        "authenticated": true,
+        "encryption_enabled": true,
+        "audit_trail": []
+      },
+      "resource_monitor": {
+        "cpu_usage": 30.0,
+        "memory_usage": 50.0,
+        "quantum_circuit_depth": 15,
+        "estimated_runtime": 5.79543127003555,
+        "hardware_requirements": {
+          "min_qubits": 30,
+          "coherence_time": "3000\u00b5s",
+          "gate_fidelity": 0.999
+        },
+        "noise_levels": {
+          "depolarizing": 0.03,
+          "readout": 0.01,
+          "thermal": 0.0001
+        }
+      },
+      "timestamp": "2025-08-23T04:03:17.940925+00:00"
+    }
+  ],
+  "failed_operations": [],
+  "monitoring_data": {
+    "metrics_summary": {
+      "cpu_usage": [
+        {
+          "timestamp": 1755921797.5272667,
+          "value": 20,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.6304922,
+          "value": 30.0,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.7342584,
+          "value": 30.0,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.7349458,
+          "value": 30.0,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.7363954,
+          "value": 30.0,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.83954,
+          "value": 30.0,
+          "context": {}
+        }
+      ],
+      "memory_usage": [
+        {
+          "timestamp": 1755921797.5272772,
+          "value": 10.0,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.6304965,
+          "value": 22.5,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.7342637,
+          "value": 40.0,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.7349496,
+          "value": 40.0,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.7363987,
+          "value": 50.0,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.839545,
+          "value": 50.0,
+          "context": {}
+        }
+      ],
+      "quantum_fidelity": [],
+      "error_rates": [],
+      "throughput": [],
+      "latency": [],
+      "operation_latency": [
+        {
+          "timestamp": 1755921797.62872,
+          "value": 0.10260438919067383,
+          "context": {
+            "operation": "quantum_advantage_discovery",
+            "problem_size": 10
+          }
+        },
+        {
+          "timestamp": 1755921797.7315214,
+          "value": 0.10141706466674805,
+          "context": {
+            "operation": "quantum_advantage_discovery",
+            "problem_size": 15
+          }
+        },
+        {
+          "timestamp": 1755921797.8378356,
+          "value": 0.1017920970916748,
+          "context": {
+            "operation": "quantum_advantage_discovery",
+            "problem_size": 25
+          }
+        },
+        {
+          "timestamp": 1755921797.941,
+          "value": 0.10199785232543945,
+          "context": {
+            "operation": "quantum_advantage_discovery",
+            "problem_size": 30
+          }
+        }
+      ],
+      "advantage_factor": [
+        {
+          "timestamp": 1755921797.628908,
+          "value": 10.013973969140526,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.7315292,
+          "value": 6.6811605381711034,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.8378427,
+          "value": 4.010003503521992,
+          "context": {}
+        },
+        {
+          "timestamp": 1755921797.9410048,
+          "value": 3.3434245142629564,
+          "context": {}
+        }
+      ]
+    },
+    "recent_alerts": []
+  }
+}

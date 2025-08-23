@@ -1,0 +1,146 @@
+{
+  "summary": {
+    "campaign_id": "dad72a69",
+    "total_runtime": 1.563893739000008,
+    "completed_tasks": 8,
+    "research_areas": {
+      "quantum_advantage": {
+        "discoveries": 0,
+        "max_advantage_factor": 0,
+        "avg_confidence": 0.0
+      },
+      "quantum_supremacy": {
+        "validations": 4,
+        "max_supremacy_factor": 13920694217.531193,
+        "avg_verification_confidence": 0.9690144652878557
+      },
+      "circuit_optimization": {
+        "optimizations": 4,
+        "max_gate_reduction": 65.0,
+        "avg_fidelity_preserved": 0.9873455662541735
+      }
+    },
+    "breakthrough_indicators": {
+      "novel_algorithms_discovered": 0,
+      "supremacy_instances_validated": 2,
+      "high_efficiency_optimizations": 4,
+      "statistical_significance_achieved": 0
+    },
+    "timestamp": "2025-08-23T04:00:44.778506"
+  },
+  "detailed_results": {
+    "advantage_discoveries": [],
+    "supremacy_validations": [
+      {
+        "problem_instance": "Random_Circuit_Sampling_20",
+        "quantum_solution_time": 0.0632356059999779,
+        "best_classical_estimate": 1.048576,
+        "supremacy_factor": 16.58205030881441,
+        "verification_confidence": 0.9532670351501074,
+        "resource_requirements": {
+          "qubits_required": 20,
+          "coherence_time_needed": "200 microseconds",
+          "gate_fidelity_required": 0.999,
+          "measurement_fidelity_required": 0.99,
+          "connectivity_requirement": "nearest_neighbor"
+        },
+        "reproducibility_score": 0.9993729300264926,
+        "timestamp": "2025-08-23T04:00:43.756383"
+      },
+      {
+        "problem_instance": "Random_Circuit_Sampling_30",
+        "quantum_solution_time": 0.19034842799999296,
+        "best_classical_estimate": 1073.741824,
+        "supremacy_factor": 5640.928245543691,
+        "verification_confidence": 0.9841802687515405,
+        "resource_requirements": {
+          "qubits_required": 30,
+          "coherence_time_needed": "300 microseconds",
+          "gate_fidelity_required": 0.999,
+          "measurement_fidelity_required": 0.99,
+          "connectivity_requirement": "nearest_neighbor"
+        },
+        "reproducibility_score": 0.9986229815908284,
+        "timestamp": "2025-08-23T04:00:44.227259"
+      },
+      {
+        "problem_instance": "Random_Circuit_Sampling_40",
+        "quantum_solution_time": 0.3515611349999972,
+        "best_classical_estimate": 1099511.627776,
+        "supremacy_factor": 3127511.884315679,
+        "verification_confidence": 0.9564725167290493,
+        "resource_requirements": {
+          "qubits_required": 40,
+          "coherence_time_needed": "400 microseconds",
+          "gate_fidelity_required": 0.999,
+          "measurement_fidelity_required": 0.99,
+          "connectivity_requirement": "nearest_neighbor"
+        },
+        "reproducibility_score": 0.998037030252592,
+        "timestamp": "2025-08-23T04:00:44.704439"
+      },
+      {
+        "problem_instance": "Random_Circuit_Sampling_53",
+        "quantum_solution_time": 0.647036643000007,
+        "best_classical_estimate": 9007199254.740992,
+        "supremacy_factor": 13920694217.531193,
+        "verification_confidence": 0.982138040520726,
+        "resource_requirements": {
+          "qubits_required": 53,
+          "coherence_time_needed": "530 microseconds",
+          "gate_fidelity_required": 0.999,
+          "measurement_fidelity_required": 0.99,
+          "connectivity_requirement": "nearest_neighbor"
+        },
+        "reproducibility_score": 0.9991774626174273,
+        "timestamp": "2025-08-23T04:00:44.777180"
+      }
+    ],
+    "optimization_results": [
+      {
+        "original_depth": 10,
+        "optimized_depth": 4,
+        "gate_reduction": 60.0,
+        "fidelity_preserved": 0.99173501745318,
+        "hardware_efficiency": 0.936165485751233,
+        "noise_mitigation_factor": 1.2732922123946446,
+        "convergence_iterations": 33,
+        "optimization_technique": "ML_Reinforcement_Learning_Optimization",
+        "timestamp": "2025-08-23T04:00:43.228369"
+      },
+      {
+        "original_depth": 20,
+        "optimized_depth": 7,
+        "gate_reduction": 65.0,
+        "fidelity_preserved": 0.9899583602314382,
+        "hardware_efficiency": 0.8593351070957069,
+        "noise_mitigation_factor": 1.2160412342445606,
+        "convergence_iterations": 17,
+        "optimization_technique": "ML_Reinforcement_Learning_Optimization",
+        "timestamp": "2025-08-23T04:00:43.233137"
+      },
+      {
+        "original_depth": 30,
+        "optimized_depth": 12,
+        "gate_reduction": 60.0,
+        "fidelity_preserved": 0.9819837630562294,
+        "hardware_efficiency": 0.8941193167383321,
+        "noise_mitigation_factor": 1.6540786015615043,
+        "convergence_iterations": 17,
+        "optimization_technique": "ML_Reinforcement_Learning_Optimization",
+        "timestamp": "2025-08-23T04:00:43.228678"
+      },
+      {
+        "original_depth": 50,
+        "optimized_depth": 20,
+        "gate_reduction": 60.0,
+        "fidelity_preserved": 0.9857051242758463,
+        "hardware_efficiency": 0.8088911595420589,
+        "noise_mitigation_factor": 1.983845954256967,
+        "convergence_iterations": 18,
+        "optimization_technique": "ML_Reinforcement_Learning_Optimization",
+        "timestamp": "2025-08-23T04:00:43.232065"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "summary": {
+    "campaign_id": "scalable_792ed299",
+    "generation": 3,
+    "total_runtime": 0.04840786800002661,
+    "completed_tests": 5,
+    "failed_tests": 0,
+    "success_rate": 100.0,
+    "scalability_analysis": {
+      "problem_size_range": {
+        "min": 20,
+        "max": 100
+      },
+      "advantage_factor_trend": {
+        "slope": 4.492970254637487,
+        "direction": "increasing",
+        "range": {
+          "min": 63.827007210572546,
+          "max": 538.9152780976731
+        }
+      },
+      "scalability_trend": {
+        "slope": 0.0025114491013369686,
+        "direction": "improving",
+        "average": 0.8402922409583222
+      },
+      "parallel_performance": {
+        "max_speedup": 3.738396017749471,
+        "average_speedup": 1.9360158749817125,
+        "efficiency_retention": 0.8402922409583222
+      },
+      "scaling_quality": {
+        "consistent_performance": 
