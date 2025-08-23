@@ -1,0 +1,269 @@
+{
+  "summary": {
+    "campaign_id": "scalable_af2f1f97",
+    "generation": 3,
+    "total_runtime": 0.05466324400003941,
+    "completed_tests": 5,
+    "failed_tests": 0,
+    "success_rate": 100.0,
+    "scalability_analysis": {
+      "problem_size_range": {
+        "min": 20,
+        "max": 100
+      },
+      "advantage_factor_trend": {
+        "slope": 5.142735734710795,
+        "direction": "increasing",
+        "range": {
+          "min": 67.70111057716018,
+          "max": 528.0265822189732
+        }
+      },
+      "scalability_trend": {
+        "slope": 0.0027319079891996167,
+        "direction": "improving",
+        "average": 0.8575858413333094
+      },
+      "parallel_performance": {
+        "max_speedup": 3.9381035144986845,
+        "average_speedup": 2.1397835159253944,
+        "efficiency_retention": 0.8575858413333094
+      },
+      "scaling_quality": {
+        "consistent_performance": true,
+        "quantum_advantage_sustained": true,
+        "large_scale_capable": true
+      }
+    },
+    "max_problem_size_achieved": 100,
+    "peak_advantage_factor": 528.0265822189732,
+    "average_scalability_score": 0.8575858413333094,
+    "optimization_effectiveness": {
+      "circuit_optimizations": 5,
+      "parallel_speedups": [
+        1.0,
+        1.0,
+        1.9711751341373662,
+        2.789638930990921,
+        3.9381035144986845
+      ],
+      "average_parallel_efficiency": 0.9652861377776981
+    },
+    "resource_utilization": {
+      "total_backends_used": 11,
+      "total_quantum_shots": 11000,
+      "average_resource_efficiency": 1.5942350268274734
+    },
+    "breakthrough_indicators": {
+      "high_scalability_achievements": 4,
+      "significant_advantages": 5,
+      "efficient_parallelizations": 5,
+      "large_scale_computations": 3
+    },
+    "timestamp": "2025-08-23T04:06:16.186559+00:00"
+  },
+  "detailed_results": [
+    {
+      "session_id": "af2f1f97",
+      "computation_id": "aea23a70",
+      "problem_size": 20,
+      "optimization_level": "balanced",
+      "advantage_factor": 67.70111057716018,
+      "confidence_score": 0.9606302056111297,
+      "statistical_significance": 0.1,
+      "backends_used": 1,
+      "total_shots": 1000,
+      "distribution_efficiency": 1.0,
+      "parallel_speedup": 1.0,
+      "parallel_efficiency": 1.0,
+      "total_computation_time": 0.049333027000045604,
+      "estimated_classical_time": 40.0,
+      "circuit_optimization": {
+        "depth": 17,
+        "fidelity": 1.0,
+        "optimization_applied": "balanced_optimization",
+        "multi_objective_score": 0.85
+      },
+      "optimization_strategy": "single_backend_optimization",
+      "estimated_improvement": 1.9,
+      "scalability_score": 0.76,
+      "resource_efficiency": 1.0,
+      "timestamp": "2025-08-23T04:06:16.180243+00:00"
+    },
+    {
+      "session_id": "af2f1f97",
+      "computation_id": "a0626121",
+      "problem_size": 35,
+      "optimization_level": "high",
+      "advantage_factor": 407.2832170403743,
+      "confidence_score": 0.9606302056111297,
+      "statistical_significance": 0.1,
+      "backends_used": 1,
+      "total_shots": 1000,
+      "distribution_efficiency": 1.0,
+      "parallel_speedup": 1.0,
+      "parallel_efficiency": 1.0,
+      "total_computation_time": 0.04976426600001105,
+      "estimated_classical_time": 122.5,
+      "circuit_optimization": {
+        "depth": 24,
+        "fidelity": 0.98703,
+        "optimization_applied": "topology_aware",
+        "connectivity_improvement": 0.3,
+        "qubit_routing_efficiency": 1.15
+      },
+      "optimization_strategy": "balanced_optimization",
+      "estimated_improvement": 3.75,
+      "scalability_score": 0.8049999999999999,
+      "resource_efficiency": 1.0,
+      "timestamp": "2025-08-23T04:06:16.181578+00:00"
+    },
+    {
+      "session_id": "af2f1f97",
+      "computation_id": "4cd086ac",
+      "problem_size": 50,
+      "optimization_level": "maximum",
+      "advantage_factor": 138.38679626193024,
+      "confidence_score": 0.9606302056111297,
+      "statistical_significance": 0.05,
+      "backends_used": 2,
+      "total_shots": 2000,
+      "distribution_efficiency": 1.0,
+      "parallel_speedup": 1.9711751341373662,
+      "parallel_efficiency": 0.9853768113429209,
+      "total_computation_time": 0.04977869300000748,
+      "estimated_classical_time": 250.0,
+      "circuit_optimization": {
+        "depth": 35,
+        "fidelity": 0.98703,
+        "optimization_applied": "topology_aware",
+        "connectivity_improvement": 0.3,
+        "qubit_routing_efficiency": 1.15
+      },
+      "optimization_strategy": "balanced_optimization",
+      "estimated_improvement": 4.5,
+      "scalability_score": 0.8456130434028761,
+      "resource_efficiency": 1.9711751341373662,
+      "timestamp": "2025-08-23T04:06:16.182231+00:00"
+    },
+    {
+      "session_id": "af2f1f97",
+      "computation_id": "654bd9d8",
+      "problem_size": 75,
+      "optimization_level": "maximum",
+      "advantage_factor": 500.961744149227,
+      "confidence_score": 0.9606302056111297,
+      "statistical_significance": 0.05,
+      "backends_used": 3,
+      "total_shots": 3000,
+      "distribution_efficiency": 1.0,
+      "parallel_speedup": 2.789638930990921,
+      "parallel_efficiency": 0.8692489876189122,
+      "total_computation_time": 0.0500247219999892,
+      "estimated_classical_time": 562.5,
+      "circuit_optimization": {
+        "depth": 30,
+        "fidelity": 0.978,
+        "optimization_applied": "aggressive_compression",
+        "compression_ratio": 0.4,
+        "estimated_speedup": 2.5
+      },
+      "optimization_strategy": "aggressive_parallelization",
+      "estimated_improvement": 12.5,
+      "scalability_score": 0.8857746962856736,
+      "resource_efficiency": 2.0,
+      "timestamp": "2025-08-23T04:06:16.183028+00:00"
+    },
+    {
+      "session_id": "af2f1f97",
+      "computation_id": "ad9e8dec",
+      "problem_size": 100,
+      "optimization_level": "maximum",
+      "advantage_factor": 528.0265822189732,
+      "confidence_score": 0.9606302056111297,
+      "statistical_significance": 0.05,
+      "backends_used": 4,
+      "total_shots": 4000,
+      "distribution_efficiency": 1.0,
+      "parallel_speedup": 3.9381035144986845,
+      "parallel_efficiency": 0.9718048899266571,
+      "total_computation_time": 0.050744861999987734,
+      "estimated_classical_time": 1000.0,
+      "circuit_optimization": {
+        "depth": 40,
+        "fidelity": 0.978,
+        "optimization_applied": "aggressive_compression",
+        "compression_ratio": 0.4,
+        "estimated_speedup": 2.5
+      },
+      "optimization_strategy": "aggressive_parallelization",
+      "estimated_improvement": 15.0,
+      "scalability_score": 0.9915414669779972,
+      "resource_efficiency": 2.0,
+      "timestamp": "2025-08-23T04:06:16.184294+00:00"
+    }
+  ],
+  "failed_tests": [],
+  "optimization_history": [
+    {
+      "strategy": "balanced_optimization",
+      "performance_score": 0.8666666666666667,
+      "result": {
+        "depth": 17,
+        "fidelity": 1.0,
+        "optimization_applied": "balanced_optimization",
+        "multi_objective_score": 0.85
+      },
+      "timestamp": "2025-08-23T04:06:16.180161+00:00"
+    },
+    {
+      "strategy": "topology_aware",
+      "performance_score": 0.8614786666666667,
+      "result": {
+        "depth": 24,
+        "fidelity": 0.98703,
+        "optimization_applied": "topology_aware",
+        "connectivity_improvement": 0.3,
+        "qubit_routing_efficiency": 1.15
+      },
+      "timestamp": "2025-08-23T04:06:16.181537+00:00"
+    },
+    {
+      "strategy": "topology_aware",
+      "performance_score": 0.8614786666666667,
+      "result": {
+        "depth": 35,
+        "fidelity": 0.98703,
+        "optimization_applied": "topology_aware",
+        "connectivity_improvement": 0.3,
+        "qubit_routing_efficiency": 1.15
+      },
+      "timestamp": "2025-08-23T04:06:16.182208+00:00"
+    },
+    {
+      "strategy": "aggressive_compression",
+      "performance_score": 0.9578666666666666,
+      "result": {
+        "depth": 30,
+        "fidelity": 0.978,
+        "optimization_applied": "aggressive_compression",
+        "compression_ratio": 0.4,
+        "estimated_speedup": 2.5
+      },
+      "timestamp": "2025-08-23T04:06:16.182989+00:00"
+    },
+    {
+      "strategy": "aggressive_compression",
+      "performance_score": 0.9578666666666666,
+      "result": {
+        "depth": 40,
+        "fidelity": 0.978,
+        "optimization_applied": "aggressive_compression",
+        "compression_ratio": 0.4,
+        "estimated_speedup": 2.5
+      },
+      "timestamp": "2025-08-23T04:06:16.184272+00:00"
+    }
+  ],
+  "learned_patterns": {}
+}

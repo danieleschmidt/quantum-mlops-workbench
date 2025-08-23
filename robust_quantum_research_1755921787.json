@@ -1,0 +1,84 @@
+{
+  "summary": {
+    "campaign_id": "robust_dcd0d30e",
+    "generation": 2,
+    "total_runtime": 0.008573536000028525,
+    "completed_tests": 0,
+    "failed_tests": 5,
+    "success_rate": 0.0,
+    "health_status": {
+      "status": "healthy",
+      "metrics": {},
+      "active_alerts": 0,
+      "recent_alerts": [],
+      "uptime": 0.009079933166503906
+    },
+    "error_analysis": {
+      "total_errors": 5,
+      "error_types": {
+        "ModuleNotFoundError": 5
+      },
+      "recovery_actions": 0
+    },
+    "security_audit": {
+      "active_sessions": 1,
+      "audit_events": 1,
+      "rate_limit_hits": 0
+    },
+    "performance_metrics": {
+      "avg_advantage_factor": 0,
+      "avg_confidence": 0,
+      "fault_tolerance_distribution": {
+        "basic": 0,
+        "medium": 0,
+        "high": 0,
+        "maximum": 0
+      }
+    },
+    "timestamp": "2025-08-23T04:03:07.860227+00:00"
+  },
+  "detailed_results": [],
+  "failed_operations": [
+    {
+      "problem_size": 10,
+      "fault_tolerance": "basic",
+      "error": "No module named 'psutil'",
+      "error_type": "ModuleNotFoundError"
+    },
+    {
+      "problem_size": 15,
+      "fault_tolerance": "medium",
+      "error": "No module named 'psutil'",
+      "error_type": "ModuleNotFoundError"
+    },
+    {
+      "problem_size": 20,
+      "fault_tolerance": "high",
+      "error": "No module named 'psutil'",
+      "error_type": "ModuleNotFoundError"
+    },
+    {
+      "problem_size": 25,
+      "fault_tolerance": "high",
+      "error": "No module named 'psutil'",
+      "error_type": "ModuleNotFoundError"
+    },
+    {
+      "problem_size": 30,
+      "fault_tolerance": "maximum",
+      "error": "No module named 'psutil'",
+      "error_type": "ModuleNotFoundError"
+    }
+  ],
+  "monitoring_data": {
+    "metrics_summary": {
+      "cpu_usage": [],
+      "memory_usage": [],
+      "quantum_fidelity": [],
+      "error_rates": [],
+      "throughput": [],
+      "latency": []
+    },
+    "recent_alerts": []
+  }
+}
