@@ -17,7 +17,7 @@ amazon-braket-sdk==1.97.0
 # Machine Learning & Data Science
 torch==2.8.0
 scikit-learn==1.6.1
-numpy==1.24.4
+numpy==2.0.2
 pandas==2.1.4
 scipy==1.13.1
 
