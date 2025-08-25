@@ -52,4 +52,4 @@ safety==3.6.0
 # Build & Packaging
 setuptools==80.9.0
 wheel==0.45.1
-twine==4.0.2
+twine==6.1.0
