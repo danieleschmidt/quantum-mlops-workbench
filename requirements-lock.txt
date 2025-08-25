@@ -40,7 +40,7 @@ pytest-xdist==3.8.0
 pytest-asyncio==1.1.0
 
 # Development Tools
-black==23.12.1
+black==25.1.0
 ruff==0.12.9
 mypy==1.17.1
 pre-commit==4.3.0
