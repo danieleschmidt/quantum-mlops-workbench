@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  HEALTH_CHECK_INTERVAL: '30'
+  METRICS_PORT: '8081'
+  QUANTUM_ENV: production
+  QUANTUM_LOG_LEVEL: INFO
+  REDIS_HOST: redis-service
+  REDIS_PORT: '6379'
+kind: ConfigMap
+metadata:
+  name: quantum-meta-learning-config
+  namespace: quantum-mlops

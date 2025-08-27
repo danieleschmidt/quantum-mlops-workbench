@@ -1,0 +1,159 @@
+{
+  "total_tests": 13,
+  "passed_tests": 11,
+  "failed_tests": 2,
+  "execution_time": 0.3957841396331787,
+  "coverage_percentage": 82.3076923076923,
+  "performance_score": 4522.831233122676,
+  "individual_results": [
+    {
+      "test_name": "parameter_initialization",
+      "passed": true,
+      "execution_time": 0.001,
+      "error_message": null,
+      "performance_metrics": {
+        "param_count": 8
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "circuit_computation_validity",
+      "passed": true,
+      "execution_time": 0.005,
+      "error_message": null,
+      "performance_metrics": {
+        "result_value": 0.4333260634764278,
+        "zero_input_result": 0.5404681738963213
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "input_validation_robustness",
+      "passed": false,
+      "execution_time": 0.003,
+      "error_message": "'RobustQuantumMetaLearningEngine' object has no attribute 'quantum_meta_circuit_optimized'",
+      "performance_metrics": null,
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "cache_functionality",
+      "passed": true,
+      "execution_time": 0.01,
+      "error_message": null,
+      "performance_metrics": {
+        "cache_hit_rate": 0.5,
+        "cache_size": 1
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "parallel_processing",
+      "passed": true,
+      "execution_time": 0.004958629608154297,
+      "error_message": null,
+      "performance_metrics": {
+        "batch_size": 4,
+        "avg_result": 0.6622002718825614,
+        "processing_speed": 806.6744879315319
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "e2e_few_shot_learning",
+      "passed": true,
+      "execution_time": 0.1,
+      "error_message": null,
+      "performance_metrics": {
+        "few_shot_accuracy": 0.6,
+        "adaptation_loss": 0.2875666930554539,
+        "support_size": 6
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "multi_generation_consistency",
+      "passed": true,
+      "execution_time": 0.02,
+      "error_message": null,
+      "performance_metrics": {
+        "results": {
+          "gen1": 0.6233347322118438,
+          "gen2": 0.6073912676675185,
+          "gen3": 0.7154521873908526
+        },
+        "max_difference": 0.10806091972333409
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "throughput_benchmark",
+      "passed": true,
+      "execution_time": 0.012137413024902344,
+      "error_message": null,
+      "performance_metrics": {
+        "throughput_per_sec": 8238.98797831382,
+        "total_computations": 100,
+        "avg_computation_time": 0.00012137413024902343
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "memory_efficiency",
+      "passed": true,
+      "execution_time": 0.020416975021362305,
+      "error_message": null,
+      "performance_metrics": {
+        "batch_size": 50,
+        "processing_time": 0.020416975021362305,
+        "results_per_sec": 2448.942605243183
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "random_input_stress",
+      "passed": false,
+      "execution_time": 0.5,
+      "error_message": "",
+      "performance_metrics": null,
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "resource_exhaustion",
+      "passed": true,
+      "execution_time": 0.34722256660461426,
+      "error_message": null,
+      "performance_metrics": {
+        "tasks_processed": 5,
+        "avg_loss": 0.2863823269962128,
+        "execution_time": 0.34722256660461426
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "parameter_injection_attack",
+      "passed": true,
+      "execution_time": 0.001,
+      "error_message": null,
+      "performance_metrics": {
+        "sanitization_effective": true,
+        "max_sanitized_value": 10.0
+      },
+      "coverage_metrics": null
+    },
+    {
+      "test_name": "data_validation",
+      "passed": true,
+      "execution_time": 0.002,
+      "error_message": null,
+      "performance_metrics": {
+        "valid_input_accepted": true,
+        "invalid_input_rejected": true
+      },
+      "coverage_metrics": null
+    }
+  ],
+  "security_validation_passed": true,
+  "chaos_resistance_score": 0.5,
+  "timestamp": 1756318352185,
+  "framework_version": "1.0"
+}

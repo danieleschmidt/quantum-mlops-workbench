@@ -1,0 +1,59 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Quantum Meta-Learning Dashboard",
+    "tags": [
+      "quantum",
+      "ml",
+      "production"
+    ],
+    "timezone": "browser",
+    "panels": [
+      {
+        "title": "Request Rate",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "rate(http_requests_total[5m])",
+            "legendFormat": "Requests/sec"
+          }
+        ]
+      },
+      {
+        "title": "Response Time",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, http_request_duration_seconds_bucket)",
+            "legendFormat": "95th percentile"
+          }
+        ]
+      },
+      {
+        "title": "Model Accuracy",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "quantum_model_accuracy",
+            "legendFormat": "Accuracy"
+          }
+        ]
+      },
+      {
+        "title": "Cache Hit Rate",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "quantum_cache_hit_rate",
+            "legendFormat": "Hit Rate"
+          }
+        ]
+      }
+    ],
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "refresh": "10s"
+  }
+}

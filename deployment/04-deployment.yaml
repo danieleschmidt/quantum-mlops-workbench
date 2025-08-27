@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: quantum-meta-learning
+    version: v1.0.0
+  name: quantum-meta-learning
+  namespace: quantum-mlops
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: quantum-meta-learning
+  template:
+    metadata:
+      labels:
+        app: quantum-meta-learning
+        version: v1.0.0
+    spec:
+      containers:
+      - env:
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              key: jwt-secret
+              name: quantum-meta-learning-secrets
+        envFrom:
+        - configMapRef:
+            name: quantum-meta-learning-config
+        image: docker.io/quantum-meta-learning:latest
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        name: quantum-meta-learning
+        ports:
+        - containerPort: 8080
+          name: http
+        - containerPort: 8081
+          name: metrics
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4Gi
+          requests:
+            cpu: 500m
+            memory: 1Gi
+        volumeMounts:
+        - mountPath: /app/data
+          name: data-volume
+        - mountPath: /app/models
+          name: models-volume
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: quantum-meta-learning-data-pvc
+      - name: models-volume
+        persistentVolumeClaim:
+          claimName: quantum-meta-learning-models-pvc

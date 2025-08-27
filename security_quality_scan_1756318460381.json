@@ -1,0 +1,4847 @@
+{
+  "scan_timestamp": 1756318466,
+  "total_files_scanned": 156,
+  "vulnerabilities": [
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "comprehensive_quality_gates_final.py",
+      "line_number": 101,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_autonomous_quantum_breakthrough.py",
+      "line_number": 130,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_autonomous_quantum_breakthrough.py",
+      "line_number": 174,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_autonomous_quantum_breakthrough.py",
+      "line_number": 271,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_autonomous_quantum_breakthrough.py",
+      "line_number": 376,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_autonomous_quantum_breakthrough.py",
+      "line_number": 373,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 186,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 244,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 265,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 284,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 415,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 688,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 710,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 731,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_generation1.py",
+      "line_number": 605,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 498,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 969,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_generation3.py",
+      "line_number": 778,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "HIGH",
+      "category": "hardcoded_secrets",
+      "description": "Potential hardcoded secrets vulnerability",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 831,
+      "recommendation": "Use environment variables or secure credential storage",
+      "cwe_id": "CWE-798"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 544,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 545,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 555,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 560,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 579,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "fast_generation2_demo.py",
+      "line_number": 334,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "fast_quantum_research_demo.py",
+      "line_number": 433,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 38,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 40,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 41,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 273,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 63,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 65,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 67,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 138,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 55,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 57,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 59,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "generation1_demo.py",
+      "line_number": 42,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "generation1_demo.py",
+      "line_number": 44,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "generation3_scalable_quantum_optimizer.py",
+      "line_number": 237,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "global_quantum_deployment.py",
+      "line_number": 499,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "global_quantum_deployment.py",
+      "line_number": 536,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "optimized_quantum_research_scalable_gen3.py",
+      "line_number": 552,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "production_deployment_final.py",
+      "line_number": 252,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 158,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "quantum_research_breakthrough.py",
+      "line_number": 693,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "research_framework_implementation.py",
+      "line_number": 812,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "revolutionary_quantum_breakthrough.py",
+      "line_number": 515,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "revolutionary_quantum_breakthrough.py",
+      "line_number": 540,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "revolutionary_quantum_research_breakthrough.py",
+      "line_number": 201,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "revolutionary_quantum_research_breakthrough.py",
+      "line_number": 212,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "robust_quantum_gen2.py",
+      "line_number": 553,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "robust_quantum_gen2.py",
+      "line_number": 553,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "scalable_quantum_gen3.py",
+      "line_number": 803,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "scalable_quantum_gen3.py",
+      "line_number": 474,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "scalable_quantum_gen3.py",
+      "line_number": 803,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "scalable_quantum_optimization.py",
+      "line_number": 397,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "scaling_optimization.py",
+      "line_number": 108,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "scaling_optimization.py",
+      "line_number": 109,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "simple_validation.py",
+      "line_number": 50,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "simple_validation.py",
+      "line_number": 52,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "simple_validation.py",
+      "line_number": 53,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "simplified_quantum_breakthrough.py",
+      "line_number": 118,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "simplified_quantum_breakthrough.py",
+      "line_number": 162,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "simplified_quantum_breakthrough.py",
+      "line_number": 210,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "simplified_quantum_breakthrough.py",
+      "line_number": 252,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "quantum_meta_learning_scalable_gen3.py",
+      "line_number": 80,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/integration_example.py",
+      "line_number": 297,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/integration_example.py",
+      "line_number": 299,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/quantum_backend_demo.py",
+      "line_number": 100,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/quantum_backend_demo.py",
+      "line_number": 109,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/testing_framework_example.py",
+      "line_number": 75,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/testing_framework_example.py",
+      "line_number": 111,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/testing_framework_example.py",
+      "line_number": 144,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/testing_framework_example.py",
+      "line_number": 187,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/testing_framework_example.py",
+      "line_number": 237,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "examples/testing_framework_example.py",
+      "line_number": 314,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/conftest.py",
+      "line_number": 53,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/conftest.py",
+      "line_number": 62,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/conftest.py",
+      "line_number": 438,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advanced_caching.py",
+      "line_number": 361,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advanced_caching.py",
+      "line_number": 437,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advanced_caching.py",
+      "line_number": 831,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/core.py",
+      "line_number": 377,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/error_correction.py",
+      "line_number": 132,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "hardcoded_secrets",
+      "description": "Potential hardcoded secrets vulnerability",
+      "file_path": "src/quantum_mlops/global_compliance.py",
+      "line_number": 30,
+      "recommendation": "Use environment variables or secure credential storage",
+      "cwe_id": "CWE-798"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/global_compliance.py",
+      "line_number": 381,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/high_performance_compilation.py",
+      "line_number": 592,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/hyperopt.py",
+      "line_number": 75,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "command_injection",
+      "description": "Potential command injection vulnerability",
+      "file_path": "src/quantum_mlops/quality_gates_engine.py",
+      "line_number": 833,
+      "recommendation": "Validate input and use subprocess with shell=False",
+      "cwe_id": "CWE-78"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "command_injection",
+      "description": "Potential command injection vulnerability",
+      "file_path": "src/quantum_mlops/quality_gates_engine.py",
+      "line_number": 834,
+      "recommendation": "Validate input and use subprocess with shell=False",
+      "cwe_id": "CWE-78"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/research_breakthrough.py",
+      "line_number": 136,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/research_breakthrough.py",
+      "line_number": 455,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/research_breakthrough.py",
+      "line_number": 664,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 306,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 1096,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 1101,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 1183,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 1195,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 899,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advantage_detection/advantage_analysis_engine.py",
+      "line_number": 108,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advantage_detection/multi_metric_supremacy.py",
+      "line_number": 119,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advantage_detection/multi_metric_supremacy.py",
+      "line_number": 186,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advantage_detection/noise_resilient_testing.py",
+      "line_number": 110,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advantage_detection/quantum_kernel_advantage.py",
+      "line_number": 96,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/advantage_detection/variational_advantage_protocols.py",
+      "line_number": 109,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/cache/manager.py",
+      "line_number": 187,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/cache/manager.py",
+      "line_number": 199,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "hardcoded_secrets",
+      "description": "Potential hardcoded secrets vulnerability",
+      "file_path": "src/quantum_mlops/security/enterprise_security.py",
+      "line_number": 32,
+      "recommendation": "Use environment variables or secure credential storage",
+      "cwe_id": "CWE-798"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/security/quantum_security.py",
+      "line_number": 458,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/services/optimization_service.py",
+      "line_number": 150,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/services/quantum_backend_service.py",
+      "line_number": 193,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "src/quantum_mlops/services/quantum_backend_service.py",
+      "line_number": 191,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 139,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 350,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 432,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 480,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 530,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 641,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "CRITICAL",
+      "category": "command_injection",
+      "description": "Potential command injection vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 52,
+      "recommendation": "Validate input and use subprocess with shell=False",
+      "cwe_id": "CWE-78"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 32,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 43,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 116,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 135,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 136,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 177,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 197,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/integration/test_backend_integration.py",
+      "line_number": 215,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 71,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 217,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 437,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 530,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/quantum/test_quantum_testing.py",
+      "line_number": 163,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/quantum/test_quantum_testing.py",
+      "line_number": 198,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "HIGH",
+      "category": "hardcoded_secrets",
+      "description": "Potential hardcoded secrets vulnerability",
+      "file_path": "tests/security/test_credential_manager.py",
+      "line_number": 191,
+      "recommendation": "Use environment variables or secure credential storage",
+      "cwe_id": "CWE-798"
+    },
+    {
+      "severity": "HIGH",
+      "category": "hardcoded_secrets",
+      "description": "Potential hardcoded secrets vulnerability",
+      "file_path": "tests/security/test_credential_manager.py",
+      "line_number": 178,
+      "recommendation": "Use environment variables or secure credential storage",
+      "cwe_id": "CWE-798"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/unit/test_core.py",
+      "line_number": 256,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/unit/test_core.py",
+      "line_number": 272,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "crypto_weakness",
+      "description": "Potential crypto weakness vulnerability",
+      "file_path": "tests/unit/test_core.py",
+      "line_number": 455,
+      "recommendation": "Use cryptographically secure algorithms (SHA-256+)",
+      "cwe_id": "CWE-327"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "vulnerable_dependency",
+      "description": "Potentially vulnerable numpy dependency (CVE-2021-33430)",
+      "file_path": "requirements.txt",
+      "line_number": 1,
+      "recommendation": "Update numpy to <1.21.0 or later",
+      "cwe_id": "CWE-1104"
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "vulnerable_dependency",
+      "description": "Potentially vulnerable numpy dependency (CVE-2021-33430)",
+      "file_path": "pyproject.toml",
+      "line_number": 1,
+      "recommendation": "Update numpy to <1.21.0 or later",
+      "cwe_id": "CWE-1104"
+    }
+  ],
+  "quality_issues": [
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'convert_numpy_types' missing docstring",
+      "file_path": "advanced_quantum_validation_framework.py",
+      "line_number": 476,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "advanced_quantum_validation_framework.py",
+      "line_number": 487,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 135 exceeds maximum 120",
+      "file_path": "advanced_quantum_validation_framework.py",
+      "line_number": 319,
+      "metric_value": 135
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "advanced_quantum_validation_framework.py",
+      "line_number": 415,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'quantum_node' missing docstring",
+      "file_path": "autonomous_quantum_sdlc_execution.py",
+      "line_number": 88,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 131 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 180,
+      "metric_value": 131
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 137 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 190,
+      "metric_value": 137
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 133 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 194,
+      "metric_value": 133
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 284,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 130 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 405,
+      "metric_value": 130
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 461,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 466,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 546,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 144 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 582,
+      "metric_value": 144
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 129 exceeds maximum 120",
+      "file_path": "autonomous_sdlc_final_validation.py",
+      "line_number": 583,
+      "metric_value": 129
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'convert_types' missing docstring",
+      "file_path": "comparative_quantum_advantage_studies.py",
+      "line_number": 614,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "comparative_quantum_advantage_studies.py",
+      "line_number": 625,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 130 exceeds maximum 120",
+      "file_path": "comparative_quantum_advantage_studies.py",
+      "line_number": 556,
+      "metric_value": 130
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "comprehensive_quality_gates.py",
+      "line_number": 623,
+      "metric_value": 16
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 133 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates.py",
+      "line_number": 310,
+      "metric_value": 133
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 129 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates.py",
+      "line_number": 679,
+      "metric_value": 129
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates.py",
+      "line_number": 691,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_final.py",
+      "line_number": 480,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 133 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_final.py",
+      "line_number": 584,
+      "metric_value": 133
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 131 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_final.py",
+      "line_number": 652,
+      "metric_value": 131
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 131 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_final.py",
+      "line_number": 682,
+      "metric_value": 131
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_new.py",
+      "line_number": 653,
+      "metric_value": 122
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 764,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 136 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 191,
+      "metric_value": 136
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 130 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 299,
+      "metric_value": 130
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 126 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 524,
+      "metric_value": 126
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 143 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 575,
+      "metric_value": 143
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 139 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 639,
+      "metric_value": 139
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 128 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 696,
+      "metric_value": 128
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 123 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 697,
+      "metric_value": 123
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 126 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 698,
+      "metric_value": 126
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 126 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 709,
+      "metric_value": 126
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "comprehensive_quality_gates_validation.py",
+      "line_number": 737,
+      "metric_value": 121
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 325,
+      "metric_value": 16
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 17 exceeds maximum 15",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 593,
+      "metric_value": 17
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 798,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 505,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 506,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": "enhanced_quality_gates.py",
+      "line_number": 508,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 141 exceeds maximum 120",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 308,
+      "metric_value": 141
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 129 exceeds maximum 120",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 417,
+      "metric_value": 129
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 129 exceeds maximum 120",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 428,
+      "metric_value": 129
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 132 exceeds maximum 120",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 440,
+      "metric_value": 132
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 161 exceeds maximum 120",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 741,
+      "metric_value": 161
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 137 exceeds maximum 120",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 780,
+      "metric_value": 137
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 158 exceeds maximum 120",
+      "file_path": "enhanced_quantum_generation2.py",
+      "line_number": 853,
+      "metric_value": 158
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 140 exceeds maximum 120",
+      "file_path": "enhanced_quantum_generation3.py",
+      "line_number": 687,
+      "metric_value": 140
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 372,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 148 exceeds maximum 120",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 375,
+      "metric_value": 148
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 128 exceeds maximum 120",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 424,
+      "metric_value": 128
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 137 exceeds maximum 120",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 474,
+      "metric_value": 137
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 134 exceeds maximum 120",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 772,
+      "metric_value": 134
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "enhanced_quantum_research_robust_gen2.py",
+      "line_number": 775,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'quantum_test_alg' missing docstring",
+      "file_path": "fast_quantum_research_demo.py",
+      "line_number": 480,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'classical_test_alg' missing docstring",
+      "file_path": "fast_quantum_research_demo.py",
+      "line_number": 486,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "fast_quantum_research_demo.py",
+      "line_number": 559,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'array' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 15,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'zeros' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 19,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'random' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 25,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'uniform' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 28,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'rand' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 35,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'randint' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 44,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'normal' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 49,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'mean' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 57,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'var' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 61,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'real' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 68,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'sum' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 72,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'exp' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 76,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'allclose' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 83,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'norm' missing docstring",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 90,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 147 exceeds maximum 120",
+      "file_path": "gen1_simple_demo.py",
+      "line_number": 69,
+      "metric_value": 147
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'array' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 22,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'zeros' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 31,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'random' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 44,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'uniform' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 47,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'rand' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 58,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'randint' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 72,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'normal' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 81,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'mean' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 93,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'var' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 102,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'isfinite' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 114,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'clip' missing docstring",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 124,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 23 exceeds maximum 15",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 545,
+      "metric_value": 23
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 32 exceeds maximum 15",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 1069,
+      "metric_value": 32
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 208,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 127 exceeds maximum 120",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 240,
+      "metric_value": 127
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "gen2_robust_demo.py",
+      "line_number": 863,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'array' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 27,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'zeros' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 33,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'random' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 42,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'uniform' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 45,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'rand' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 52,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'mean' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 65,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'var' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 71,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'isfinite' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 80,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'clip' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 87,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 18 exceeds maximum 15",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 528,
+      "metric_value": 18
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'compute_param_gradient' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 677,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 35 exceeds maximum 15",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 1159,
+      "metric_value": 35
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'test_job' missing docstring",
+      "file_path": "gen3_scale_demo.py",
+      "line_number": 1195,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 167 exceeds maximum 120",
+      "file_path": "generation2_advanced_research_demo.py",
+      "line_number": 128,
+      "metric_value": 167
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 147 exceeds maximum 120",
+      "file_path": "generation2_advanced_research_demo.py",
+      "line_number": 160,
+      "metric_value": 147
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 167 exceeds maximum 120",
+      "file_path": "generation2_advanced_research_demo.py",
+      "line_number": 270,
+      "metric_value": 167
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'robust_circuit' missing docstring",
+      "file_path": "generation2_enhancements.py",
+      "line_number": 332,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "generation3_optimization.py",
+      "line_number": 277,
+      "metric_value": 16
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'simple_circuit' missing docstring",
+      "file_path": "generation3_optimization.py",
+      "line_number": 492,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'optimized_circuit' missing docstring",
+      "file_path": "generation3_optimization.py",
+      "line_number": 557,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'convert_types' missing docstring",
+      "file_path": "generation3_scalable_quantum_optimizer.py",
+      "line_number": 728,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'convert_types' missing docstring",
+      "file_path": "generation4_production_deployment.py",
+      "line_number": 540,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 135 exceeds maximum 120",
+      "file_path": "generation4_production_deployment.py",
+      "line_number": 385,
+      "metric_value": 135
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 131 exceeds maximum 120",
+      "file_path": "generation4_production_deployment.py",
+      "line_number": 386,
+      "metric_value": 131
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 133 exceeds maximum 120",
+      "file_path": "generation4_production_deployment.py",
+      "line_number": 424,
+      "metric_value": 133
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'convert_types' missing docstring",
+      "file_path": "generation4_quality_gates_comprehensive.py",
+      "line_number": 771,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'convert_numpy_types' missing docstring",
+      "file_path": "generation4_revolutionary_research_breakthrough.py",
+      "line_number": 408,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "generation4_revolutionary_research_breakthrough.py",
+      "line_number": 419,
+      "metric_value": 6
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "global_deployment_automation.py",
+      "line_number": 178,
+      "metric_value": 16
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 138 exceeds maximum 120",
+      "file_path": "global_deployment_automation.py",
+      "line_number": 1113,
+      "metric_value": 138
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "global_deployment_automation.py",
+      "line_number": 1140,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 143 exceeds maximum 120",
+      "file_path": "global_deployment_automation.py",
+      "line_number": 1196,
+      "metric_value": 143
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "global_deployment_automation.py",
+      "line_number": 1412,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 146 exceeds maximum 120",
+      "file_path": "global_quantum_deployment.py",
+      "line_number": 721,
+      "metric_value": 146
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "optimized_quantum_research_scalable_gen3.py",
+      "line_number": 867,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 139 exceeds maximum 120",
+      "file_path": "optimized_quantum_research_scalable_gen3.py",
+      "line_number": 760,
+      "metric_value": 139
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 123 exceeds maximum 120",
+      "file_path": "optimized_quantum_research_scalable_gen3.py",
+      "line_number": 800,
+      "metric_value": 123
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 142 exceeds maximum 120",
+      "file_path": "optimized_quantum_research_scalable_gen3.py",
+      "line_number": 831,
+      "metric_value": 142
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 145 exceeds maximum 120",
+      "file_path": "production_deployment_final.py",
+      "line_number": 262,
+      "metric_value": 145
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 133 exceeds maximum 120",
+      "file_path": "production_deployment_final.py",
+      "line_number": 525,
+      "metric_value": 133
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "production_deployment_final.py",
+      "line_number": 612,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "production_deployment_final.py",
+      "line_number": 635,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "production_deployment_final.py",
+      "line_number": 636,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 123 exceeds maximum 120",
+      "file_path": "production_deployment_guide.py",
+      "line_number": 384,
+      "metric_value": 123
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 166 exceeds maximum 120",
+      "file_path": "production_deployment_guide.py",
+      "line_number": 395,
+      "metric_value": 166
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "production_deployment_guide.py",
+      "line_number": 406,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 161 exceeds maximum 120",
+      "file_path": "production_deployment_guide.py",
+      "line_number": 462,
+      "metric_value": 161
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 167 exceeds maximum 120",
+      "file_path": "production_deployment_guide.py",
+      "line_number": 463,
+      "metric_value": 167
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 128 exceeds maximum 120",
+      "file_path": "production_deployment_guide.py",
+      "line_number": 659,
+      "metric_value": 128
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 142 exceeds maximum 120",
+      "file_path": "production_deployment_guide.py",
+      "line_number": 995,
+      "metric_value": 142
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'test_circuit' missing docstring",
+      "file_path": "quality_gates.py",
+      "line_number": 48,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'simple_circuit' missing docstring",
+      "file_path": "quality_gates.py",
+      "line_number": 124,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_breakthrough_demo.py",
+      "line_number": 134,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 539 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_breakthrough_demo.py",
+      "line_number": 410,
+      "metric_value": 539
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 285 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_breakthrough_demo.py",
+      "line_number": 412,
+      "metric_value": 285
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 453 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_breakthrough_demo.py",
+      "line_number": 414,
+      "metric_value": 453
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 184 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_breakthrough_demo.py",
+      "line_number": 420,
+      "metric_value": 184
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 332,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 435 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 535,
+      "metric_value": 435
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 478 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 538,
+      "metric_value": 478
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 504 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 541,
+      "metric_value": 504
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 394 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 544,
+      "metric_value": 394
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 144 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 547,
+      "metric_value": 144
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 295 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 550,
+      "metric_value": 295
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 132 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_simplified_breakthrough.py",
+      "line_number": 552,
+      "metric_value": 132
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'quantum_test_algorithm' missing docstring",
+      "file_path": "quantum_research_breakthrough.py",
+      "line_number": 670,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'classical_test_algorithm' missing docstring",
+      "file_path": "quantum_research_breakthrough.py",
+      "line_number": 677,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough.py",
+      "line_number": 812,
+      "metric_value": 122
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 413,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 137 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 178,
+      "metric_value": 137
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 150 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 258,
+      "metric_value": 150
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 266,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 274,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 136 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 472,
+      "metric_value": 136
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 123 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 526,
+      "metric_value": 123
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 123 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 527,
+      "metric_value": 123
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 131 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 542,
+      "metric_value": 131
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 138 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 549,
+      "metric_value": 138
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 145 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 772,
+      "metric_value": 145
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "quantum_research_breakthrough_final.py",
+      "line_number": 773,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "research_framework_implementation.py",
+      "line_number": 806,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 130 exceeds maximum 120",
+      "file_path": "revolutionary_quantum_breakthrough.py",
+      "line_number": 491,
+      "metric_value": 130
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "revolutionary_quantum_research_breakthrough.py",
+      "line_number": 406,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "revolutionary_quantum_research_breakthrough.py",
+      "line_number": 418,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 134 exceeds maximum 120",
+      "file_path": "revolutionary_quantum_research_breakthrough.py",
+      "line_number": 436,
+      "metric_value": 134
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 138 exceeds maximum 120",
+      "file_path": "revolutionary_quantum_research_breakthrough.py",
+      "line_number": 437,
+      "metric_value": 138
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 147 exceeds maximum 120",
+      "file_path": "revolutionary_quantum_research_breakthrough.py",
+      "line_number": 438,
+      "metric_value": 147
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "robust_enhancements.py",
+      "line_number": 53,
+      "metric_value": 16
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "robust_quantum_gen2.py",
+      "line_number": 345,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 158 exceeds maximum 120",
+      "file_path": "robust_quantum_gen2.py",
+      "line_number": 418,
+      "metric_value": 158
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 153 exceeds maximum 120",
+      "file_path": "robust_quantum_gen2.py",
+      "line_number": 548,
+      "metric_value": 153
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 130 exceeds maximum 120",
+      "file_path": "robust_quantum_gen2.py",
+      "line_number": 646,
+      "metric_value": 130
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 131 exceeds maximum 120",
+      "file_path": "robust_quantum_gen2.py",
+      "line_number": 684,
+      "metric_value": 131
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 157 exceeds maximum 120",
+      "file_path": "robust_quantum_mlops_enhancement.py",
+      "line_number": 840,
+      "metric_value": 157
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 183 exceeds maximum 120",
+      "file_path": "robust_quantum_mlops_enhancement.py",
+      "line_number": 860,
+      "metric_value": 183
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "scalable_quantum_gen3.py",
+      "line_number": 343,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 127 exceeds maximum 120",
+      "file_path": "scalable_quantum_gen3.py",
+      "line_number": 678,
+      "metric_value": 127
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'to_dict' missing docstring",
+      "file_path": "scalable_quantum_optimization.py",
+      "line_number": 97,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "scalable_quantum_optimization.py",
+      "line_number": 295,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 130 exceeds maximum 120",
+      "file_path": "scalable_quantum_optimization.py",
+      "line_number": 1086,
+      "metric_value": 130
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 141 exceeds maximum 120",
+      "file_path": "scalable_quantum_optimization.py",
+      "line_number": 1087,
+      "metric_value": 141
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 130 exceeds maximum 120",
+      "file_path": "scalable_quantum_optimization.py",
+      "line_number": 1110,
+      "metric_value": 130
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "scalable_quantum_optimization.py",
+      "line_number": 1111,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "scaling_optimization.py",
+      "line_number": 279,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'get' missing docstring",
+      "file_path": "simple_scalable_gen3.py",
+      "line_number": 27,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'put' missing docstring",
+      "file_path": "simple_scalable_gen3.py",
+      "line_number": 35,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'hit_rate' missing docstring",
+      "file_path": "simple_scalable_gen3.py",
+      "line_number": 46,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'record_metric' missing docstring",
+      "file_path": "simple_scalable_gen3.py",
+      "line_number": 57,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'get_average' missing docstring",
+      "file_path": "simple_scalable_gen3.py",
+      "line_number": 64,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "simple_scalable_gen3.py",
+      "line_number": 166,
+      "metric_value": 16
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'array' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 33,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'random' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 37,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'uniform' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 40,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'rand' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 47,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'randint' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 56,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'zeros' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 62,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'mean' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 71,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'var' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 75,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'norm' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 85,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'mock_circuit' missing docstring",
+      "file_path": "simple_validation.py",
+      "line_number": 104,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'convert_numpy_types' missing docstring",
+      "file_path": "simplified_quantum_breakthrough.py",
+      "line_number": 495,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 136 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_autonomous_gen1.py",
+      "line_number": 203,
+      "metric_value": 136
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 137 exceeds maximum 120",
+      "file_path": "quantum_meta_learning_scalable_gen3.py",
+      "line_number": 266,
+      "metric_value": 137
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 18 exceeds maximum 15",
+      "file_path": "comprehensive_quantum_testing_framework.py",
+      "line_number": 97,
+      "metric_value": 18
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 136 exceeds maximum 120",
+      "file_path": "comprehensive_quantum_testing_framework.py",
+      "line_number": 603,
+      "metric_value": 136
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'visit_FunctionDef' missing docstring",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 233,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'visit_If' missing docstring",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 274,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'visit_For' missing docstring",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 289,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'visit_While' missing docstring",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 304,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 142 exceeds maximum 120",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 240,
+      "metric_value": 142
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 138 exceeds maximum 120",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 266,
+      "metric_value": 138
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 142 exceeds maximum 120",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 280,
+      "metric_value": 142
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 142 exceeds maximum 120",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 295,
+      "metric_value": 142
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 142 exceeds maximum 120",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 310,
+      "metric_value": 142
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 352,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": "quantum_security_quality_gates.py",
+      "line_number": 353,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": ".terragon/autonomous-discovery.py",
+      "line_number": 110,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": ".terragon/autonomous-discovery.py",
+      "line_number": 112,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": ".terragon/autonomous-discovery.py",
+      "line_number": 210,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 129 exceeds maximum 120",
+      "file_path": ".terragon/autonomous-discovery.py",
+      "line_number": 552,
+      "metric_value": 129
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 135 exceeds maximum 120",
+      "file_path": ".terragon/autonomous-discovery.py",
+      "line_number": 555,
+      "metric_value": 135
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 165 exceeds maximum 120",
+      "file_path": ".terragon/autonomous-discovery.py",
+      "line_number": 572,
+      "metric_value": 165
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 18 exceeds maximum 15",
+      "file_path": ".terragon/simple-discovery.py",
+      "line_number": 16,
+      "metric_value": 18
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 140 exceeds maximum 120",
+      "file_path": ".terragon/simple-discovery.py",
+      "line_number": 173,
+      "metric_value": 140
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'circuit' missing docstring",
+      "file_path": "examples/quantum_advantage_analysis_demo.py",
+      "line_number": 93,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'mock_circuit' missing docstring",
+      "file_path": "examples/quantum_advantage_analysis_demo.py",
+      "line_number": 121,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'cost_function' missing docstring",
+      "file_path": "examples/quantum_advantage_analysis_demo.py",
+      "line_number": 176,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'cost_function' missing docstring",
+      "file_path": "examples/quantum_advantage_analysis_demo.py",
+      "line_number": 315,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'main' missing docstring",
+      "file_path": "examples/quantum_backend_demo.py",
+      "line_number": 26,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 18 exceeds maximum 15",
+      "file_path": "examples/quantum_monitoring_demo.py",
+      "line_number": 104,
+      "metric_value": 18
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'execute_circuit' missing docstring",
+      "file_path": "examples/testing_framework_example.py",
+      "line_number": 435,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'circuit' missing docstring",
+      "file_path": "tests/conftest.py",
+      "line_number": 30,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'mock_execute' missing docstring",
+      "file_path": "tests/conftest.py",
+      "line_number": 187,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/advanced_caching.py",
+      "line_number": 732,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/advanced_caching.py",
+      "line_number": 734,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'objective_function' missing docstring",
+      "file_path": "src/quantum_mlops/algorithms.py",
+      "line_number": 256,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'objective_function' missing docstring",
+      "file_path": "src/quantum_mlops/algorithms.py",
+      "line_number": 458,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'validate_device' missing docstring",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 47,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'validate_training_data' missing docstring",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 64,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'validate_training_labels' missing docstring",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 70,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'validate_language' missing docstring",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 104,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 23 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 163,
+      "metric_value": 23
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'quantum_circuit' missing docstring",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 244,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'train_fn' missing docstring",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 317,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'quantum_circuit' missing docstring",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 318,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'quantum_circuit' missing docstring",
+      "file_path": "src/quantum_mlops/api.py",
+      "line_number": 369,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/autonomous_executor.py",
+      "line_number": 461,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/autonomous_executor.py",
+      "line_number": 463,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 8 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/autonomous_executor.py",
+      "line_number": 465,
+      "metric_value": 8
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'cost_function' missing docstring",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 166,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 444,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 129 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 555,
+      "metric_value": 129
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 146 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 556,
+      "metric_value": 146
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 149 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 557,
+      "metric_value": 149
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 134 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 568,
+      "metric_value": 134
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 137 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 569,
+      "metric_value": 137
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 155 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 579,
+      "metric_value": 155
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/benchmarking.py",
+      "line_number": 596,
+      "metric_value": 122
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "too_many_parameters",
+      "description": "Function has 11 parameters (max 8)",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 144,
+      "metric_value": 11
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'test_circuit' missing docstring",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 631,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'create_live_table' missing docstring",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 925,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 1468,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 1469,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 1475,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 8 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 1477,
+      "metric_value": 8
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 9 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 1480,
+      "metric_value": 9
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 123 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 279,
+      "metric_value": 123
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 147 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/cli.py",
+      "line_number": 1153,
+      "metric_value": 147
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/compilation.py",
+      "line_number": 334,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 129 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/core.py",
+      "line_number": 595,
+      "metric_value": 129
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'scaled_circuit' missing docstring",
+      "file_path": "src/quantum_mlops/error_correction.py",
+      "line_number": 112,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/exceptions.py",
+      "line_number": 547,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/exceptions.py",
+      "line_number": 563,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/exceptions.py",
+      "line_number": 477,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 123 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/exceptions.py",
+      "line_number": 478,
+      "metric_value": 123
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 150 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/exceptions.py",
+      "line_number": 499,
+      "metric_value": 150
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/global_deployment_engine.py",
+      "line_number": 353,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/health.py",
+      "line_number": 664,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/high_performance_compilation.py",
+      "line_number": 735,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 131 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/high_performance_compilation.py",
+      "line_number": 727,
+      "metric_value": 131
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/hyperopt.py",
+      "line_number": 155,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'optuna_objective' missing docstring",
+      "file_path": "src/quantum_mlops/hyperopt.py",
+      "line_number": 222,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/hyperopt.py",
+      "line_number": 302,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "too_many_parameters",
+      "description": "Function has 9 parameters (max 8)",
+      "file_path": "src/quantum_mlops/hyperopt.py",
+      "line_number": 357,
+      "metric_value": 9
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'objective_function' missing docstring",
+      "file_path": "src/quantum_mlops/hyperopt.py",
+      "line_number": 392,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/hyperopt.py",
+      "line_number": 304,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 153 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/hyperopt.py",
+      "line_number": 597,
+      "metric_value": 153
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/integrations.py",
+      "line_number": 126,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/integrations.py",
+      "line_number": 127,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/integrations.py",
+      "line_number": 237,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/integrations.py",
+      "line_number": 238,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/integrations.py",
+      "line_number": 310,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/integrations.py",
+      "line_number": 311,
+      "metric_value": 7
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/logging_config.py",
+      "line_number": 483,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/logging_config.py",
+      "line_number": 484,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/logging_config.py",
+      "line_number": 504,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/logging_config.py",
+      "line_number": 505,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 19 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/monitoring.py",
+      "line_number": 268,
+      "metric_value": 19
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/optimization.py",
+      "line_number": 130,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/optimization.py",
+      "line_number": 134,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'job_wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/optimization.py",
+      "line_number": 448,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": "src/quantum_mlops/optimization.py",
+      "line_number": 174,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/production_monitoring.py",
+      "line_number": 363,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'console_notification' missing docstring",
+      "file_path": "src/quantum_mlops/production_monitoring.py",
+      "line_number": 539,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/production_monitoring.py",
+      "line_number": 543,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 180 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/production_monitoring.py",
+      "line_number": 544,
+      "metric_value": 180
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 127 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/production_monitoring.py",
+      "line_number": 590,
+      "metric_value": 127
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/production_monitoring.py",
+      "line_number": 595,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 127 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/quality_gates_engine.py",
+      "line_number": 901,
+      "metric_value": 127
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/research_breakthrough.py",
+      "line_number": 999,
+      "metric_value": 124
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/scale_optimization.py",
+      "line_number": 198,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'sync_wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/scale_optimization.py",
+      "line_number": 221,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/scale_optimization.py",
+      "line_number": 478,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/scale_optimization.py",
+      "line_number": 480,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 8 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/scale_optimization.py",
+      "line_number": 482,
+      "metric_value": 8
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 135 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/scale_optimization.py",
+      "line_number": 730,
+      "metric_value": 135
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/scale_optimization.py",
+      "line_number": 863,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": "src/quantum_mlops/scaling.py",
+      "line_number": 346,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 31,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 33,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 62,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 64,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 79,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 81,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'circuit' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 698,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'circuit' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 703,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'circuit' missing docstring",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 722,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 139 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 714,
+      "metric_value": 139
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/testing.py",
+      "line_number": 973,
+      "metric_value": 121
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 29 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/validation.py",
+      "line_number": 38,
+      "metric_value": 29
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 24 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/validation.py",
+      "line_number": 156,
+      "metric_value": 24
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 22 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/validation.py",
+      "line_number": 299,
+      "metric_value": 22
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/validation.py",
+      "line_number": 332,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/validation.py",
+      "line_number": 335,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/validation.py",
+      "line_number": 337,
+      "metric_value": 6
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 26 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/validation.py",
+      "line_number": 404,
+      "metric_value": 26
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 125 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/advantage_detection/__init__.py",
+      "line_number": 9,
+      "metric_value": 125
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 127 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/advantage_detection/__init__.py",
+      "line_number": 12,
+      "metric_value": 127
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 22 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/advantage_detection/advantage_analysis_engine.py",
+      "line_number": 260,
+      "metric_value": 22
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/advantage_detection/advantage_analysis_engine.py",
+      "line_number": 545,
+      "metric_value": 121
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/advantage_detection/multi_metric_supremacy.py",
+      "line_number": 160,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/advantage_detection/multi_metric_supremacy.py",
+      "line_number": 170,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/advantage_detection/noise_resilient_testing.py",
+      "line_number": 164,
+      "metric_value": 6
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 20 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/backends/braket_backend.py",
+      "line_number": 133,
+      "metric_value": 20
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/braket_backend.py",
+      "line_number": 177,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/braket_backend.py",
+      "line_number": 184,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/braket_backend.py",
+      "line_number": 187,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 8 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/braket_backend.py",
+      "line_number": 190,
+      "metric_value": 8
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 9 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/braket_backend.py",
+      "line_number": 193,
+      "metric_value": 9
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 22 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/backends/pennylane_backend.py",
+      "line_number": 121,
+      "metric_value": 22
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 22 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/backends/pennylane_backend.py",
+      "line_number": 127,
+      "metric_value": 22
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/pennylane_backend.py",
+      "line_number": 157,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/pennylane_backend.py",
+      "line_number": 160,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 8 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/pennylane_backend.py",
+      "line_number": 163,
+      "metric_value": 8
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 9 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/pennylane_backend.py",
+      "line_number": 166,
+      "metric_value": 9
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/pennylane_backend.py",
+      "line_number": 184,
+      "metric_value": 6
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 27 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/backends/qiskit_backend.py",
+      "line_number": 176,
+      "metric_value": 27
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/qiskit_backend.py",
+      "line_number": 223,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/qiskit_backend.py",
+      "line_number": 230,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/qiskit_backend.py",
+      "line_number": 233,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 8 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/qiskit_backend.py",
+      "line_number": 236,
+      "metric_value": 8
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 9 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/backends/qiskit_backend.py",
+      "line_number": 239,
+      "metric_value": 9
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'to_dict' missing docstring",
+      "file_path": "src/quantum_mlops/database/models.py",
+      "line_number": 46,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'to_dict' missing docstring",
+      "file_path": "src/quantum_mlops/database/models.py",
+      "line_number": 88,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'to_dict' missing docstring",
+      "file_path": "src/quantum_mlops/database/models.py",
+      "line_number": 139,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'to_dict' missing docstring",
+      "file_path": "src/quantum_mlops/database/models.py",
+      "line_number": 210,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'to_dict' missing docstring",
+      "file_path": "src/quantum_mlops/database/models.py",
+      "line_number": 263,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'to_dict' missing docstring",
+      "file_path": "src/quantum_mlops/database/models.py",
+      "line_number": 313,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 17 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/security/audit_logger.py",
+      "line_number": 177,
+      "metric_value": 17
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/security/authentication.py",
+      "line_number": 387,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/security/authentication.py",
+      "line_number": 389,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/security/authorization.py",
+      "line_number": 303,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/security/authorization.py",
+      "line_number": 412,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/security/authorization.py",
+      "line_number": 414,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/security/authorization.py",
+      "line_number": 428,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/security/authorization.py",
+      "line_number": 430,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/security/encryption.py",
+      "line_number": 446,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 128 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/security/encryption.py",
+      "line_number": 260,
+      "metric_value": 128
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/security/encryption.py",
+      "line_number": 518,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 167 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/security/enterprise_security.py",
+      "line_number": 438,
+      "metric_value": 167
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/security/input_validator.py",
+      "line_number": 392,
+      "metric_value": 16
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/security/input_validator.py",
+      "line_number": 469,
+      "metric_value": 6
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/security/input_validator.py",
+      "line_number": 493,
+      "metric_value": 16
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 17 exceeds maximum 15",
+      "file_path": "src/quantum_mlops/security/quantum_cloud_security.py",
+      "line_number": 170,
+      "metric_value": 17
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'decorator' missing docstring",
+      "file_path": "src/quantum_mlops/security/quantum_cloud_security.py",
+      "line_number": 455,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'wrapper' missing docstring",
+      "file_path": "src/quantum_mlops/security/quantum_cloud_security.py",
+      "line_number": 457,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "technical_debt",
+      "description": "Technical debt marker found",
+      "file_path": "src/quantum_mlops/security/quantum_cloud_security.py",
+      "line_number": 472,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "syntax_error",
+      "description": "Syntax error: unterminated string literal (detected at line 614)",
+      "file_path": "src/quantum_mlops/security/security_scanner.py",
+      "line_number": 614,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 121 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/security/security_scanner.py",
+      "line_number": 76,
+      "metric_value": 121
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 127 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/security/security_scanner.py",
+      "line_number": 83,
+      "metric_value": 127
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 138 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/services/experiment_service.py",
+      "line_number": 468,
+      "metric_value": 138
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 126 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/services/experiment_service.py",
+      "line_number": 469,
+      "metric_value": 126
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 134 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/services/experiment_service.py",
+      "line_number": 485,
+      "metric_value": 134
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/services/optimization_service.py",
+      "line_number": 108,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/services/optimization_service.py",
+      "line_number": 112,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 8 exceeds maximum 5",
+      "file_path": "src/quantum_mlops/services/optimization_service.py",
+      "line_number": 114,
+      "metric_value": 8
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'score_backend' missing docstring",
+      "file_path": "src/quantum_mlops/services/quantum_backend_service.py",
+      "line_number": 166,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/services/quantum_backend_service.py",
+      "line_number": 429,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 124 exceeds maximum 120",
+      "file_path": "src/quantum_mlops/database/seeds/sample_data.py",
+      "line_number": 19,
+      "metric_value": 124
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 301,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'intermittent_submit' missing docstring",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 349,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'high_latency_submit' missing docstring",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 378,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 21 exceeds maximum 15",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 400,
+      "metric_value": 21
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 468,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 475,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 487,
+      "metric_value": 6
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'slow_operation' missing docstring",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 491,
+      "metric_value": null
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 500,
+      "metric_value": 7
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 628,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 634,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 6 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 638,
+      "metric_value": 6
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "excessive_nesting",
+      "description": "Nesting depth 7 exceeds maximum 5",
+      "file_path": "tests/chaos/test_quantum_noise.py",
+      "line_number": 641,
+      "metric_value": 7
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'cost_fn' missing docstring",
+      "file_path": "tests/integration/test_advantage_detection_integration.py",
+      "line_number": 123,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'plateau_cost_function' missing docstring",
+      "file_path": "tests/integration/test_advantage_detection_integration.py",
+      "line_number": 184,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'circuit' missing docstring",
+      "file_path": "tests/integration/test_advantage_detection_integration.py",
+      "line_number": 214,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'cost_function' missing docstring",
+      "file_path": "tests/integration/test_advantage_detection_integration.py",
+      "line_number": 382,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'quantum_circuit' missing docstring",
+      "file_path": "tests/integration/test_advantage_detection_integration.py",
+      "line_number": 385,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'optimization_cost' missing docstring",
+      "file_path": "tests/integration/test_advantage_detection_integration.py",
+      "line_number": 649,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'simple_circuit' missing docstring",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 193,
+      "metric_value": null
+    },
+    {
+      "severity": "HIGH",
+      "category": "high_complexity",
+      "description": "Function complexity 16 exceeds maximum 15",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 501,
+      "metric_value": 16
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 140 exceeds maximum 120",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 261,
+      "metric_value": 140
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 127 exceeds maximum 120",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 275,
+      "metric_value": 127
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 122 exceeds maximum 120",
+      "file_path": "tests/load/test_quantum_load.py",
+      "line_number": 615,
+      "metric_value": 122
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'test_function' missing docstring",
+      "file_path": "tests/quantum/test_quantum_testing.py",
+      "line_number": 195,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'setUp' missing docstring",
+      "file_path": "tests/quantum/test_quantum_testing.py",
+      "line_number": 285,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'simple_circuit' missing docstring",
+      "file_path": "tests/quantum/test_quantum_testing.py",
+      "line_number": 500,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'test_custom_quantum_behavior' missing docstring",
+      "file_path": "tests/quantum/test_quantum_testing.py",
+      "line_number": 646,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "line_too_long",
+      "description": "Line length 126 exceeds maximum 120",
+      "file_path": "tests/quantum/test_quantum_testing.py",
+      "line_number": 673,
+      "metric_value": 126
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'dummy_circuit' missing docstring",
+      "file_path": "tests/unit/test_backends.py",
+      "line_number": 379,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'dummy_circuit' missing docstring",
+      "file_path": "tests/unit/test_backends.py",
+      "line_number": 393,
+      "metric_value": null
+    },
+    {
+      "severity": "LOW",
+      "category": "missing_docstring",
+      "description": "Public function 'dummy_circuit' missing docstring",
+      "file_path": "tests/unit/test_backends.py",
+      "line_number": 408,
+      "metric_value": null
+    }
+  ],
+  "security_score": 76.52482269503545,
+  "quality_score": 68.35214446952597,
+  "overall_score": 72.43848358228071,
+  "gates_passed": {
+    "security_gate": false,
+    "quality_gate": false,
+    "critical_vulnerabilities": false,
+    "high_complexity": false,
+    "dependency_security": false,
+    "quantum_security": true
+  },
+  "recommendations": [
+    "\ud83d\udd34 CRITICAL: Address all critical security vulnerabilities immediately",
+    "\ud83d\udd10 Implement secure credential management (environment variables, HashiCorp Vault)",
+    "\ud83d\udce6 Update vulnerable dependencies to latest secure versions",
+    "\ud83d\udd27 Refactor high complexity functions (average complexity: 20.5)",
+    "\ud83d\udcda Add docstrings to improve code documentation"
+  ],
+  "compliance_status": {
+    "owasp_top10": false,
+    "pci_dss": false,
+    "gdpr_privacy": true,
+    "quantum_security_best_practices": true,
+    "code_quality_standards": false
+  },
+  "scan_version": "1.0"
+}
