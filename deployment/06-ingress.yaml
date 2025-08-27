@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: quantum-meta-learning-ingress
+  namespace: quantum-mlops
+spec:
+  rules:
+  - host: quantum-meta-learning.example.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: quantum-meta-learning-service
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - quantum-meta-learning.example.com
+    secretName: quantum-meta-learning-tls

@@ -1,0 +1,27 @@
+{
+  "meta_learning_accuracy": 0.4666666666666666,
+  "classical_baseline_accuracy": 0.5333333333333333,
+  "quantum_advantage_factor": 0.8749999999999999,
+  "adaptation_speed": 392.6718532954422,
+  "few_shot_performance": {
+    "1-shot": 0.5,
+    "3-shot": 0.6,
+    "5-shot": 0.4666666666666666
+  },
+  "circuit_depth": 2,
+  "parameter_efficiency": 8.0,
+  "convergence_time": 0.16469883918762207,
+  "breakthrough_score": 4.726738764107163,
+  "statistical_significance": 0.9455668946048182,
+  "error_count": 0,
+  "validation_passed": true,
+  "noise_resilience": 0.9999998204560576,
+  "parameter_stability": 0.9978822322543024,
+  "convergence_stability": 0.8570197849863566,
+  "security_hash": "2f1c1f1c9fe28e2a",
+  "timestamp": 1756318087632,
+  "generation": 2,
+  "experiment_type": "quantum_meta_learning_robust_breakthrough",
+  "python_version": "3.x",
+  "numpy_version": "1.26.4"
+}

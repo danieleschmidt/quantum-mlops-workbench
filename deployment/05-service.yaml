@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: quantum-meta-learning
+  name: quantum-meta-learning-service
+  namespace: quantum-mlops
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  - name: metrics
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+  selector:
+    app: quantum-meta-learning
+  type: ClusterIP

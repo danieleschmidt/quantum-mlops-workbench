@@ -1,0 +1,19 @@
+{
+  "meta_learning_accuracy": 0.6,
+  "classical_baseline_accuracy": 0.3,
+  "quantum_advantage_factor": 2.0,
+  "adaptation_speed": 988.9653190271143,
+  "few_shot_performance": {
+    "1-shot": 0.5,
+    "3-shot": 0.6,
+    "5-shot": 0.6
+  },
+  "circuit_depth": 2,
+  "parameter_efficiency": 8.0,
+  "convergence_time": 0.03643965721130371,
+  "breakthrough_score": 11.156753190271145,
+  "statistical_significance": 0.99,
+  "timestamp": 1756317968196,
+  "generation": 1,
+  "experiment_type": "quantum_meta_learning_breakthrough_optimized"
+}

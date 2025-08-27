@@ -1,0 +1,27 @@
+groups:
+- name: quantum-meta-learning-alerts
+  rules:
+  - alert: HighErrorRate
+    annotations:
+      description: Error rate is above 10% for 5 minutes
+      summary: High error rate detected
+    expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
+    for: 5m
+    labels:
+      severity: critical
+  - alert: LowModelAccuracy
+    annotations:
+      description: Model accuracy is below 60%
+      summary: Model accuracy degraded
+    expr: quantum_model_accuracy < 0.6
+    for: 10m
+    labels:
+      severity: warning
+  - alert: HighMemoryUsage
+    annotations:
+      description: Memory usage is above 90%
+      summary: High memory usage
+    expr: container_memory_usage_bytes / container_spec_memory_limit_bytes > 0.9
+    for: 5m
+    labels:
+      severity: warning
