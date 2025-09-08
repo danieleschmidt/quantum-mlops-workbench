@@ -34,7 +34,7 @@ opentelemetry-sdk==1.36.0
 structlog==25.4.0
 
 # Testing & Quality Assurance
-pytest==8.4.1
+pytest==8.4.2
 pytest-cov==6.2.1
 pytest-xdist==3.8.0
 pytest-asyncio==1.1.0
