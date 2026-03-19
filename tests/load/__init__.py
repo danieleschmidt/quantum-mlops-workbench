@@ -1,1 +1,0 @@
-# Load testing for quantum MLOps platform
